@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SequenzaCrescente.dir/main.cpp.o  -o SequenzaCrescente 

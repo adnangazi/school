@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/MorraCinese2.dir/main.cpp.o  -o MorraCinese2 

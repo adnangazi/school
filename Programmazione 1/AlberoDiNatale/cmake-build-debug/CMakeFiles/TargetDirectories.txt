@@ -1,0 +1,3 @@
+D:/GitHub/University/AlberoDiNatale/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/AlberoDiNatale/cmake-build-debug/CMakeFiles/AlberoDiNatale.dir
+D:/GitHub/University/AlberoDiNatale/cmake-build-debug/CMakeFiles/rebuild_cache.dir

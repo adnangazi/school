@@ -1,0 +1,3 @@
+/home/adnan/Documenti/GitHub/University/MorraCinese1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/adnan/Documenti/GitHub/University/MorraCinese1/cmake-build-debug/CMakeFiles/MorraCinese1.dir
+/home/adnan/Documenti/GitHub/University/MorraCinese1/cmake-build-debug/CMakeFiles/edit_cache.dir
