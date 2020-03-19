@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/GitHub/University/AlberoDiNatale/main.cpp" "D:/GitHub/University/AlberoDiNatale/cmake-build-debug/CMakeFiles/AlberoDiNatale.dir/main.cpp.obj"
+  "D:/GitHub/University/Programmazione 1/AlberoDiNatale/main.cpp" "D:/GitHub/University/Programmazione 1/AlberoDiNatale/cmake-build-debug/CMakeFiles/AlberoDiNatale.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ParentesiAccavallate.dir/main.cpp.o"
-  "ParentesiAccavallate"
+  "CMakeFiles/ParentesiAccavallate.dir/main.cpp.obj"
+  "ParentesiAccavallate.exe"
+  "ParentesiAccavallate.exe.manifest"
   "ParentesiAccavallate.pdb"
+  "libParentesiAccavallate.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

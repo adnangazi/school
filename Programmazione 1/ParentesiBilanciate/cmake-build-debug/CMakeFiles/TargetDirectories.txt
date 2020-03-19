@@ -1,3 +1,3 @@
-/home/adnan/Documenti/GitHub/University/ParentesiBilanciate/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/adnan/Documenti/GitHub/University/ParentesiBilanciate/cmake-build-debug/CMakeFiles/ParentesiBilanciate.dir
-/home/adnan/Documenti/GitHub/University/ParentesiBilanciate/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione 1/ParentesiBilanciate/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione 1/ParentesiBilanciate/cmake-build-debug/CMakeFiles/ParentesiBilanciate.dir
+D:/GitHub/University/Programmazione 1/ParentesiBilanciate/cmake-build-debug/CMakeFiles/rebuild_cache.dir

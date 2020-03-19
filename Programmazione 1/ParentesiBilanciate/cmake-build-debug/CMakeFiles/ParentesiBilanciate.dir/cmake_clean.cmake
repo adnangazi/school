@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ParentesiBilanciate.dir/main.cpp.o"
-  "ParentesiBilanciate"
+  "CMakeFiles/ParentesiBilanciate.dir/main.cpp.obj"
+  "ParentesiBilanciate.exe"
+  "ParentesiBilanciate.exe.manifest"
   "ParentesiBilanciate.pdb"
+  "libParentesiBilanciate.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

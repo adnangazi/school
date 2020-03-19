@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MorraCinese2.dir/main.cpp.o"
-  "MorraCinese2"
+  "CMakeFiles/MorraCinese2.dir/main.cpp.obj"
+  "MorraCinese2.exe"
+  "MorraCinese2.exe.manifest"
   "MorraCinese2.pdb"
+  "libMorraCinese2.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

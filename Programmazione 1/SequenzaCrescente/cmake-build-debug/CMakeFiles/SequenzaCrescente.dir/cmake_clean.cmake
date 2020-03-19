@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SequenzaCrescente.dir/main.cpp.o"
-  "SequenzaCrescente"
+  "CMakeFiles/SequenzaCrescente.dir/main.cpp.obj"
+  "SequenzaCrescente.exe"
+  "SequenzaCrescente.exe.manifest"
   "SequenzaCrescente.pdb"
+  "libSequenzaCrescente.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

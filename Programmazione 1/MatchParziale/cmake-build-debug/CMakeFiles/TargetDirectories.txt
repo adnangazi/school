@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione 1/MatchParziale/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione 1/MatchParziale/cmake-build-debug/CMakeFiles/MatchParziale.dir
+D:/GitHub/University/Programmazione 1/MatchParziale/cmake-build-debug/CMakeFiles/rebuild_cache.dir

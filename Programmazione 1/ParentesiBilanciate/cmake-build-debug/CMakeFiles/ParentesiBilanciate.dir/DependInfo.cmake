@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/adnan/Documenti/GitHub/University/ParentesiBilanciate/main.cpp" "/home/adnan/Documenti/GitHub/University/ParentesiBilanciate/cmake-build-debug/CMakeFiles/ParentesiBilanciate.dir/main.cpp.o"
+  "D:/GitHub/University/Programmazione 1/ParentesiBilanciate/main.cpp" "D:/GitHub/University/Programmazione 1/ParentesiBilanciate/cmake-build-debug/CMakeFiles/ParentesiBilanciate.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    cout << "start"<<endl;
+    cout << "start" << endl;
 
     int n;
     cin >> n;
@@ -15,7 +15,7 @@ int main() {
         int g1 = 0;
         int g2 = 0;
 
-        for (int i = 0; i < n*2; i++) {
+        for (int i = 0; i < n*2; i++) { //R
             cin >> mg1;
             cin >> mg2;
             if (mg1 == 's' && mg2 == 'f') g1++;
@@ -26,7 +26,7 @@ int main() {
             else if (mg1 == 'f' && mg2 == 's') g2++;
             if (g1 > n/2) {cout << v1 << endl << "end" << endl; return 0;}
             else if (g2 > n/2) {cout << v2 << endl << "end" << endl; return 0;}
-        }
+        } //POST-R
 
         if (g1 > g2) cout << v1 << endl;
         else if (g1 < g2) cout << v2 << endl;
@@ -36,3 +36,8 @@ int main() {
 
     cout << "end" << endl;
 }
+/*
+    R=(0 <= i <= n*2) && (letti valori in input per giocatore1 e giocatore e incrementati le vittorie)
+    Prova di corretteza del ciclo R:
+    R sempre valido perchè i = 0 inizialmente e incrementato finchè i < n*2: R && !(i < n*2) => R && (i >= n*2) => i = n*2 => giocato il numero massimo di volte necessarie per decretare il vincitore => POST
+*/

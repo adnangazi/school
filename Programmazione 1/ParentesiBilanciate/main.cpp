@@ -9,7 +9,7 @@ int main() {
     char insert;
     int parentesi = 0;
 
-    while (insert != '0') {
+    while (insert != '0') { //R
         cin >> insert;
         if (insert == '(') parentesi++;
         else if (insert == ')') parentesi--;
@@ -21,3 +21,8 @@ int main() {
 
     cout << "end"<<endl;
 }
+/*
+    R=(0 <= i <= n*2) && (letti valori in input e incrementati contatori parentesi aperte e chiuse)
+    Prova di corretteza del ciclo R:
+    R sempre valido perchè nessun '0' inserito prima: R && !(i < n*2) => R && (i >= n*2) => i = n*2 => giocato il numero massimo di volte necessarie per decretare il vincitore => POST
+*/
