@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione 1/StampaFetta/cmake-build-debug/CMakeFiles/StampaFetta.dir
+D:/GitHub/University/Programmazione 1/StampaFetta/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione 1/StampaFetta/cmake-build-debug/CMakeFiles/rebuild_cache.dir
