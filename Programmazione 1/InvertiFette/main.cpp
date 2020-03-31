@@ -12,9 +12,9 @@ void scambia(int & y, int & z) {
 //PRE=(p int puntatore al primo elemento di X e definito nelle prime n_ele posizioni, altri parametri sono interi e bool definiti)
 int& TV(int*p, int lim1,int lim2, int lim3, int n_ele, int f, int n, bool & ok) {
     if (n_ele > lim1*lim2*lim3) {
-        n_ele = lim1*lim2*lim3;
+        n_ele = lim1*lim2*lim3; //considero al massimo tutti gli elementi dell'array
     }
-    if ((lim3 * n + f) >= n_ele) {
+    if ((lim3 * n + f) >= n_ele) { //non sono stati inseriti elementi fino all'elemento della V-fetta indicata
         ok = false;
     }
     return p[lim3 * n + f];
@@ -24,14 +24,14 @@ int& TV(int*p, int lim1,int lim2, int lim3, int n_ele, int f, int n, bool & ok) 
 //PRE=(p int puntatore al primo elemento di X e definito nelle prime n_ele posizioni, altri parametri sono interi e bool definiti)
 int& TH(int*p, int lim1,int lim2, int lim3, int n_ele, int f, int n, bool & ok) {
     if (n_ele > lim1*lim2*lim3) {
-        n_ele = lim1*lim2*lim3;
+        n_ele = lim1*lim2*lim3; //considero al massimo tutti gli elementi dell'array
     }
-    int a = 0;
-    while (n >= lim3) {
+    int a = 0; //quoziente della divisione intera n:lim3
+    while (n >= lim3) { //divisione intera n:lim3
         a++;
         n -= lim3;
-    }
-    if ((f*lim3 + lim3*lim2*a + n) >= n_ele) {
+    } //n è il resto della divisione intera n:lim3
+    if ((f*lim3 + lim3*lim2*a + n) >= n_ele) { //non sono stati inseriti elementi fino all'elemento della H-fetta indicata
         ok = false;
     }
     return p[f*lim3 + lim3*lim2*a + n];
@@ -81,11 +81,12 @@ int main() {
 }
 
 /*
- * R=(stop != false per la prima volta) && (inserito la quadrupla da input) && (stop = true sse fv == -1) &&
- * (scambio elementi V-fetta e H-fetta sse gli elementi esistono e sono definiti) && (stampa messaggio di errore sse gli elementi esistono e sono definiti)
+ * R=(stop == true per la prima volta) && (inserito la quadrupla da input) && (stop = true sse fv == -1) && (scambio elementi V-fetta e H-fetta sse gli elementi esistono e sono definiti) && (stampa messaggio di errore sse gli elementi non esistono o non sono definiti)
  *
- * 
+ * POST-R=(eseguito operazioni di scambio elementi V-fetta/H-fetta sse l'operazione era consentita e finchè non inserita la sentinella)
  *
  * Prova di correttezza del ciclo R:
- *
+ *  R vero la prima che si entra nel ciclo perche inizialmente stop == false => stop != true
+ *  R vero ogni volta successiva in cui si enta nel ciclo perchè in ciclo viene eseguito finchè fv == -1 => stop == true
+ *  R vero l'ultima volta in cui si entra nel ciclo perchè R && !(!stop) => R1 && stop => inserita la sentinella che indica fine delle operazioni di scambio
 */

@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione 1/SottosequenzaS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/GitHub/University/Programmazione 1/SottosequenzaS/cmake-build-debug/CMakeFiles/SottosequenzaS.dir
+D:/GitHub/University/Programmazione 1/SottosequenzaS/cmake-build-debug/CMakeFiles/edit_cache.dir
