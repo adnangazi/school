@@ -12,14 +12,14 @@ int F(int i, int lim1, int lim2, int lim3) {
 }
 //POST=(restituisce la distanza in X tra il primo elemento di una qualsiasi H-fetta e l’elemento i della fetta)
 
-//PRE=(a array di int [fine >= 0] completamente definito)
-void stampa(int * a, int fine) {
-    for (int inizio = 0; inizio < fine; ++inizio) {
-        cout << a[inizio] << " ";
+//PRE=(a array di int [lim1 * lim2 * lim3 >= 0], fetta, elem >= 0)
+void stampa(int * a, int fetta, int elem, int lim1, int lim2, int lim3) {
+    for (int i = 0; i < elem; ++i) {
+        cout << a[fetta * lim3 + F(i, lim1, lim2, lim3)] << " ";
     }
     cout << endl;
 }
-//POST=(stampato tutti gli elementi di a)
+//POST=(stampato tutta la H-Fetta hf di a)
 
 //PRE=(a array di int [fine >= 0] completamente definito, inizio >= 0)
 void stampaPatternRimasto(int * a, int inizio, int fine) {
@@ -30,14 +30,20 @@ void stampaPatternRimasto(int * a, int inizio, int fine) {
 }
 //POST=(stampato tutti gli elementi da iniizio di a)
 
-//PRE=(b array di int [lung >= 0] completamente definito, inizio >= 0)
-void accompattaSx(int * b, int inizio, int & lung) {
-    for (int i = inizio; i < lung; ++i) { //compatto verso sinistra
-        b[i] = b[i + 1];
+//PRE=(P, X array di int [nP >= 0] e [n_ele >= 0]; i, h, f, lim1, lim2, lim3, z, j, hf >= 0)
+void accompatta(int h, int i, int f, int n_ele, int & z, int & j, int * P, int lim1, int lim2, int lim3, int hf, int * X) {
+    if (X[F(j, lim1, lim2, lim3) + hf * lim3] == P[z]) {
+        while (i < n_ele) {
+            X[f] = X[i]; //accompatto a sx di una posizione
+            f = i;
+            i = F(h++, lim1, lim2, lim3) + hf * lim3;
+        }
+        z++;
+    } else {
+        j++;
     }
-    lung--;
 }
-//POST=(restituito b con tutti gli elementi a dx di inizio compattati a sx di una posizione) && (impostato la nuova lunghezza della H-Fetta)
+//POST=(restituito X con tutti gli elementi della H-Fetta hf accompattati a sx) && (eliminati tutti gli elementi della H-Fetta hf di X presenti anche in P)
 
 int main() {
     int X[400], P[20], n_ele, nP, lim1, lim2, lim3;
@@ -58,49 +64,37 @@ int main() {
 
     int hf;
     cin >> hf; // fetta da trattare
-    int lung = 0; // lunghezza della H-fetta hf
+    int j = 0; // lunghezza della H-fetta hf
     bool fineHfetta = false;
     int z = 0; //numero di elementi consumati nel pattern
-    int b[lim1 * lim3]; //H-Fetta: [lunghezza massima H-Fetta]
 
-    for (int j = 0; j < lim1 * lim3 && !fineHfetta; ++j) { //R
+    for (; j < lim1 * lim3 && !fineHfetta;) { //R
         if (F(j, lim1, lim2, lim3) + hf * lim3 < n_ele) {
-            b[j] = X[F(j, lim1, lim2, lim3) + hf * lim3];
-            lung++;
+            accompatta(j, F(j + 1, lim1, lim2, lim3) + hf * lim3, F(j, lim1, lim2, lim3) + hf * lim3, n_ele, z, j, P, lim1, lim2, lim3, hf, X);
         } else {
             fineHfetta = true;
         }
     } //POST-R
 
-    for (int l = 0; l < lung && z < nP;) { //elimino gli elementi della H-Fetta che si presentano anche nel pattern
-        if (b[l] == P[z]) { //scorro sul pattern
-            accompattaSx(b, l, lung);
-            z++;
-        } else { //scorro su H-Fetta
-            l++;
-        }
-    }
-
     if (z == nP) { //z non può essere maggiore di nP per condizione sul ciclo for precedente
         cout << "pattern consumato tutto" << endl;
     } else {
         cout << "pattern rimasto ";
-        stampaPatternRimasto(P, z, nP); //non uso stampa() perchè non ci sono spazi tra gli elementi nella stampa degli elementi del pattern rimasto
+        stampaPatternRimasto(P, z, nP);
     }
 
     cout << "la H-fetta " << hf << " e' diventata:" << endl;
-    stampa(b, lung);
-    cout<< endl << "end" << endl;
+    stampa(X, hf, j - z, lim1, lim2, lim3); //stampa H-Fetta
+    cout << endl << "end" << endl;
 }
-/**
-     * R = (0 <= k <= lim1) && (fineHfetta solo per la prima volta) && (iterato su tutta la H-Fetta di X) &&
-     * (inserimento ordinato di un nuovo elemento della H-Fetta in b sse elemento definito, ovvero posizione in X minore degli elementi inseriti n_ele: F(j, lim1, lim2, lim3) + hf * lim3 < n_ele) &&
-     * (fineHfetta sse nuovo elemento della H-Fetta non è definito, ovvero non sono stati inseriti abbastanza elementi (posizione elemento < n_ele): F(j, lim1, lim2, lim3) + hf * lim >= n_ele) &&
-     * (incrementato lunghezza di b sse inserito nuovo elemento nella H-Fetta)
+     /**
+     * R = (0 <= j <= lim1 * lim3) && (fineHfetta solo per la prima volta) && (iterato su tutta la H-Fetta di X) &&
+     * (cercato nella H-Fetta hf di X un elemento di P, poi eliminato tale elemento e accompattato tutti gli elementi a sx sse elemento j della H-Fetta non è definta (numero elementi inseriti in X non sufficienti) e trovato match con un elemento in P: F(j, lim1, lim2, lim3) + hf * lim3 < n_ele) &&
+     * (fineHfetta sse elemento j della H-Fetta non è definta (numero elementi inseriti in X non sufficienti): F(j, lim1, lim2, lim3) + hf * lim3 >= n_ele)
      *
      * Prova di correttezza del ciclo R:
      *  Il cilco R è sempre corretto in quanto:
-     *  Corretto la prima volta che si entra nel ciclo: inizialmente k = 0 e fineHfetta = false => rispettate le condizioni necessarrie per entrare nel ciclo.
-     *  Corretto ad ogni iterazione dentro il cilco: il ciclo viene eseguito finchè fineHfetta 0 k > lim1.
-     *  Corretto all'ultima iterazione del ciclo (quando si esce): R && !( (0 <= k <= lim1) && (!fineHfetta) ) => R && ( (k > lim1) || (fineHfetta) ) => iterato su tutti gli elementi definiti della H-Fetta hf di X => inseriti gli elementi in b.
+     *  Corretto la prima volta che si entra nel ciclo: inizialmente j = 0 e fineHfetta = false => rispettate le condizioni necessarrie per entrare nel ciclo.
+     *  Corretto ad ogni iterazione dentro il cilco: il ciclo viene eseguito finchè fineHfetta o k > lim1 * lim3.
+     *  Corretto all'ultima iterazione del ciclo (quando si esce): R && !( (0 <= j <= lim1 * lim3) && (!fineHfetta) ) => R && ( (j > lim1 * lim3) || (fineHfetta) ) => iterato su tutti gli elementi definiti della H-Fetta hf di X => inseriti gli elementi in b.
      **/
