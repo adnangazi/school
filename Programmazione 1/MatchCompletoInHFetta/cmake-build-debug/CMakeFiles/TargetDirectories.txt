@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione 1/MatchCompletoInHFetta/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione 1/MatchCompletoInHFetta/cmake-build-debug/CMakeFiles/MatchCompletoInHFetta.dir
+D:/GitHub/University/Programmazione 1/MatchCompletoInHFetta/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -46,27 +46,28 @@ void accompatta(int h, int i, int f, int n_ele, int & z, int & j, int * P, int l
 //POST=(restituito X con tutti gli elementi della H-Fetta hf accompattati a sx) && (eliminati tutti gli elementi della H-Fetta hf di X presenti anche in P)
 
 int main() {
-    int X[400], P[20], n_ele, nP, lim1, lim2, lim3;
+    int X[400], P[20], n_ele, nP, lim1, lim2, lim3, hf, j = 0, z = 0; //lunghezza della H-fetta hf, numero di elementi consumati nel pattern
+    bool fineHfetta = false;
+
     cin >> n_ele;
     for(int i = 0; i < n_ele; i++) {
         cin >> X[i];
     }
+
     cin >> lim1 >> lim2 >> lim3;
     if (lim1 * lim2 * lim3 < n_ele) {
         n_ele = lim1 * lim2 * lim3;
     }
+
     cin >> nP;
     for (int i = 0; i < nP; i++) {
         cin >> P[i];
     }
-    int nsp = n_ele/(lim2*lim3), eus= n_ele%(lim2*lim3), rpus= eus/lim3, ur= eus%lim3; //non usati
-    cout<<"start"<<endl;
 
-    int hf;
+    int nsp = n_ele/(lim2*lim3), eus= n_ele%(lim2*lim3), rpus= eus/lim3, ur= eus%lim3; //non usati
+
+    cout<<"start"<<endl;
     cin >> hf; // fetta da trattare
-    int j = 0; // lunghezza della H-fetta hf
-    bool fineHfetta = false;
-    int z = 0; //numero di elementi consumati nel pattern
 
     for (; j < lim1 * lim3 && !fineHfetta;) { //R
         if (F(j, lim1, lim2, lim3) + hf * lim3 < n_ele) {
