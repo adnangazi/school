@@ -91,3 +91,32 @@ int main() {
         stampa(x, 0);
     }
 }
+
+/*************************************************************************************************************************************************************************
+    Prova induttiva della funzione 'searchPath(bool * B, int r, int c, int n)':
+	La correttezza di questa funzione ricorsiva (che chiameremo F) è dimostrata eseguendo un'ipotesi induttiva sulla funzione
+    richiamata internamente, ovvero la stessa funzione 'searchPath(bool * B, int r, int c, int n)' (che chiameremo G).
+
+	G riceve come parametri formali i parametri attuali alla chiamata da F, ovvero:
+		- B: array che  va visto come un array di bool [n][n] con n >= 0 alla chiamata inizale della funzione ==> non essendo modificato al passaggio in G B rimane
+		array che va visto come un array di bool [n][n] con n >= 0 ad ogni chiamata.
+		- r + 1: inizialmente r == 0 e le chiamate a G vengono effettuate finchè r < n ==> 0 <= r <= n - 1
+		- c - 1, c o c + 1 in base a quale funzione G viene chiamata in F: inizialmente c == 0 e le chiamate a G vengono effettuate finchè c < n ==> -1 <= c <= n
+		- n: n >= 0 alla chiamata iniziale della funzione ==> n >= 0 ad ogni chiamata in quanto non viene cambiato al passaggio a G.
+	==> quindi G rispetta il PRE-condizione della funzione.
+
+	Entrambi i casi base di G rientrano nella definizione del POST-condizione di G:
+		- caso base 1: return lista degli elementi in modo da costituire un cammino sse la lunghezza della lista è tale che il cammino è un cammino completo
+		(fino all'ultima riga).
+		- caso base 2: return 0 (considerabile come lista vuota) sse se non esiste un cammino completo.
+	==> abbiamo che G rispetta il POST-condizione della funzione.
+
+	Usando la correttezza di G, dimostro la correttezza di F:
+		In F, per ogni radice (cella = 1 in riga 0: rappresenta possibile inizio di cammino) si scorrono tutti i rami possibili ottenuti dall'albero binario formato
+		dall'insieme dei cammini, completi o non completi. Per ogni ramo, si controlla che la lunghezza sia tale che il ramo arrivi fino all'ultima riga della matrice
+		B[n][n] ==> trovato cammino completo. Si crea ricorsivamente e si restituisce una lista di nodi in cui si salvano le colonne del cammino rispetto alla relativa
+		riga. Altrimenti non si è trovato nessun cammino completo ==> restituito 0 che indica sia una lista vuota che la presenza di cammini completi.
+
+	==> dimostro così la corretteza della funzione F, e quindi anche di G. Viene dimostrato così la correttezza della funzione 'searchPath(bool * B, int r, int c, int n)'
+    rispetto al suo PRE e POST condizione.
+ *************************************************************************************************************************************************************************/
