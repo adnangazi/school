@@ -15,14 +15,15 @@ struct nodo {
     }
 };
 
-//PRE=(arr va visto come un array di int [n][n] con n >= 0, 0 <= i <= dim - 1, -1 <= j <= dim)
+//PRE=(arr va visto come un array di int [dim][dim] con dim >= 0, i e j interi definiti)
 int getPos(int * arr, int i, int j, int dim) {
-    if (j >= 0 && j < dim) { //controllo limiti bordi della colonna
-        return *(arr + dim * i + j); //B[i][j]
+    if (j >= 0 && j < dim && i >= 0 && i < dim) { //controllo limiti bordi matrice
+        return *(arr + dim * i + j); //arr[i][j]
     }
+
     return 0;
 }
-//POST=(return arr[i][j] sse arr[i][j] > 0, altrimenti return 0)
+//POST=(return arr[i][j] sse arr[i][j] elemento di arr (j >= 0 && j < dim && i >= 0 && i < dim) , altrimenti return 0)
 
 //PRE=(X lista di nodi, n >= 0)
 bool checkLength(nodo * X, int n) {
@@ -45,7 +46,7 @@ void del(nodo * a) {
         countDel++;
     }
 }
-//POST=(eliminato tutti i nodi di a dalla memoria dinamica e incrementato countDel)
+//POST=(eliminato tutti i nodi della lista dalla memoria dinamica e incrementato countDel)
 
 //PRE=(a, b, c, lista di nodi)
 nodo * biggestPath(nodo * x, nodo * y, nodo * z) {
@@ -53,17 +54,25 @@ nodo * biggestPath(nodo * x, nodo * y, nodo * z) {
         if (y && y->val > x->val) {
             del(x);
             x = y;
+        } else {
+            del(y);
         }
         if (z && z->val > x->val) {
             del(x);
             x = z;
+        } else {
+            del(z);
         }
+
         return x;
     } else if (y) { //x non definito
         if (z && z->val > y->val) {
             del(y);
             y = z;
+        } else {
+            del(z);
         }
+
         return y;
     } else { //x e y non definiti
         return z; //se z non definito z = 0 ==> return 0;
@@ -77,32 +86,29 @@ nodo * searchPath(int * B, int r, int c, int n) {
 
     if (c - 1 >= 0 && r > 0 && r < n && getPos(B, r, c - 1, n) > 0) { //scorro sotto-ramo sinistro a partire dalla posizione attuale
         nodo * a = searchPath(B, r + 1, c - 1, n); //base ricorsiva ==> sotto-ramo sinistro
-        int val = a ? a->val : 0; //a->val sse a definito, altrimenti 0
-        x = new nodo(c - 1, val + getPos(B, r, c - 1, n), a);
-        countNew++;
-        if (!checkLength(x, n - r)) { //ramo non lungo abbastanza per essere un commino completo
-            del(x);
-            x = 0;
+
+        if (checkLength(a, n - (r + 1))) { //sotto-ramo lungo abbastanza per essere un commino completo
+            int val = a ? a->val : 0; //a->val sse a definito, altrimenti 0
+            x = new nodo(c - 1, val + getPos(B, r, c - 1, n), a);
+            countNew++;
         }
     }
     if (r < n && getPos(B, r, c, n) > 0) { //scorro sotto-ramo centrale a partire dalla posizione attuale
         nodo * a = searchPath(B, r + 1, c, n); //base ricorsiva ==> sotto-ramo centrale
-        int val = a ? a->val : 0; //a->val sse a definito, altrimenti 0
-        y = new nodo(c, val + getPos(B, r, c, n), a);
-        countNew++;
-        if (!checkLength(y, n - r)) { //ramo non lungo abbastanza per essere un commino completo
-            del(y);
-            y = 0;
+
+        if (checkLength(a, n - (r + 1))) { //sotto-ramo lungo abbastanza per essere un commino completo
+            int val = a ? a->val : 0; //a->val sse a definito, altrimenti 0
+            y = new nodo(c, val + getPos(B, r, c, n), a);
+            countNew++;
         }
     }
     if (c + 1 < n && r > 0 && r < n && getPos(B, r, c + 1, n) > 0) { //scorro sotto-ramo destro a partire dalla posizione attuale
         nodo * a = searchPath(B, r + 1, c + 1, n); //base ricorsiva ==> sotto-ramo destro
-        int val = a ? a->val : 0; //a->val sse a definito, altrimenti 0
-        z = new nodo(c + 1, val + getPos(B, r, c + 1, n), a);
-        countNew++;
-        if (!checkLength(z, n - r)) { //ramo non lungo abbastanza per essere un commino completo
-            del(z);
-            z = 0;
+
+        if (checkLength(a, n - (r + 1))) { //sotto-ramo lungo abbastanza per essere un commino completo
+            int val = a ? a->val : 0; //a->val sse a definito, altrimenti 0
+            z = new nodo(c + 1, val + getPos(B, r, c + 1, n), a);
+            countNew++;
         }
     }
 
@@ -137,8 +143,11 @@ int main() {
     for(int i = 0; i < n; i++) {
         nodo * y = searchPath(B, 0, i, n);
 
-        if (y && !(x && x->val >= y->val)) { //cammino completo massimo più a sinistra
+        if (y && !(x && x->val >= y->val)) { //x è cammino completo massimo più a sinistra: dealloco gli altri cammini completi salvati in memoria dinamica
+            del(x);
             x = y;
+        } else {
+            del(y);
         }
     }
 
