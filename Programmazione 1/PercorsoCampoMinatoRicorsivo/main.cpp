@@ -11,11 +11,12 @@ struct nodo {
     }
 };
 
-//PRE=(arr va visto come un array di bool [n][n] con n >= 0, 0 <= i <= dim - 1, -1 <= j <= dim)
+//PRE=(arr va visto come un array di bool [n][n] con n >= 0, i e j interi definiti)
 bool getPos(bool * arr, int i, int j, int dim) {
-    if (j >= 0 && j < dim) { //controllo limiti bordi della colonna
+    if (j >= 0 && j < dim && i >= 0 && i < dim) { //controllo limiti bordi della colonna
         return *(arr + dim * i + j); //B[i][j]
     }
+
     return false;
 }
 //POST=(return true sse arr[i][j] == true)
@@ -32,43 +33,27 @@ bool checkLength(nodo * X, int n) {
 }
 //POST=(return true sse numero di nodi in X == n)
 
-//PRE=(a lista di nodi)
-void del(nodo * a) {
-    while (a) {
-        nodo * b = a;
-        a = a->next;
-        delete b;
-    }
-}
-//POST=(eliminato tutti i nodi di a dalla memoria dinamica)
-
 //PRE=(B va visto come un array di bool [n][n] con n >= 0, 0 <= r <= n - 1, -1 <= c <= n)
 nodo * searchPath(bool * B, int r, int c, int n) {
     if (c - 1 >= 0 && r > 0 && r < n && getPos(B, r, c - 1, n)) { //scorro sotto-ramo sinistro a partire dalla posizione attuale
-        nodo * a = new nodo(c - 1, searchPath(B, r + 1, c - 1, n)); //
-        if (checkLength(a, n - r)) { //sotto-ramo lungo abbastanza da completare un commino completo
-            return a; //base 1 ==> trovato un cammino completo
-        } else { //elimino i nodi dalla memoria dinamica
-            del(a);
-            a = 0;
+        nodo * a = searchPath(B, r + 1, c - 1, n);
+
+        if (checkLength(a, n - (r + 1))) { //sotto-ramo lungo abbastanza da completare un commino completo
+            return new nodo(c - 1, a);; //base 1 ==> trovato un cammino completo
         }
     }
     if (r < n && getPos(B, r, c, n)) { //scorro sotto-ramo centrale a partire dalla posizione attuale
-        nodo * a = new nodo(c, searchPath(B, r + 1, c, n));
-        if (checkLength(a, n - r)) { //sotto-ramo lungo abbastanza da completare un commino completo
-            return a; //base 1 ==> trovato un cammino completo
-        } else { //elimino i nodi dalla memoria dinamica
-            del(a);
-            a = 0;
+        nodo * a = searchPath(B, r + 1, c, n);
+
+        if (checkLength(a, n - (r + 1))) { //sotto-ramo lungo abbastanza da completare un commino completo
+            return new nodo(c, a);; //base 1 ==> trovato un cammino completo
         }
     }
     if (c + 1 < n && r > 0 && r < n && getPos(B, r, c + 1, n)) { //scorro sotto-ramo destro a partire dalla posizione attuale
-        nodo * a = new nodo(c + 1, searchPath(B, r + 1, c + 1, n));
-        if (checkLength(a, n - r)) { //sotto-ramo lungo abbastanza da completare un commino completo
-            return a; //base 1 ==> trovato un cammino completo
-        } else { //elimino i nodi dalla memoria dinamica
-            del(a);
-            a = 0;
+        nodo * a = searchPath(B, r + 1, c + 1, n);
+
+        if (checkLength(a, n - (r + 1))) { //sotto-ramo lungo abbastanza da completare un commino completo
+            return new nodo(c + 1, a);; //base 1 ==> trovato un cammino completo
         }
     }
     
