@@ -32,24 +32,43 @@ bool checkLength(nodo * X, int n) {
 }
 //POST=(return true sse numero di nodi in X == n)
 
+//PRE=(a lista di nodi)
+void del(nodo * a) {
+    while (a) {
+        nodo * b = a;
+        a = a->next;
+        delete b;
+    }
+}
+//POST=(eliminato tutti i nodi di a dalla memoria dinamica)
+
 //PRE=(B va visto come un array di bool [n][n] con n >= 0, 0 <= r <= n - 1, -1 <= c <= n)
 nodo * searchPath(bool * B, int r, int c, int n) {
-    if (c - 1 >= 0 && r < n && getPos(B, r, c - 1, n)) { //scorro sotto-ramo sinistro a partire dalla posizione attuale
+    if (c - 1 >= 0 && r > 0 && r < n && getPos(B, r, c - 1, n)) { //scorro sotto-ramo sinistro a partire dalla posizione attuale
         nodo * a = new nodo(c - 1, searchPath(B, r + 1, c - 1, n)); //
         if (checkLength(a, n - r)) { //sotto-ramo lungo abbastanza da completare un commino completo
             return a; //base 1 ==> trovato un cammino completo
+        } else { //elimino i nodi dalla memoria dinamica
+            del(a);
+            a = 0;
         }
     }
     if (r < n && getPos(B, r, c, n)) { //scorro sotto-ramo centrale a partire dalla posizione attuale
         nodo * a = new nodo(c, searchPath(B, r + 1, c, n));
         if (checkLength(a, n - r)) { //sotto-ramo lungo abbastanza da completare un commino completo
             return a; //base 1 ==> trovato un cammino completo
+        } else { //elimino i nodi dalla memoria dinamica
+            del(a);
+            a = 0;
         }
     }
-    if (c + 1 < n && r < n && getPos(B, r, c + 1, n)) { //scorro sotto-ramo destro a partire dalla posizione attuale
+    if (c + 1 < n && r > 0 && r < n && getPos(B, r, c + 1, n)) { //scorro sotto-ramo destro a partire dalla posizione attuale
         nodo * a = new nodo(c + 1, searchPath(B, r + 1, c + 1, n));
         if (checkLength(a, n - r)) { //sotto-ramo lungo abbastanza da completare un commino completo
             return a; //base 1 ==> trovato un cammino completo
+        } else { //elimino i nodi dalla memoria dinamica
+            del(a);
+            a = 0;
         }
     }
     
