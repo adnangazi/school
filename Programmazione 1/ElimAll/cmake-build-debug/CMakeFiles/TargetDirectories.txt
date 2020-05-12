@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione 1/ElimAll/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/GitHub/University/Programmazione 1/ElimAll/cmake-build-debug/CMakeFiles/ElimAll.dir
+D:/GitHub/University/Programmazione 1/ElimAll/cmake-build-debug/CMakeFiles/edit_cache.dir
