@@ -2,18 +2,19 @@
 
 using namespace std;
 
+
 struct nodo {
     int info;
     nodo * next;
 
-    nodo (int a = 0, nodo * b = 0) {
+    nodo(int a = 0, nodo * b = 0) {
         info = a;
         next = b;
     }
 };
 
 //PRE=(n intero definito)
-nodo * faiL (int n) {
+nodo * faiL(int n) {
     if (n) {
         int x;
         cin >> x;
@@ -25,7 +26,7 @@ nodo * faiL (int n) {
 //POST=(restituito lista con n nodi con info inseriti da input)
 
 //PRE=(L lista di nodi, anche vuoto)
-void stampa (nodo * L) {
+void stampa(nodo * L) {
     if (L) {
         cout << L->info << ' ';
         stampa(L->next);
@@ -36,7 +37,7 @@ void stampa (nodo * L) {
 //POST=(stampato Left-To-Right info dei nodi di L)
 
 //PRE=(Lista(L) ben formata e ordinata)
-nodo * clone (nodo * L) {
+nodo * clone(nodo * L) {
     if (L) {
         return new nodo(L->info, clone(L->next));
     }
@@ -57,7 +58,8 @@ nodo * insOrd_ric(nodo * L, nodo * x) {
         L->next = insOrd_ric(L->next, x); //scorro ricorsivamene L finchè non trovo la posizione in cui inserire x
         return L; //caso ricorsivo 1: restituisco L(L) = vL(L) @ L(x) ordinato
     } else { //trovato posizione di x in L
-        return new nodo(x->info, L); //caso ricorsivo 2: restituisco L(x) @ L(L1): L(L1) è il resto di L(L) dopo L(x)
+        x->next = L;
+        return x; //caso ricorsivo 2: restituisco L(x) @ L(L1): L(L1) è il resto di L(L) dopo L(x)
     }
 }
 //POST=(restituisce vL(L) con x aggiunto in modo che la nuova lista sia ancora ordinata)
@@ -76,16 +78,19 @@ nodo * insOrd_iter(nodo * L, nodo * x) {
         if (a->info <= x->info) { //x da inserire in mezzo ad a
             if (a->next) {
                 if (x->info <= a->next->info) { //a <= x <= a.next
-                    a->next = new nodo(x->info, a->next); //inserimento x in mezzo
+                    x->next = a->next; //inserimento x in mezzo
+                    a->next = x;
                     return L;
                 } else { //a.next < x
                     a = a->next; //continuo a scorrere
                 }
             } else { //ultimo elemento di a < x
-                a->next = new nodo(x->info, 0); //inserimento x in coda
+                a->next = x; //inserimento x in coda
+                return L;
             }
         } else { //x < primo elemento di a
-            return new nodo(x->info, a); //inserimento x all'inizio
+            x->next = a;
+            return x; //inserimento x all'inizio
         }
     }
 
@@ -93,16 +98,47 @@ nodo * insOrd_iter(nodo * L, nodo * x) {
 }
 //POST=(restituisce vL(L) con x aggiunto in modo che la nuova lista sia ancora ordinata)
 
-int main () {
-    int m, x;
-    cin >> m >> x;
-    nodo * L = faiL(m);
-    nodo * L1 = clone(L);
+//PRE=(L(L) è ben formata)
+nodo * ord_ric(nodo * L, nodo * listaOrdinata) {
+    if (!L) {
+        return listaOrdinata;
+    } else {
+        nodo * temp = L;
+        L = L->next;
+        temp->next = 0; //temp nodo isolato da inserire nella lista ordinata
 
-    L = insOrd_ric(L, new nodo(x));
-    L1 = insOrd_iter(L1, new nodo(x));
+        listaOrdinata = insOrd_ric(listaOrdinata, temp); //inserimento nodo nella lista ordinata
+        return ord_ric(L, listaOrdinata);
+    }
+}
+//POST=(restituisce una lista ordinata composta con tutti i nodi di L(n))
+
+//PRE=(L(L) è ben formata)
+nodo * ord_iter(nodo * P) {
+    nodo * listaOrdinata = 0;
+
+    while (P) {
+        nodo * temp = P;
+        P = P->next;
+        temp->next = 0; //temp nodo isolato da inserire nella lista ordinata
+
+        listaOrdinata = insOrd_ric(listaOrdinata, temp); //inserimento nodo nella lista ordinata
+    }
+
+    return listaOrdinata;
+}
+//POST=(restituisce una lista ordinata composta con tutti i nodi di L(n))
+
+int main() {
+    int m;
+    cin >> m;
+    nodo * L = faiL(m);
+    nodo * P = clone(L);
+
+    L = ord_ric(L, 0); //passata una lista vuota in cui verrà inserito la lista ordinata a partire da L(L)
+    P = ord_iter(P);
     stampa(L);
-    stampa(L1);
+    stampa(P);
 }
 
 /*******************************************************************************************************************************************************************************
