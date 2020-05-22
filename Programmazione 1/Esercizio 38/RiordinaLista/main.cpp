@@ -101,17 +101,17 @@ nodo * insOrd_iter(nodo * L, nodo * x) {
 //PRE=(L(L) è ben formata)
 nodo * ord_ric(nodo * L, nodo * listaOrdinata) {
     if (!L) {
-        return listaOrdinata;
+        return listaOrdinata; //caso base 1: nessuna lista da riordinare: restituito la lista ordinata precedente
     } else {
         nodo * temp = L;
         L = L->next;
         temp->next = 0; //temp nodo isolato da inserire nella lista ordinata
 
         listaOrdinata = insOrd_ric(listaOrdinata, temp); //inserimento nodo nella lista ordinata
-        return ord_ric(L, listaOrdinata);
+        return ord_ric(L, listaOrdinata); //caso ricorsivo 1: restituito la lista ordinata della sottolista di L(L) formata dal secondo all'ultimo nodo di vL(L)
     }
 }
-//POST=(restituisce una lista ordinata composta con tutti i nodi di L(n))
+//POST=(restituisce una lista ordinata composta con tutti i nodi di L(L))
 
 //PRE=(L(L) è ben formata)
 nodo * ord_iter(nodo * P) {
@@ -127,7 +127,7 @@ nodo * ord_iter(nodo * P) {
 
     return listaOrdinata;
 }
-//POST=(restituisce una lista ordinata composta con tutti i nodi di L(n))
+//POST=(restituisce una lista ordinata composta con tutti i nodi di L(P))
 
 int main() {
     int m;
@@ -141,31 +141,28 @@ int main() {
     stampa(P);
 }
 
-/*******************************************************************************************************************************************************************************
-Prova induttiva della funzione 'elimOne2(nodo * L, int x)':
-La correttezza di questa funzione ricorsiva (che chiameremo F) è dimostrata eseguendo un'ipotesi induttiva sulla funzione richiamata internamente, ovvero la stessa
-funzione 'elimOne2(nodo * L, int x)' (che chiameremo G).
+/*********************************************************************************************************************************************************************************
+    Prova induttiva della funzione 'nodo * ord_ric(nodo * L, nodo * listaOrdinata)':
+	La correttezza di questa funzione ricorsiva (che chiameremo F) è dimostrata eseguendo un'ipotesi induttiva sulla funzione richiamata internamente, ovvero la stessa
+    funzione 'nodo * ord_ric(nodo * L, nodo * listaOrdinata)' (che chiameremo G).
 
-G riceve come parametri formali i parametri attuali alla chiamata da F, ovvero:
-- L->next: nodo successivo di L, ovvero una lista ben formata e non vuota perchè la chiamata a G viene effettuata sse esiste L->next. Inoltre ogni nodo di della
-        nuova Lista(L->next) ha info != x.
-- x: intero che non viene modificato, quindi definito e uguale al parametro formale di F.
-==> quindi G rispetta il PRE-condizione della funzione.
+	G riceve come parametri formali i parametri attuali alla chiamata da F, ovvero:
+		- L->next: nodo successivo di L passato per riferimento, ovvero una lista ben formata anche vuota.
+		- listaOrdinata: lista ben formata anche vuota.
+	==> quindi G rispetta il PRE-condizione della funzione.
 
-Entrambi i casi base di G rientrano nella definizione del POST-condizione di G:
-- caso base 1: L->next != x ==> il prossimo elemento è diverso da x nel campo info, si esegue una chiamata ricorsiva in cui si passa Lista(L->next).
-- caso base 2: il prossimo elemento è x nel campo info, tale nodo viene deallocato, il nodo attaule viene collegato con il nodo successivo dell'elemento deallocato.
-==> viene quindi passato la Lista(L) ricevuta da G con tutti i nodi di vLista(L) a parte tutti quelli con info = x e questi nodi vengono anche deallocati.
-Presumendo la corretteza del caso ricorsivo in G, abbiamo che G rispetta il POST-condizione della funzione.
+	Entrambi i casi base di G rientrano nella definizione del POST-condizione di G:
+        - caso base 1: nessuna lista da riordinare: restituito la lista ordinata precedente
+        - caso ricorsivo 1: restituito la lista ordinata della sottolista di L(L) formata dal secondo all'ultimo nodo di vL(L)
+    ==> si continua a scarrere L(L) ricorsivamente inserendo ogni nodo di L(L) nella lista ordinata L(listaOrdinata) ==> restituisce una lista ordinata composta con tutti i nodi
+    di L(L) ==> G rispetta il POST-condizione della funzione.
 
-Usando la correttezza di G, dimostro la correttezza di F:
-In F si scorre ricorsivamente dal primo al penultimo elemento della lista L, controllando rispettivamente il secondo elemento della lista per ogni primo elemento della
-lista passata alla funzione ricorsiva chiamata: in questo modo si controlla dal secondo all'ultimo nodo della lista L di partenza. Infatti non serve controllare anche
-il primo elemento della lista iniziale perchè in tale nodo non potrà esserci x nel campo info (condizione definita dal PRE-condizione di G). Per ogni lista passata
-alla funzione ricorsiva chiamata, si controlla che il secondo elemento sia diverso da x nel campo info, quindi si controlla che nella lista iniziale L dal secondo
-        all'ultimo campo sia diversi da x nel campo info. Se la condizione non viene verificata, il relativo nodo viene deallocato, il nodo precedente viene collegato con il
-nodo successivo dell'elemento deallocato.
+	Usando la correttezza di G, dimostro la correttezza di F:
+		In F si scorre ricorsivamene L(L) finchè non ci sono più elementi in questa lista: ogni volta viene passato alla funzione ausialiaria nodo * insOrd_ric(nodo * L, nodo * x)
+		il nuovo L(L) (L(L) della chiamata precedente escluso il primo nodo) e il primo nodo di L(L). La funzione ausiliaria restituisce una nuova lista per return in cui viene
+		inserito il primo nodo di L(L) in una lista ordinata, inizialmente vuota. In questo modo dopo l'nodo di L(L), tutti i nodi della lista originale sono stati inseriti nella
+		lista ordinata: tale lista viene restituita.
 
-==> dimostro così la corretteza della funzione F, e quindi anche di G. Viene dimostrato così la correttezza della funzione 'palindroma(char * S, int n)' rispetto al suo
-        PRE e POST condizione.
-*******************************************************************************************************************************************************************************/
+	==> dimostro così la corretteza della funzione F, e quindi anche di G. Viene dimostrato così la correttezza della funzione 'nodo * ord_ric(nodo * L, nodo * listaOrdinata)'
+ rispetto al suo PRE e POST condizione.
+ *********************************************************************************************************************************************************************************/

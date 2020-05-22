@@ -1,3 +1,3 @@
-D:/GitHub/University/Programmazione 1/RiordinaLista/cmake-build-debug/CMakeFiles/RiordinaLista.dir
-D:/GitHub/University/Programmazione 1/RiordinaLista/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/GitHub/University/Programmazione 1/RiordinaLista/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/GitHub/University/Programmazione 1/Esercizio 38/RiordinaLista/cmake-build-debug/CMakeFiles/RiordinaLista.dir
+D:/GitHub/University/Programmazione 1/Esercizio 38/RiordinaLista/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione 1/Esercizio 38/RiordinaLista/cmake-build-debug/CMakeFiles/rebuild_cache.dir

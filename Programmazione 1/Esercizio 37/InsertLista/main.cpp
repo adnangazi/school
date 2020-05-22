@@ -127,35 +127,32 @@ int main () {
 *********************************************************************************************************************************************************************************/
 
 /*********************************************************************************************************************************************************************************
-    Prova induttiva della funzione 'nodo * match(nodo *& T, nodo * P)':
+    Prova induttiva della funzione 'nodo * insOrd_ric(nodo * L, nodo * x)':
 	La correttezza di questa funzione ricorsiva (che chiameremo F) è dimostrata eseguendo un'ipotesi induttiva sulla funzione richiamata internamente, ovvero la stessa
-    funzione 'nodo * match(nodo *& T, nodo * P)' (che chiameremo G).
+    funzione 'nodo * insOrd_ric(nodo * L, nodo * x)' (che chiameremo G).
 
 	G riceve come parametri formali i parametri attuali alla chiamata da F, ovvero:
 		- L->next: nodo successivo di L passato per riferimento, ovvero una lista ben formata anche vuota.
-		- P: lista ben formata anche vuota.
+		- X: lista ben formata anche vuota.
 	==> quindi G rispetta il PRE-condizione della funzione.
 
 	Entrambi i casi base di G rientrano nella definizione del POST-condizione di G:
-        - caso base 1: restituisco una lista vuota (0) perchè impossibile trovare match, in quanto la lista in cui controllare il match completo e contiguo o la lista degli elementi
-        del match completo e contiguo o entrambi sono vuoti.
-        - caso ricorsivo 1: trovato un match completo e contiguo di P in T (è anche quello più a sinistra) ==> ricucisco il buco in T in modo che il nuovo T sia formato dai nodi di
-        T originale tranne che dai nodi del match completo e contiguo e restituisco la lista del match completo e contiguo.
-        - caso ricorsivo 2: se non ho trovato un inizio di match completo e contiguo in T di P scorro ricorsivamente T finchè non trovo un inizio di match completo e contiguo e
-        restiuisco il risultato di tale match.
-    ==> quindi se in T c’è un match di P contiguo e completo, allora la funzione estrae i nodi del match più a sinistra e la restituisce col return mentre T è la lista che resta,
-    se non c’è match la funzione restituisce 0 e L(T) non cambia ==> G rispetta il POST-condizione della funzione.
+        - caso base 1: restituisco L(L) perchè L(X) vuoto, quindi nessun elemento da inserire
+        - caso base 2: restituisco L(X) perchè L(L) vuoto, quindi la nuova lista sarà formata solo da L(X)
+        - caso ricorsivo 1: restituisco L(L) dopo aver inserito L(X) nella posizione corretta di L(L)
+        - caso ricorsivo 2: dopo aver trovato la posizione in cui inserire L(X) e aver fatto l'inserimento, restituisco L(x) @ L(L1): L(L1) è il resto di L(L) dopo L(x), in modo
+        da assegnare al nodo precedente di L(L) o restituire la nuova lista modificata
+    ==> quindi se in L(L) c’è un nodo X da inserire, allora la funzione scorre ricorsivamente L(L) fino a trovare la posizione in in cui inserire L(X), inserisce tale nodo e
+    restituisce vL(L) con X aggiunto in modo che la nuova lista sia ancora ordinata ==> G rispetta il POST-condizione della funzione.
 
 	Usando la correttezza di G, dimostro la correttezza di F:
-		In F si scorre ricorsivamente la lista T fino a che non si trova un match completo e contiguo di P in T oppure fino alla fine della lista, ovvero finechè non si arriva al
-		nodo nullo, per verificare non ci siano match completi e contigui. In questo ultimo caso T non viene modificato e viene restituito una lista vuota, che indica la presenza
-		di nessun match completo tra T e P. In caso di trovi un inizio di match completo si chiama una funzione ausiliaria che controlla che ci sia un match completo e contiguo
-		di P in T a partire dal nodo attuale di T in cui è stato trovato l'inizio di match. La funzione ausiliaria restituisce una lista vuota se non è stato trovato un match
-		completo e contiguo a partire da tale nodo di T oppure restituisce la lista dei nodi del match completo e contiguo se tale match completo e contiguo è stato trovato.
-		Se è stato trovato un match continuo e contiguo, la funzione ausiliaria estrae i nodi del match da T, ricucendo la lista.
-		F controlla che l'inizio del possibile match completo e contiguo corrisponda ad un effettivo match completo e contiguo: in tale caso viene restituito la lista dei match,
-		altrimenti si continua a scorrere su T in cerca di altri match continui e contigui.
+		In F si scorre ricorsivamente L(L) finchè non si trova la posizione in cui inserire L(X): trovato tale posizione si inserisce il nodo modificando il nodo precedente e
+		quello successivo di L(L) e si restituisce la nuova lista per return. Per trovare la posizione in cui inserire L(X) si sfrutta il fatto che L(L) è ordinato in ordine
+		crescente, quindi si scorrono i nodi di L(L) da sinistra verso destra finchè x->info <= L->info, ovvero non si trova un nodo di L con info maggiore dell'info di X.
+		Vengono controllati ad ogni chiamata ricorsiva i casi limite: quindi se si arriva alla fine di L(L), L(X) verrà inserito automaticamente come nodo finale. Se l'info di
+		non è maggiore dell'info primo nodo di L(L) allora L(X) viene inserito come primo nodo di L(L) perchè significa che nessun nodo di L(L) può essere minore di L(X).
+		Si controlla anche che L(X) sia definito.
 
-	==> dimostro così la corretteza della funzione F, e quindi anche di G. Viene dimostrato così la correttezza della funzione 'nodo * match(nodo *& T, nodo * P)' rispetto al suo
- PRE e POST condizione.
+	==> dimostro così la corretteza della funzione F, e quindi anche di G. Viene dimostrato così la correttezza della funzione 'nodo * insOrd_ric(nodo * L, nodo * x)' rispetto al
+ suo PRE e POST condizione.
  *********************************************************************************************************************************************************************************/
