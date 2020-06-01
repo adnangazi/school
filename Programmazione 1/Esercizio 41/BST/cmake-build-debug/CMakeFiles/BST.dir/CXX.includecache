@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/GitHub/University/Programmazione 1/Esercizio 41/BST/BST.h
+
+D:/GitHub/University/Programmazione 1/Esercizio 41/BST/main.cpp
+iostream
+-
+BST.h
+D:/GitHub/University/Programmazione 1/Esercizio 41/BST/BST.h
+
