@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione ad oggetti/Classi progetto/Contenitore/cmake-build-debug/CMakeFiles/Contenitore.dir
+D:/GitHub/University/Programmazione ad oggetti/Classi progetto/Contenitore/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione ad oggetti/Classi progetto/Contenitore/cmake-build-debug/CMakeFiles/rebuild_cache.dir

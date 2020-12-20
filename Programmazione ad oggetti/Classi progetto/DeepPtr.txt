@@ -1,0 +1,29 @@
+
+
+template <class T>
+class DeepPtr {
+private:
+    T * ptr;
+
+public:
+    DeepPtr(T * p = 0) : ptr(p) {}
+
+    ~DeepPtr() {
+        delete ptr;
+    }
+
+    DeepPtr(const DeepPtr<T> & dp) : ptr(dp.ptr) {cout << "qua" << endl;}
+
+    /*DeepPtr<T> & operator= (const DeepPtr<T> & dp) {
+        if (this != & dp) {
+            delete ptr;
+            //ptr = dp.ptr;
+            *this = DeepPtr(dp);
+        }
+        return * this;
+    }*/
+
+    void prova() {
+        cout << *ptr << endl;
+    }
+};
