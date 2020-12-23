@@ -2,32 +2,39 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cardio.cpp \
+    crossfit.cpp \
+    esercizio.cpp \
     main.cpp \
     mainwindow.cpp \
-    model.cpp \
-    monoslide.cpp \
-    multislide.cpp \
-    slide.cpp \
-    slideshow.cpp \
-    slidecreator.cpp \
-    slideviewer.cpp
+    monoesercizio.cpp \
+    multiesercizio.cpp \
+    orario.cpp \
+    riposo.cpp \
+    riposoattivo.cpp \
+    riposopassivo.cpp \
+    sollevamentopesi.cpp
 
 HEADERS += \
+    cardio.h \
+    crossfit.h \
+    deepptr.h \
+    esercizio.h \
     mainwindow.h \
-    model.h \
-    monoslide.h \
-    multislide.h \
-    slide.h \
-    slideshow.h \
-    slidecreator.h \
-    slideviewer.h
+    monoesercizio.h \
+    multiesercizio.h \
+    orario.h \
+    riposo.h \
+    riposoattivo.h \
+    riposopassivo.h \
+    sollevamentopesi.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
