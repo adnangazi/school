@@ -18,6 +18,8 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     CrossFit * clone() const override;
+    bool operator== (const Esercizio & e) const override;
+    bool operator!= (const Esercizio & e) const override;
 };
 
 #endif // CROSSFIT_H

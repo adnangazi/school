@@ -1,6 +1,7 @@
 #ifndef ESERCIZIO_H
 #define ESERCIZIO_H
 
+#include <typeinfo>
 #include "orario.h"
 
 using std::string;
@@ -21,6 +22,11 @@ public:
     virtual Orario getDurata() const = 0;
     virtual void setDurata(const Orario & o = 0) = 0;
     virtual Esercizio * clone() const = 0;
+    virtual Esercizio * operator= (const Esercizio * const e);
+    virtual bool operator== (const Esercizio & e) const;
+    virtual bool operator!= (const Esercizio & e) const;
+    Esercizio * operator+ (const Esercizio * const e) const;
+    Esercizio * operator- (const Esercizio * const e) const;
 };
 
 #endif // ESERCIZIO_H

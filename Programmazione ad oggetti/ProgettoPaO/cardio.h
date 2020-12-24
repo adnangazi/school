@@ -23,6 +23,8 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     Cardio * clone() const override;
+    bool operator== (const Esercizio & e) const override;
+    bool operator!= (const Esercizio & e) const override;
 };
 
 #endif // CARDIO_H

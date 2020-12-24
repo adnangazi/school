@@ -44,11 +44,15 @@ Orario & Orario::operator= (const Orario & o) {
 }
 
 bool operator> (const Orario & a, const Orario & b) {
-    if (a.getOre() > b.getOre()) return true;
-    else if (a.getOre() < b.getOre()) return false;
-    else if (a.getMinuti() > b.getMinuti()) return true;
-    else if (a.getMinuti() < b.getMinuti()) return false;
-    else return a.getSecondi() > b.getSecondi();
+    if (a.getOre() == b.getOre()) {
+        if (a.getMinuti() == b.getMinuti()) {
+            return a.getSecondi() > b.getSecondi();
+        } else {
+            return a.getMinuti() > b.getMinuti();
+        }
+    } else {
+        return a.getOre() > b.getOre();
+    }
 }
 
 bool operator>= (const Orario & a, const Orario & b) {

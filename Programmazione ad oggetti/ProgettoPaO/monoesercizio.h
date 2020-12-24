@@ -16,6 +16,8 @@ public:
     virtual uint stimaCalorieBruciate() const = 0;
     virtual void incrementaIntensita() = 0;
     virtual void decrementaIntesita() = 0;
+    virtual bool operator== (const Esercizio & e) const override;
+    virtual bool operator!= (const Esercizio & e) const override;
 };
 
 #endif // MONOESERCIZIO_H

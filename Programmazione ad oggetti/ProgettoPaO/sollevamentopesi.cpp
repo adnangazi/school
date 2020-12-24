@@ -27,7 +27,7 @@ void SollevamentoPesi::setSerie(const uint & s) {
 }
 
 string SollevamentoPesi::getDescrizione() const {
-    return Esercizio::getDescrizione() + "i altre sborae varie su SollevamentoPesi...";
+    return Esercizio::getDescrizione() + " i altre sborae varie su SollevamentoPesi...";
 }
 
 Orario SollevamentoPesi::getDurata() const {
@@ -41,27 +41,58 @@ void SollevamentoPesi::setDurata(const Orario & o) {
 }
 
 uint SollevamentoPesi::stimaCalorieBruciate() const {
-    return MonoEsercizio::getMET() * ripetizioni * serie;
+    return getMET() * ripetizioni * serie;
 }
 
 void SollevamentoPesi::incrementaIntensita() {
-    if (serie > 1) {
-        serie--;
-        ripetizioni += ripetizioni / serie;
+    if (serie > ripetizioni) {
+        if (serie > 1) {
+            serie--;
+            ripetizioni += ripetizioni / serie;
+            peso += peso / 10;
+        } else {
+            std::cout << "Impossibile incrementare ulteriormente l'intensità dell'esercizio: numero di serie troppo basso!" << std::endl;
+        }
+    } else if (ripetizioni > 1) {
+        ripetizioni--;
+        serie += serie / ripetizioni;
         peso += peso / 10;
     } else {
-        std::cout << "Impossibile aumentare ulteriormente l'intensità dell'esercizio!" << std::endl;
+        std::cout << "Impossibile incrementare ulteriormente l'intensità dell'esercizio: numero di ripetizioni troppo basso!" << std::endl;
     }
 }
 
 void SollevamentoPesi::decrementaIntesita() {
-    serie++;
-    ripetizioni -= ripetizioni / serie;
-    peso -= peso / 11;
+    if (serie > ripetizioni) {
+        if (serie > 1) {
+            serie++;
+            ripetizioni -= ripetizioni / serie;
+            peso -= peso / 11;
+        } else {
+            std::cout << "Impossibile decrementare ulteriormente l'intensità dell'esercizio: numero di serie troppo basso!" << std::endl;
+        }
+    } else if (ripetizioni > 1) {
+        ripetizioni++;
+        serie -= serie / ripetizioni;
+        peso -= peso / 11;
+    } else {
+        std::cout << "Impossibile decrementare ulteriormente l'intensità dell'esercizio: numero di ripetizioni troppo basso!" << std::endl;
+    }
 }
 
 SollevamentoPesi * SollevamentoPesi::clone() const {
     return new SollevamentoPesi(*this);
+}
+
+bool SollevamentoPesi::operator== (const Esercizio & e) const {
+    std::cout << "SollevamentoPesi::operator==()" << std::endl;
+    SollevamentoPesi temp = dynamic_cast<const SollevamentoPesi&>(e);
+    return MonoEsercizio::operator== (e) && peso == temp.peso && ripetizioni == temp.ripetizioni && serie == temp.serie;
+}
+
+bool SollevamentoPesi::operator!= (const Esercizio & e) const {
+    std::cout << "SollevamentoPesi::operator!=()" << std::endl;
+    return ! (*this == e);
 }
 
 const Orario SollevamentoPesi::tempoDiRipetizione = Orario(5);

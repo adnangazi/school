@@ -30,6 +30,8 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     SollevamentoPesi * clone() const override;
+    bool operator== (const Esercizio & e) const override;
+    bool operator!= (const Esercizio & e) const override;
 };
 
 #endif // SOLLEVAMENTOPESI_H
