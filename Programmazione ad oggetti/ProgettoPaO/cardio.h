@@ -9,22 +9,28 @@ private:
     uint velocita;
 
 public:
-    Cardio(const string n, const string d, const uint m = 0, const Orario & o = 0, const uint & v = 0);
-    //Cardio(const Esercizio & e);
+    //costruttori e distruttori
+    Cardio(const string & n, const string & d, const uint & m = 0, const Orario & o = 0, const uint & v = 0);
+    Cardio(const Esercizio & e);
     virtual ~Cardio() = default;
+
+    //metodi della classe
     uint getVelocita() const;
     void setVelocita(const uint & v = 0);
+
     //@override Esercizio
     string getDescrizione() const override;
     Orario getDurata() const override;
     void setDurata(const Orario & o) override;
+    Cardio * clone() const override;
+    Esercizio & operator=(const Esercizio & e) override;
+    bool operator==(const Esercizio & e) const override;
+    bool operator!=(const Esercizio & e) const override;
+
     //@override MonoEsercizio
     uint stimaCalorieBruciate() const override;
     void incrementaIntensita() override;
     void decrementaIntesita() override;
-    Cardio * clone() const override;
-    bool operator== (const Esercizio & e) const override;
-    bool operator!= (const Esercizio & e) const override;
 };
 
 #endif // CARDIO_H

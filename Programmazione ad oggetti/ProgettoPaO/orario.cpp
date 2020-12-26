@@ -1,6 +1,6 @@
 #include "orario.h"
 
-Orario::Orario(const uint secondi, const uint minuti, const uint ore) : sec(secondi + minuti * 60 + ore * 3600) {}
+Orario::Orario(const uint & secondi, const uint & minuti, const uint & ore) : sec(secondi + minuti * 60 + ore * 3600) {}
 
 Orario::Orario(const Orario & o) : Orario(o.getSecondi(), o.getMinuti(), o.getOre()) {}
 
@@ -16,34 +16,36 @@ uint Orario::getOre() const {
     return sec / 3600;
 }
 
-void Orario::setSecondi(const uint s) {
+void Orario::setSecondi(const uint & s) {
     sec += (s - getSecondi());
 }
 
-void Orario::setMinuti(const uint m) {
+void Orario::setMinuti(const uint & m) {
     sec += (m - getMinuti()) * 60;
 }
 
-void Orario::setOre(const uint o) {
+void Orario::setOre(const uint & o) {
     sec += (o - getOre()) * 3600;
 }
 
-bool operator== (const Orario & a, const Orario & b) {
+bool operator==(const Orario & a, const Orario & b) {
     return a.getOre() == b.getOre() && a.getMinuti() == b.getMinuti() && a.getSecondi() == b.getSecondi();
 }
 
-bool operator!= (const Orario & a, const Orario & b) {
+bool operator!=(const Orario & a, const Orario & b) {
     return a.getOre() != b.getOre() || a.getMinuti() != b.getMinuti() || a.getSecondi() != b.getSecondi();
 }
 
-Orario & Orario::operator= (const Orario & o) {
+Orario & Orario::operator=(const Orario & o) {
     if (*this != o) {
         this->sec = o.sec;
+    } else {
+        std::cout << "Impossibile assegnare un oggetto a se stesso!" << std::endl;
     }
     return *this;
 }
 
-bool operator> (const Orario & a, const Orario & b) {
+bool operator>(const Orario & a, const Orario & b) {
     if (a.getOre() == b.getOre()) {
         if (a.getMinuti() == b.getMinuti()) {
             return a.getSecondi() > b.getSecondi();
@@ -55,23 +57,23 @@ bool operator> (const Orario & a, const Orario & b) {
     }
 }
 
-bool operator>= (const Orario & a, const Orario & b) {
-    return a > b || a == b;
+bool operator>=(const Orario & a, const Orario & b) {
+    return (a > b) || (a == b);
 }
 
-bool operator< (const Orario & a, const Orario & b) {
+bool operator<(const Orario & a, const Orario & b) {
     return b > a;
 }
 
-bool operator<= (const Orario & a, const Orario & b) {
+bool operator<=(const Orario & a, const Orario & b) {
     return b >= a;
 }
 
-Orario operator+ (const Orario & a, const Orario & b) {
+Orario operator+(const Orario & a, const Orario & b) {
     return Orario(a.getSecondi() + b.getSecondi(), a.getMinuti() + b.getMinuti(), a.getOre() + b.getOre());
 }
 
-Orario operator- (const Orario & a, const Orario & b) {
+Orario operator-(const Orario & a, const Orario & b) {
     if (a < b) return Orario();
 
     int secondi = a.getSecondi() - b.getSecondi(); //int perchè può andare in negativo (riporto necessario)
@@ -91,6 +93,6 @@ Orario operator- (const Orario & a, const Orario & b) {
     return Orario(secondi, minuti, ore);
 }
 
-std::ostream & operator<< (std::ostream & os, const Orario & o) {
-    return os << "Ore: " << o.getOre() << ", Minuti: " << o.getMinuti() << ", Secondi: " << o.getSecondi();
+std::ostream & operator<<(std::ostream & os, const Orario & o) {
+    return os << "(Ore:" << o.getOre() << ", Minuti:" << o.getMinuti() << ", Secondi:" << o.getSecondi() << ")";
 }

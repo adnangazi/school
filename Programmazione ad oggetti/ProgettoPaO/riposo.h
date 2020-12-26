@@ -8,12 +8,19 @@ private:
     string istruzioneRiposo;
 
 public:
-    Riposo(const string n, const string d, string ir);
+    //costruttori e distruttori
+    Riposo(const string & n, const string & d, const string & ir);
+    Riposo(const Esercizio & e);
     virtual ~Riposo() = default;
+
+    //metodi della classe
     string getIstruzioneRiposo() const;
-    void setIstruzioneRiposo(const string ir);
-    virtual bool operator== (const Esercizio & e) const override;
-    virtual bool operator!= (const Esercizio & e) const override;
+    void setIstruzioneRiposo(const string & ir);
+
+    //@override Esericizio
+    virtual Esercizio & operator=(const Esercizio & e) override;
+    virtual bool operator==(const Esercizio & e) const override;
+    virtual bool operator!=(const Esercizio & e) const override;
 };
 
 #endif // RIPOSO_H

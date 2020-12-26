@@ -1,6 +1,17 @@
 #include "sollevamentopesi.h"
 
-SollevamentoPesi::SollevamentoPesi(const string n, const string d, const uint m, const uint & p, const uint & r, const uint & s) : MonoEsercizio(n, d, m), peso(p), ripetizioni(r), serie(s) {}
+SollevamentoPesi::SollevamentoPesi(const string & n, const string & d, const uint & m, const uint & p, const uint & r, const uint & s) : MonoEsercizio(n, d, m), peso(p), ripetizioni(r), serie(s) {}
+
+SollevamentoPesi::SollevamentoPesi(const Esercizio & e) : MonoEsercizio(e) {
+    const SollevamentoPesi * const temp = dynamic_cast<const SollevamentoPesi*>(&e);
+    if (temp != nullptr) {
+        peso = temp->peso;
+        ripetizioni = temp->ripetizioni;
+        serie = temp->serie;
+    } else {
+        peso = ripetizioni = serie = 0;
+    }
+}
 
 uint SollevamentoPesi::getPeso() const {
     return peso;
@@ -35,48 +46,12 @@ Orario SollevamentoPesi::getDurata() const {
 }
 
 void SollevamentoPesi::setDurata(const Orario & o) {
-    uint totaleSec = o.getOre() * 3600 + o.getMinuti() * 60 + o.getSecondi();
-    totaleSec -= (serie - 1) * 60; //tolgo il minuto di riposo obbligatorio tra una serie e l'altra
-    ripetizioni = (totaleSec / serie) / tempoDiRipetizione.getSecondi();
-}
-
-uint SollevamentoPesi::stimaCalorieBruciate() const {
-    return getMET() * ripetizioni * serie;
-}
-
-void SollevamentoPesi::incrementaIntensita() {
-    if (serie > ripetizioni) {
-        if (serie > 1) {
-            serie--;
-            ripetizioni += ripetizioni / serie;
-            peso += peso / 10;
-        } else {
-            std::cout << "Impossibile incrementare ulteriormente l'intensità dell'esercizio: numero di serie troppo basso!" << std::endl;
-        }
-    } else if (ripetizioni > 1) {
-        ripetizioni--;
-        serie += serie / ripetizioni;
-        peso += peso / 10;
+    if (serie > 0) {
+        uint totaleSec = o.getOre() * 3600 + o.getMinuti() * 60 + o.getSecondi();
+        totaleSec -= (serie - 1) * 60; //tolgo il minuto di riposo obbligatorio tra una serie e l'altra
+        ripetizioni = (totaleSec / serie) / tempoDiRipetizione.getSecondi();
     } else {
-        std::cout << "Impossibile incrementare ulteriormente l'intensità dell'esercizio: numero di ripetizioni troppo basso!" << std::endl;
-    }
-}
-
-void SollevamentoPesi::decrementaIntesita() {
-    if (serie > ripetizioni) {
-        if (serie > 1) {
-            serie++;
-            ripetizioni -= ripetizioni / serie;
-            peso -= peso / 11;
-        } else {
-            std::cout << "Impossibile decrementare ulteriormente l'intensità dell'esercizio: numero di serie troppo basso!" << std::endl;
-        }
-    } else if (ripetizioni > 1) {
-        ripetizioni++;
-        serie -= serie / ripetizioni;
-        peso -= peso / 11;
-    } else {
-        std::cout << "Impossibile decrementare ulteriormente l'intensità dell'esercizio: numero di ripetizioni troppo basso!" << std::endl;
+        std::cout << "Impossibile impostare la durata: numero di serie troppo basso!" << std::endl;
     }
 }
 
@@ -84,15 +59,60 @@ SollevamentoPesi * SollevamentoPesi::clone() const {
     return new SollevamentoPesi(*this);
 }
 
-bool SollevamentoPesi::operator== (const Esercizio & e) const {
-    std::cout << "SollevamentoPesi::operator==()" << std::endl;
-    SollevamentoPesi temp = dynamic_cast<const SollevamentoPesi&>(e);
-    return MonoEsercizio::operator== (e) && peso == temp.peso && ripetizioni == temp.ripetizioni && serie == temp.serie;
+Esercizio & SollevamentoPesi::operator=(const Esercizio & e) {
+    MonoEsercizio::operator=(e);
+    const SollevamentoPesi * const temp = dynamic_cast<const SollevamentoPesi*>(&e);
+    if (temp != nullptr) {
+        peso = temp->peso;
+        ripetizioni = temp->ripetizioni;
+        serie = temp->serie;
+    } else {
+        peso = ripetizioni = serie = 0;
+    }
+    return * this;
 }
 
-bool SollevamentoPesi::operator!= (const Esercizio & e) const {
-    std::cout << "SollevamentoPesi::operator!=()" << std::endl;
-    return ! (*this == e);
+bool SollevamentoPesi::operator==(const Esercizio & e) const {
+    const SollevamentoPesi temp = dynamic_cast<const SollevamentoPesi&>(e); //dynamic_cast per base virtuale
+    return MonoEsercizio::operator==(e) && peso == temp.peso && ripetizioni == temp.ripetizioni && serie == temp.serie;
+}
+
+bool SollevamentoPesi::operator!=(const Esercizio & e) const {
+    return !(*this == e);
+}
+
+uint SollevamentoPesi::stimaCalorieBruciate() const {
+    return getMET() * ripetizioni * serie;
+}
+
+void SollevamentoPesi::incrementaIntensita() {
+    if (serie <= 1 || ripetizioni <= 0) {
+        std::cout << "Impossibile incrementare ulteriormente l'intensità: numero di serie o ripetizioni troppo basso!" << std::endl;
+    } else {
+        if (serie > ripetizioni) {
+            serie = round(static_cast<double>(ripetizioni * serie) / static_cast<double>(ripetizioni + 1));
+            ripetizioni++;
+        } else {
+            ripetizioni = round(static_cast<double>(ripetizioni * serie) / static_cast<double>(serie - 1));
+            serie--;
+        }
+        peso += (peso < 10) ? 1 : peso / 10;
+    }
+}
+
+void SollevamentoPesi::decrementaIntesita() {
+    if (serie <= 0 || ripetizioni <= 1) {
+        std::cout << "Impossibile decrementare ulteriormente l'intensità: numero di serie o ripetizioni troppo basso!" << std::endl;
+    } else {
+        if (ripetizioni > serie) {
+            ripetizioni = round(static_cast<double>(ripetizioni * serie) / static_cast<double>(serie + 1));
+            serie++;
+        } else {
+            serie = round(static_cast<double>(ripetizioni * serie) / static_cast<double>(ripetizioni - 1));
+            ripetizioni--;
+        }
+        peso -= (peso > 0 && peso < 11) ? 1 : peso / 11;
+    }
 }
 
 const Orario SollevamentoPesi::tempoDiRipetizione = Orario(5);

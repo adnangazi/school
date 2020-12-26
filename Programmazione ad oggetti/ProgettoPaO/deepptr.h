@@ -7,13 +7,18 @@ private:
     T * ptr;
 
 public:
+    //costruttori e distruttori
     DeepPtr(T * p = 0);
-    ~DeepPtr();
     DeepPtr(const DeepPtr<T> & dp);
-    T * operator-> ();
-    T & operator* ();
+    ~DeepPtr();
+
+    //metodi della classe
     T * get();
-    DeepPtr<T> & operator= (const DeepPtr<T> & dp);
+
+    //@overload operatori
+    DeepPtr<T> & operator=(const DeepPtr<T> & dp);
+    T * operator->();
+    T & operator*();
 };
 
 template <class T>
@@ -27,30 +32,30 @@ DeepPtr<T>::~DeepPtr() {
 template <class T>
 DeepPtr<T>::DeepPtr(const DeepPtr<T> & dp) : ptr(dp.ptr->clone()) {}
 
-//DeepPtr->funzioneDiClasseT --> (ptr --> *ptr --> *ptr.) automatico
-template <class T>
-T * DeepPtr<T>::operator-> () {
-    return ptr;
-}
-
-//*DeepPtr --> riferimento a ptr
-template<class T>
-T & DeepPtr<T>::operator* () {
-    return * ptr;
-}
-
 template<class T>
 T * DeepPtr<T>::get() {
     return ptr;
 }
 
 template <class T>
-DeepPtr<T> & DeepPtr<T>::operator= (const DeepPtr<T> & dp) {
+DeepPtr<T> & DeepPtr<T>::operator=(const DeepPtr<T> & dp) {
     if (this != & dp) {
         delete ptr;
         ptr = dp.ptr->clone();
     }
     return * this;
+}
+
+//DeepPtr->funzioneDiClasseT --> (ptr --> *ptr --> *ptr.) automatico
+template <class T>
+T * DeepPtr<T>::operator->() {
+    return ptr;
+}
+
+//*DeepPtr --> riferimento a ptr
+template<class T>
+T & DeepPtr<T>::operator*() {
+    return * ptr;
 }
 
 #endif // DEEPPTR_H
