@@ -1,0 +1,13 @@
+debug/Model.o
+debug/MonoSlide.o
+debug/MultiSlide.o
+debug/Slide.o
+debug/SlideCreator.o
+debug/SlideShow.o
+debug/controller.o
+debug/main.o
+debug/slidescreen.o
+debug/slidesviewer.o
+debug/moc_controller.o
+debug/moc_slidescreen.o
+debug/moc_slidesviewer.o

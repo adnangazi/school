@@ -1,0 +1,13 @@
+release/Model.o
+release/MonoSlide.o
+release/MultiSlide.o
+release/Slide.o
+release/SlideCreator.o
+release/SlideShow.o
+release/controller.o
+release/main.o
+release/slidescreen.o
+release/slidesviewer.o
+release/moc_controller.o
+release/moc_slidescreen.o
+release/moc_slidesviewer.o
