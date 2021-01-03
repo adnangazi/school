@@ -1,0 +1,3 @@
+D:/GitHub/University/Programmazione ad oggetti/Classi progetto/DList/cmake-build-debug/CMakeFiles/DList.dir
+D:/GitHub/University/Programmazione ad oggetti/Classi progetto/DList/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programmazione ad oggetti/Classi progetto/DList/cmake-build-debug/CMakeFiles/rebuild_cache.dir

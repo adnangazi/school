@@ -26,6 +26,7 @@ HEADERS += \
     cardio.h \
     crossfit.h \
     deepptr.h \
+    dlist.h \
     esercizio.h \
     mainwindow.h \
     monoesercizio.h \
