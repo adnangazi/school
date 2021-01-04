@@ -1,3 +1,0 @@
-D:/GitHub/University/Programmazione ad oggetti/Classi progetto/Orario/cmake-build-debug/CMakeFiles/Orario.dir
-D:/GitHub/University/Programmazione ad oggetti/Classi progetto/Orario/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/GitHub/University/Programmazione ad oggetti/Classi progetto/Orario/cmake-build-debug/CMakeFiles/rebuild_cache.dir
