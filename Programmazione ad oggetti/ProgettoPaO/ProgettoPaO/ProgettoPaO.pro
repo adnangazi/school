@@ -15,7 +15,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     monoesercizio.cpp \
-    multiesercizio.cpp \
     orario.cpp \
     riposo.cpp \
     riposoattivo.cpp \
@@ -30,7 +29,6 @@ HEADERS += \
     esercizio.h \
     mainwindow.h \
     monoesercizio.h \
-    multiesercizio.h \
     orario.h \
     riposo.h \
     riposoattivo.h \

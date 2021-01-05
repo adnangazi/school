@@ -4,7 +4,6 @@ release/esercizio.o
 release/main.o
 release/mainwindow.o
 release/monoesercizio.o
-release/multiesercizio.o
 release/orario.o
 release/riposo.o
 release/riposoattivo.o

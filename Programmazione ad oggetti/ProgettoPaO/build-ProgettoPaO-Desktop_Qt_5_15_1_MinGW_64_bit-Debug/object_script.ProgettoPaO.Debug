@@ -4,7 +4,6 @@ debug/esercizio.o
 debug/main.o
 debug/mainwindow.o
 debug/monoesercizio.o
-debug/multiesercizio.o
 debug/orario.o
 debug/riposo.o
 debug/riposoattivo.o
