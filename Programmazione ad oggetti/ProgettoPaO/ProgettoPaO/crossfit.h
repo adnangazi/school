@@ -22,6 +22,7 @@ public:
     Esercizio & operator=(const Esercizio & e) override;
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
+    std::ostream & operator<<(std::ostream & os) const override;
 };
 
 #endif // CROSSFIT_H

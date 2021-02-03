@@ -128,3 +128,11 @@ bool RiposoAttivo::operator==(const Esercizio & e) const {
 bool RiposoAttivo::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
+
+std::ostream & RiposoAttivo::operator<<(std::ostream & os) const {
+    Riposo::operator<<(os) << std::endl;
+    os << " | Descrizione: " << getDescrizione() << std::endl;
+    os << " | MET: " << getMET() << std::endl;
+    os << " +---";
+    return os;
+}

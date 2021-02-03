@@ -37,3 +37,9 @@ bool MonoEsercizio::operator==(const Esercizio & e) const {
 bool MonoEsercizio::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
+
+std::ostream & MonoEsercizio::operator<<(std::ostream & os) const {
+    Esercizio::operator<<(os) << std::endl;
+    os << " | MET: " << MET;
+    return os;
+}

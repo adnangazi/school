@@ -37,3 +37,11 @@ bool Esercizio::operator==(const Esercizio & e) const {
 bool Esercizio::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
+
+std::ostream & Esercizio::operator<<(std::ostream & os) const {
+    os << " +---" << std::endl;
+    os << " | Nome: " << nome << std::endl;
+    os << " | Durata: " << getDurata() << std::endl;
+    os << " | Calorie bruciate: " << stimaCalorieBruciate();
+    return os;
+}

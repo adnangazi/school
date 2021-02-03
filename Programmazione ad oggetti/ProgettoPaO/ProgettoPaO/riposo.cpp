@@ -37,3 +37,9 @@ bool Riposo::operator==(const Esercizio & e) const {
 bool Riposo::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
+
+std::ostream & Riposo::operator<<(std::ostream & os) const {
+    Esercizio::operator<<(os) << std::endl;
+    os << " | Istruzioni riposo: " << istruzioneRiposo;
+    return os;
+}

@@ -21,6 +21,17 @@ public:
     T & operator*();
 };
 
+//@overload operatori esterni alla classe
+template <class T>
+bool operator==(const DeepPtr<T> & a, const DeepPtr<T> & b) {
+    return a.ptr == b.ptr;
+}
+
+template <class T>
+bool operator!=(const DeepPtr<T> & a, const DeepPtr<T> & b) {
+    return a.ptr != b.ptr;
+}
+
 template <class T>
 DeepPtr<T>::DeepPtr(T * const p) : ptr(p) {}
 
@@ -30,7 +41,7 @@ DeepPtr<T>::~DeepPtr() {
 }
 
 template <class T>
-DeepPtr<T>::DeepPtr(const DeepPtr<T> & dp) : ptr(dp.ptr->clone()) {}
+DeepPtr<T>::DeepPtr(const DeepPtr<T> & dp) : ptr(dp.ptr ? dp.ptr->clone() : nullptr) {}
 
 template<class T>
 T * DeepPtr<T>::get() {
@@ -41,7 +52,7 @@ template <class T>
 DeepPtr<T> & DeepPtr<T>::operator=(const DeepPtr<T> & dp) {
     if (this != & dp) {
         delete ptr;
-        ptr = dp.ptr->clone();
+        ptr = dp.ptr ? dp.ptr->clone() : nullptr;
     }
     return * this;
 }

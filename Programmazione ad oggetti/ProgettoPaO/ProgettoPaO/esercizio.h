@@ -1,9 +1,6 @@
 #ifndef ESERCIZIO_H
 #define ESERCIZIO_H
 
-#include <iostream>
-using namespace std;
-#include <typeinfo>
 #include "orario.h"
 
 using std::string;
@@ -37,6 +34,7 @@ public:
     virtual Esercizio & operator=(const Esercizio & e);
     virtual bool operator==(const Esercizio & e) const;
     virtual bool operator!=(const Esercizio & e) const;
+    virtual std::ostream & operator<<(std::ostream & os) const;
 };
 
 #endif // ESERCIZIO_H

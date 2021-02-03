@@ -83,3 +83,11 @@ bool Cardio::operator==(const Esercizio & e) const {
 bool Cardio::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
+
+std::ostream & Cardio::operator<<(std::ostream & os) const {
+    MonoEsercizio::operator<<(os) << std::endl;
+    os << " | Descrizione: " << getDescrizione() << std::endl;
+    os << " | Velocita': " << velocita << std::endl;
+    os << " +---";
+    return os;
+}

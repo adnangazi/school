@@ -21,6 +21,7 @@ public:
     virtual Esercizio & operator=(const Esercizio & e) override;
     virtual bool operator==(const Esercizio & e) const override;
     virtual bool operator!=(const Esercizio & e) const override;
+    virtual std::ostream & operator<<(std::ostream & os) const override;
 };
 
 #endif // MONOESERCIZIO_H

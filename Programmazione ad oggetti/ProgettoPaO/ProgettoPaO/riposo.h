@@ -21,6 +21,7 @@ public:
     virtual Esercizio & operator=(const Esercizio & e) override;
     virtual bool operator==(const Esercizio & e) const override;
     virtual bool operator!=(const Esercizio & e) const override;
+    std::ostream & operator<<(std::ostream & os) const override;
 };
 
 #endif // RIPOSO_H

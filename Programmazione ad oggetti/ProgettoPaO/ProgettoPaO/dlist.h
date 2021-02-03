@@ -1,7 +1,7 @@
 #ifndef DLIST_H
 #define DLIST_H
 
-#include <ostream>
+#include <iostream>
 typedef unsigned int uint;
 
 template <class T>
@@ -43,9 +43,13 @@ public:
     T popFront();
     T pop(const uint pos);
     void set(const T & i, const uint pos);
+    bool deepCheckEquals(const DList & d) const;
+    bool deepCheckNotEquals(const DList & d) const;
 
     //@overload operatori
     DList & operator=(const DList & d);
+    bool operator==(const DList & d) const;
+    bool operator!=(const DList & d) const;
     T & operator[](const uint pos) const;
 
     class Iterator {
@@ -59,64 +63,10 @@ public:
         Iterator(Nodo * const p = nullptr, const bool pte = false);
 
         //@overload operatori
-        Iterator & operator++() {
-            if (ptr != nullptr) {
-                if (!past_the_end) {
-                    if (ptr->next != nullptr) {
-                        ptr = ptr->next;
-                    } else {
-                        ptr++;
-                        past_the_end = true;
-                    }
-                }
-            }
-            return *this;
-        }
-
-        Iterator operator++(int) {
-            Iterator temp(*this);
-            if (ptr != nullptr) {
-                if(!past_the_end) {
-                    if (ptr->next != nullptr) {
-                        ptr = ptr->next;
-                    } else {
-                        ptr++;
-                        past_the_end = true;
-                    }
-                }
-            }
-            return temp;
-        }
-
-        Iterator & operator--() {
-            if (ptr != nullptr) {
-                if (ptr->prev == nullptr)
-                    ptr = nullptr;
-                else if (!past_the_end) {
-                    ptr = ptr->prev;
-                } else {
-                    ptr--;
-                    past_the_end = false;
-                }
-            }
-            return *this;
-        }
-
-        Iterator operator--(int) {
-            Iterator temp(*this);
-            if (ptr != nullptr) {
-                if (ptr->prev == nullptr) {
-                      ptr = nullptr;
-                } else if (!past_the_end) {
-                       ptr = ptr->prev;
-                } else {
-                    ptr--;
-                    past_the_end = false;
-                }
-            }
-            return temp;
-        }
-
+        Iterator & operator++();
+        Iterator operator++(int);
+        Iterator & operator--();
+        Iterator operator--(int);
         bool operator==(const Iterator & it) const;
         bool operator!=(const Iterator & it) const;
         T & operator*() const;
@@ -124,17 +74,8 @@ public:
     };
 
     //metodi della classe
-    Iterator begin() const {
-        return Iterator(first);
-    }
-
-    Iterator end() const {
-        if (!last) {
-            return Iterator();
-        } else {
-            return Iterator(last + 1, true);
-        }
-    }
+    Iterator begin() const;
+    Iterator end() const;
 };
 
 template<class T>
@@ -309,6 +250,52 @@ DList<T> & DList<T>::operator=(const DList<T> & d) {
 }
 
 template<class T>
+bool DList<T>::deepCheckEquals(const DList<T> & d) const {
+    if (size != d.size) {
+        return false;
+    }
+    Nodo * tempA = first;
+    Nodo * tempB = d.first;
+    for (int i = 0; i < size; i++) {
+        if (*(tempA->info) != *(tempB->info)) { //confronto gli oggetti puntati e non i puntatori
+            return false;
+        }
+        tempA = tempA->next;
+        tempB = tempB->next;
+    }
+
+    return true;
+}
+
+template<class T>
+bool DList<T>::deepCheckNotEquals(const DList<T> & d) const {
+    return !deepCheckEquals(d);
+}
+
+template<class T>
+bool DList<T>::operator==(const DList<T> & d) const {
+    if (size != d.size) {
+        return false;
+    }
+    Nodo * tempA = first;
+    Nodo * tempB = d.first;
+    for (int i = 0; i < size; i++) {
+        if (tempA != tempB) {
+            return false;
+        }
+        tempA = tempA->next;
+        tempB = tempB->next;
+    }
+
+    return true;
+}
+
+template<class T>
+bool DList<T>::operator!=(const DList<T> & d) const {
+    return !(*this == d);
+}
+
+template<class T>
 T & DList<T>::operator[](const uint pos) const {
     if (isEmpty() || pos >= size) {
         throw std::out_of_range("Impossibile accedere in una cella su una lista vuota o IndexOutOfBoundError!");
@@ -330,6 +317,68 @@ template<class T>
 DList<T>::Iterator::Iterator(Nodo * const p, const bool pte) : ptr(p), past_the_end(pte) {}
 
 template<class T>
+typename DList<T>::Iterator & DList<T>::Iterator::operator++() {
+    if (ptr != nullptr) {
+        if (!past_the_end) {
+            if (ptr->next != nullptr) {
+                ptr = ptr->next;
+            } else {
+                ptr++;
+                past_the_end = true;
+            }
+        }
+    }
+    return *this;
+}
+
+template<class T>
+typename DList<T>::Iterator DList<T>::Iterator::operator++(int) {
+    Iterator temp(*this);
+    if (ptr != nullptr) {
+        if(!past_the_end) {
+            if (ptr->next != nullptr) {
+                ptr = ptr->next;
+            } else {
+                ptr++;
+                past_the_end = true;
+            }
+        }
+    }
+    return temp;
+}
+
+template<class T>
+typename DList<T>::Iterator & DList<T>::Iterator::operator--() {
+    if (ptr != nullptr) {
+        if (ptr->prev == nullptr)
+            ptr = nullptr;
+        else if (!past_the_end) {
+            ptr = ptr->prev;
+        } else {
+            ptr--;
+            past_the_end = false;
+        }
+    }
+    return *this;
+}
+
+template<class T>
+typename DList<T>::Iterator DList<T>::Iterator::operator--(int) {
+    Iterator temp(*this);
+    if (ptr != nullptr) {
+        if (ptr->prev == nullptr) {
+              ptr = nullptr;
+        } else if (!past_the_end) {
+               ptr = ptr->prev;
+        } else {
+            ptr--;
+            past_the_end = false;
+        }
+    }
+    return temp;
+}
+
+template<class T>
 bool DList<T>::Iterator::operator==(const Iterator & it) const {
     return ptr == it.ptr;
 }
@@ -347,6 +396,31 @@ T & DList<T>::Iterator::operator*() const {
 template<class T>
 T * DList<T>::Iterator::operator->() const {
     return &(ptr->info);
+}
+
+template<class T>
+typename DList<T>::Iterator DList<T>::begin() const {
+    return Iterator(first);
+}
+
+template<class T>
+typename DList<T>::Iterator DList<T>::end() const {
+    if (!last) {
+        return Iterator();
+    } else {
+        return Iterator(last + 1, true);
+    }
+}
+
+template<class T>
+std::ostream & operator<<(std::ostream & os, const DList<T> & d) {
+    os << "[" << std::endl;
+    for (int i = 0; i < d.getSize(); i++) {
+        os << " [ Esercizio numero " << i + 1 << " ]" << std::endl;
+        (d[i])->operator<<(os) << std::endl << std::endl;
+    }
+    os << std::endl << "]";
+    return os;
 }
 
 #endif // DLIST_H

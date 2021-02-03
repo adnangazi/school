@@ -54,3 +54,13 @@ bool CrossFit::operator==(const Esercizio & e) const {
 bool CrossFit::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
+
+std::ostream & CrossFit::operator<<(std::ostream & os) const {
+    MonoEsercizio::operator<<(os) << std::endl;
+    os << " | Descrizione: " << getDescrizione() << std::endl;
+    os << " | Velocita': " << getVelocita() << std::endl;
+    os << " | Peso: " << getPeso() << std::endl;
+    os << " | Ripetizioni: " << getRipetizioni() << std::endl;
+    os << " +---";
+    return os;
+}

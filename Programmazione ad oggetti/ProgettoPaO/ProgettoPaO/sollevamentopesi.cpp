@@ -115,4 +115,14 @@ bool SollevamentoPesi::operator!=(const Esercizio & e) const {
     return !(*this == e);
 }
 
-const Orario SollevamentoPesi::tempoDiRipetizione = Orario(5);
+std::ostream & SollevamentoPesi::operator<<(std::ostream & os) const {
+    MonoEsercizio::operator<<(os) << std::endl;
+    os << " | Descrizione: " << getDescrizione() << std::endl;
+    os << " | Peso: " << peso << std::endl;
+    os << " | Ripetizioni: " << ripetizioni << std::endl;
+    os << " | Serie: " << serie << std::endl;
+    os << " +---";
+    return os;
+}
+
+const Orario SollevamentoPesi::tempoDiRipetizione = Orario(5); //5 secondi
