@@ -279,8 +279,8 @@ bool DList<T>::operator==(const DList<T> & d) const {
     }
     Nodo * tempA = first;
     Nodo * tempB = d.first;
-    for (int i = 0; i < size; i++) {
-        if (tempA != tempB) {
+    for (uint i = 0; i < size; i++) {
+        if (tempA->info != tempB->info) {
             return false;
         }
         tempA = tempA->next;

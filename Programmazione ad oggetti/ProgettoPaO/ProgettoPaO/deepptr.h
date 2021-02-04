@@ -1,6 +1,8 @@
 #ifndef DEEPPTR_H
 #define DEEPPTR_H
 
+#include <iostream>
+
 template <class T>
 class DeepPtr {
 private:
@@ -19,21 +21,12 @@ public:
     DeepPtr<T> & operator=(const DeepPtr<T> & dp);
     T * operator->();
     T & operator*();
+    bool operator==(const DeepPtr<T> & a);
+    bool operator!=(const DeepPtr<T> & a);
 };
 
-//@overload operatori esterni alla classe
 template <class T>
-bool operator==(const DeepPtr<T> & a, const DeepPtr<T> & b) {
-    return a.ptr == b.ptr;
-}
-
-template <class T>
-bool operator!=(const DeepPtr<T> & a, const DeepPtr<T> & b) {
-    return a.ptr != b.ptr;
-}
-
-template <class T>
-DeepPtr<T>::DeepPtr(T * const p) : ptr(p) {}
+DeepPtr<T>::DeepPtr(T * const p) : ptr(p? p->clone() : nullptr) { delete p; }
 
 template <class T>
 DeepPtr<T>::~DeepPtr() {
@@ -67,6 +60,16 @@ T * DeepPtr<T>::operator->() {
 template<class T>
 T & DeepPtr<T>::operator*() {
     return * ptr;
+}
+
+template <class T>
+bool DeepPtr<T>::operator==(const DeepPtr<T> & a) {
+    return ptr == a.ptr;
+}
+
+template <class T>
+bool DeepPtr<T>::operator!=(const DeepPtr<T> & a) {
+    return ptr != a.ptr;
 }
 
 #endif // DEEPPTR_H

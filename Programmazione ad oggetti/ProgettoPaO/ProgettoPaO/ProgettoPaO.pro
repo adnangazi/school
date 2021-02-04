@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     cardio.cpp \
+    creaesercizio.cpp \
     crossfit.cpp \
     esercizio.cpp \
     main.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 
 HEADERS += \
     cardio.h \
+    creaesercizio.h \
     crossfit.h \
     deepptr.h \
     dlist.h \

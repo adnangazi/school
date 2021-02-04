@@ -1,4 +1,5 @@
 debug/cardio.o
+debug/creaesercizio.o
 debug/crossfit.o
 debug/esercizio.o
 debug/main.o

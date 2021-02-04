@@ -1,4 +1,5 @@
 release/cardio.o
+release/creaesercizio.o
 release/crossfit.o
 release/esercizio.o
 release/main.o

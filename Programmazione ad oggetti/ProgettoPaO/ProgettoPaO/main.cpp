@@ -10,7 +10,5 @@ int main(int argc, char * argv[]) {
     cout << argc << " " << *argv << endl;
     cout << "Inizio programma" << endl;
 
-
-
     cout << "Fine programma" << endl;
 }
