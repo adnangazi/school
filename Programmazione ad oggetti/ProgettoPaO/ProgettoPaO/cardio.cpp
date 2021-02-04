@@ -2,16 +2,7 @@
 
 Cardio::Cardio(const string & n, const string & d, const uint m, const Orario & o, const uint v) : MonoEsercizio(n, d, m), durata(o), velocita(v) {}
 
-Cardio::Cardio(const Esercizio & e) : MonoEsercizio(e) {
-    const Cardio * const temp = dynamic_cast<const Cardio*>(&e);
-    if (temp != nullptr) {
-        durata = temp->durata;
-        velocita = temp->velocita;
-    } else {
-        durata = Orario();
-        velocita = 0;
-    }
-}
+Cardio::Cardio(const Cardio & e) : MonoEsercizio(e), durata(e.durata), velocita(e.velocita) {}
 
 uint Cardio::getVelocita() const {
     return velocita;
@@ -62,16 +53,10 @@ Cardio * Cardio::clone() const {
     return new Cardio(*this);
 }
 
-Esercizio & Cardio::operator=(const Esercizio & e) {
+Cardio & Cardio::operator=(const Cardio & e) {
     MonoEsercizio::operator=(e);
-    const Cardio * const temp = dynamic_cast<const Cardio*>(&e);
-    if (temp != nullptr) {
-        durata = temp->durata;
-        velocita = temp->velocita;
-    } else {
-        durata = Orario();
-        velocita = 0;
-    }
+    durata = e.durata;
+    velocita = e.velocita;
     return *this;
 }
 

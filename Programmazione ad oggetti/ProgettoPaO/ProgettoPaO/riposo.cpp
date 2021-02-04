@@ -2,14 +2,7 @@
 
 Riposo::Riposo(const string & n, const string & d, const string & ir) : Esercizio(n, d), istruzioneRiposo(ir) {}
 
-Riposo::Riposo(const Esercizio & e) : Esercizio(e) {
-    const Riposo * const temp = dynamic_cast<const Riposo*>(&e);
-    if (temp != nullptr) {
-        istruzioneRiposo = temp->istruzioneRiposo;
-    } else {
-        istruzioneRiposo = "";
-    }
-}
+Riposo::Riposo(const Riposo & e) : Esercizio(e), istruzioneRiposo(e.istruzioneRiposo) {}
 
 string Riposo::getIstruzioneRiposo() const {
     return istruzioneRiposo;
@@ -19,14 +12,9 @@ void Riposo::setIstruzioneRiposo(const string & ir) {
     istruzioneRiposo = ir;
 }
 
-Esercizio & Riposo::operator=(const Esercizio & e) {
+Riposo & Riposo::operator=(const Riposo & e) {
     Esercizio::operator=(e);
-    const Riposo * const temp = dynamic_cast<const Riposo*>(&e);
-    if (temp != nullptr) {
-        istruzioneRiposo = temp->istruzioneRiposo;
-    } else {
-        istruzioneRiposo = "";
-    }
+    istruzioneRiposo = e.istruzioneRiposo;
     return *this;
 }
 

@@ -2,7 +2,6 @@
 #define ESERCIZIO_H
 
 #include "orario.h"
-
 using std::string;
 
 class Esercizio {
@@ -31,7 +30,7 @@ public:
     virtual Esercizio * clone() const = 0;
 
     //@overload operatori
-    virtual Esercizio & operator=(const Esercizio & e);
+    Esercizio & operator=(const Esercizio & e);
     virtual bool operator==(const Esercizio & e) const;
     virtual bool operator!=(const Esercizio & e) const;
     virtual std::ostream & operator<<(std::ostream & os) const;

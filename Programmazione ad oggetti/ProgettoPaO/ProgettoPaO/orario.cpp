@@ -94,5 +94,5 @@ Orario operator-(const Orario & a, const Orario & b) {
 }
 
 std::ostream & operator<<(std::ostream & os, const Orario & o) {
-    return os << "[" << o.getOre() << ":" << o.getMinuti() << ":" << o.getSecondi() << "]";
+    return os << "(" << o.getOre() << ":" << o.getMinuti() << ":" << o.getSecondi() << ")";
 }

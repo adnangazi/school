@@ -10,7 +10,7 @@ private:
 public:
     //costruttori e distruttori
     RiposoPassivo(const string & n, const string & d, const string & ir,const Orario & o = 0);
-    RiposoPassivo(const Esercizio & e);
+    RiposoPassivo(const RiposoPassivo & e);
     ~RiposoPassivo() = default;
 
     //@override Esercizio
@@ -21,7 +21,9 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     RiposoPassivo * clone() const override;
-    Esercizio & operator=(const Esercizio & e) override;
+
+
+    RiposoPassivo & operator=(const RiposoPassivo & e);
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;

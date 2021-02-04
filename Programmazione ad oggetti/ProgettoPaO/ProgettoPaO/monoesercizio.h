@@ -10,7 +10,7 @@ private:
 public:
     //costruttori e distruttori
     MonoEsercizio(const string & n, const string & d, const uint m = 0);
-    MonoEsercizio(const Esercizio & e);
+    MonoEsercizio(const MonoEsercizio & e);
     virtual ~MonoEsercizio() = default;
 
     //metodi della classe
@@ -18,7 +18,7 @@ public:
     void setMET(const uint m = 0);
 
     //@override Esercizio
-    virtual Esercizio & operator=(const Esercizio & e) override;
+    MonoEsercizio & operator=(const MonoEsercizio & e);
     virtual bool operator==(const Esercizio & e) const override;
     virtual bool operator!=(const Esercizio & e) const override;
     virtual std::ostream & operator<<(std::ostream & os) const override;

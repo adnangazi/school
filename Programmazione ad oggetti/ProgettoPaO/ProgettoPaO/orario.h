@@ -1,7 +1,7 @@
 #ifndef ORARIO_H
 #define ORARIO_H
 
-#include <ostream>
+#include <iostream>
 typedef unsigned int uint;
 
 class Orario {

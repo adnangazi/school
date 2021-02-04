@@ -256,7 +256,7 @@ bool DList<T>::deepCheckEquals(const DList<T> & d) const {
     }
     Nodo * tempA = first;
     Nodo * tempB = d.first;
-    for (int i = 0; i < size; i++) {
+    for (uint i = 0; i < size; i++) {
         if (*(tempA->info) != *(tempB->info)) { //confronto gli oggetti puntati e non i puntatori
             return false;
         }
@@ -414,12 +414,12 @@ typename DList<T>::Iterator DList<T>::end() const {
 
 template<class T>
 std::ostream & operator<<(std::ostream & os, const DList<T> & d) {
-    os << "[" << std::endl;
-    for (int i = 0; i < d.getSize(); i++) {
-        os << " [ Esercizio numero " << i + 1 << " ]" << std::endl;
+    os << "[" << std::endl << std::endl;
+    for (uint i = 0; i < d.getSize(); i++) {
+        os << " +---" << std::endl << " | Esercizio numero " << i + 1 << std::endl;
         (d[i])->operator<<(os) << std::endl << std::endl;
     }
-    os << std::endl << "]";
+    os << "]";
     return os;
 }
 

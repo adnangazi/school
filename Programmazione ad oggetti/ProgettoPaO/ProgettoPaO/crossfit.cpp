@@ -5,10 +5,10 @@ CrossFit::CrossFit(const string & n, const string & d, const uint m, const Orari
     SollevamentoPesi::setDurata(o);
 }
 
-CrossFit::CrossFit(const Esercizio & e) : MonoEsercizio(e), Cardio(e), SollevamentoPesi(e) {}
+CrossFit::CrossFit(const CrossFit & e) : MonoEsercizio(e), Cardio(e), SollevamentoPesi(e) {}
 
 string CrossFit::getDescrizione() const {
-    return Esercizio::getDescrizione() + Cardio::getDescrizione() + SollevamentoPesi::getDescrizione() + " i altre sborae varie su CrossFit...";
+    return Esercizio::getDescrizione() + " i altre sborae varie su CrossFit...";
 }
 
 Orario CrossFit::getDurata() const {
@@ -40,7 +40,7 @@ CrossFit * CrossFit::clone() const {
     return new CrossFit(*this);
 }
 
-Esercizio & CrossFit::operator=(const Esercizio & e) {
+CrossFit & CrossFit::operator=(const CrossFit & e) {
     Cardio::operator=(e);
     SollevamentoPesi::operator=(e);
     return *this;

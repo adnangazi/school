@@ -11,7 +11,7 @@ private:
 public:
     //costruttori e distruttori
     Cardio(const string & n, const string & d, const uint m = 0, const Orario & o = 0, const uint v = 0);
-    Cardio(const Esercizio & e);
+    Cardio(const Cardio & e);
     ~Cardio() = default;
 
     //metodi della classe
@@ -26,7 +26,9 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     Cardio * clone() const override;
-    Esercizio & operator=(const Esercizio & e) override;
+
+
+    Cardio & operator=(const Cardio & e);
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;

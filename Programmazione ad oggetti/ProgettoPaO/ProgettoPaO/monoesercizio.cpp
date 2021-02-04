@@ -2,14 +2,7 @@
 
 MonoEsercizio::MonoEsercizio(const string & n, const string & d, const uint m) : Esercizio(n, d), MET(m) {}
 
-MonoEsercizio::MonoEsercizio(const Esercizio & e) : Esercizio(e) {
-    const MonoEsercizio * const temp = dynamic_cast<const MonoEsercizio*>(&e);
-    if (temp != nullptr) {
-        MET = temp->MET;
-    } else {
-        MET = 0;
-    }
-}
+MonoEsercizio::MonoEsercizio(const MonoEsercizio & e) : Esercizio(e), MET(e.MET) {}
 
 uint MonoEsercizio::getMET() const {
     return MET;
@@ -19,14 +12,9 @@ void MonoEsercizio::setMET(const uint m) {
     MET = m;
 }
 
-Esercizio & MonoEsercizio::operator=(const Esercizio & e) {
+MonoEsercizio & MonoEsercizio::operator=(const MonoEsercizio & e) {
     Esercizio::operator=(e);
-    const MonoEsercizio * const temp = dynamic_cast<const MonoEsercizio*>(&e);
-    if (temp != nullptr) {
-        MET = temp->MET;
-    } else {
-        MET = 0;
-    }
+    MET = e.MET;
     return *this;
 }
 

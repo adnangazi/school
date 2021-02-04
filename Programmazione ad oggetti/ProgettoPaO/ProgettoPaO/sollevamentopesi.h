@@ -16,7 +16,7 @@ public:
 
     //costruttori e distruttori
     SollevamentoPesi(const string & n, const string & d, const uint m = 0, const uint p = 0, const uint r = 0, const uint s = 0);
-    SollevamentoPesi(const Esercizio & e);
+    SollevamentoPesi(const SollevamentoPesi & e);
     ~SollevamentoPesi() = default;
 
     //metodi della classe
@@ -35,7 +35,9 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     SollevamentoPesi * clone() const override;
-    Esercizio & operator=(const Esercizio & e) override;
+
+
+    SollevamentoPesi & operator=(const SollevamentoPesi & e);
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;

@@ -2,16 +2,7 @@
 
 SollevamentoPesi::SollevamentoPesi(const string & n, const string & d, const uint m, const uint p, const uint r, const uint s) : MonoEsercizio(n, d, m), peso(p), ripetizioni(r), serie(s) {}
 
-SollevamentoPesi::SollevamentoPesi(const Esercizio & e) : MonoEsercizio(e) {
-    const SollevamentoPesi * const temp = dynamic_cast<const SollevamentoPesi*>(&e);
-    if (temp != nullptr) {
-        peso = temp->peso;
-        ripetizioni = temp->ripetizioni;
-        serie = temp->serie;
-    } else {
-        peso = ripetizioni = serie = 0;
-    }
-}
+SollevamentoPesi::SollevamentoPesi(const SollevamentoPesi & e) : MonoEsercizio(e), peso(e.peso), ripetizioni(e.ripetizioni), serie(e.serie) {}
 
 uint SollevamentoPesi::getPeso() const {
     return peso;
@@ -93,16 +84,11 @@ SollevamentoPesi * SollevamentoPesi::clone() const {
     return new SollevamentoPesi(*this);
 }
 
-Esercizio & SollevamentoPesi::operator=(const Esercizio & e) {
+SollevamentoPesi & SollevamentoPesi::operator=(const SollevamentoPesi & e) {
     MonoEsercizio::operator=(e);
-    const SollevamentoPesi * const temp = dynamic_cast<const SollevamentoPesi*>(&e);
-    if (temp != nullptr) {
-        peso = temp->peso;
-        ripetizioni = temp->ripetizioni;
-        serie = temp->serie;
-    } else {
-        peso = ripetizioni = serie = 0;
-    }
+    peso = e.peso;
+    ripetizioni = e.ripetizioni;
+    serie = e.serie;
     return *this;
 }
 

@@ -1,19 +1,8 @@
 #include "riposoattivo.h"
 
-void RiposoAttivo::deepCopy(const Esercizio & e, Esercizio *& esercizioAttivo) {
-    const RiposoAttivo * const temp = dynamic_cast<const RiposoAttivo*>(&e);
-    if (temp != nullptr) {
-        *esercizioAttivo = *temp->esercizioAttivo;
-    } else {
-        esercizioAttivo = 0;
-    }
-}
+RiposoAttivo::RiposoAttivo(const string & ir, Esercizio * const e) : Riposo(e->getNome(), e->getDescrizione(), ir), esercizioAttivo((e) ? e->clone() : nullptr) {}
 
-RiposoAttivo::RiposoAttivo(const string & ir, Esercizio * const e) : Riposo(e->getNome(), e->getDescrizione(), ir), esercizioAttivo((e) ? e->clone() : 0) {}
-
-RiposoAttivo::RiposoAttivo(const Esercizio & e) : Riposo(e) {
-    deepCopy(e, esercizioAttivo);
-}
+RiposoAttivo::RiposoAttivo(const RiposoAttivo & e) : Riposo(e), esercizioAttivo(e.esercizioAttivo ? e.esercizioAttivo->clone() : nullptr) {}
 
 RiposoAttivo::~RiposoAttivo() {
     delete esercizioAttivo;
@@ -47,9 +36,9 @@ void RiposoAttivo::setMET(const uint m) {
 }
 
 //necessario ridefinire operator=() della classe RiposoAttivo: altrimenti viene eseguito una shallow copy dell'oggetto durante l'assegnazione e l'attributo 'esercizioAttivo' dei due oggetti RiposoAttivo usati nell'assegnazione puntano allo stesso oggetto
-Esercizio & RiposoAttivo::operator=(const RiposoAttivo & r) {
-    Riposo::operator=(r);
-    deepCopy(r, esercizioAttivo);
+RiposoAttivo & RiposoAttivo::operator=(const RiposoAttivo & e) {
+    Riposo::operator=(e);
+    esercizioAttivo = e.esercizioAttivo ? e.esercizioAttivo->clone() : nullptr;
     return *this;
 }
 
@@ -68,6 +57,7 @@ Orario RiposoAttivo::getDurata() const {
     if (temp) {
         return temp->getDurata();
     } else {
+        std::cout << typeid (*esercizioAttivo).name() << std::endl;
         throw std::out_of_range("Impossibile restituire la durata: esercizioAttivo non è un sottitipo di Esercizio!");
         return Orario();
     }
@@ -114,15 +104,9 @@ RiposoAttivo * RiposoAttivo::clone() const {
     return new RiposoAttivo(*this);
 }
 
-Esercizio & RiposoAttivo::operator=(const Esercizio & e) {
-    Riposo::operator=(e);
-    deepCopy(e, esercizioAttivo);
-    return *this;
-}
-
 bool RiposoAttivo::operator==(const Esercizio & e) const {
     const RiposoAttivo temp = static_cast<const RiposoAttivo&>(e);
-    return getIstruzioneRiposo() == temp.getIstruzioneRiposo() && *esercizioAttivo == *temp.esercizioAttivo;
+    return getIstruzioneRiposo() == temp.getIstruzioneRiposo() && (temp.esercizioAttivo != nullptr && esercizioAttivo != nullptr ? *(temp.esercizioAttivo) == *esercizioAttivo : temp.esercizioAttivo == esercizioAttivo);
 }
 
 bool RiposoAttivo::operator!=(const Esercizio & e) const {

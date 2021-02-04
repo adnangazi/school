@@ -8,13 +8,10 @@ class RiposoAttivo : public Riposo {
 private:
     Esercizio * esercizioAttivo;
 
-    //metodi privati della classe
-    static void deepCopy(const Esercizio & e, Esercizio *& esercizioAttivo);
-
 public:
     //costruttori e distruttori
     RiposoAttivo(const string & ir, Esercizio * const e = 0);
-    RiposoAttivo(const Esercizio & e);
+    RiposoAttivo(const RiposoAttivo & e);
     ~RiposoAttivo();
 
     //metodi della classe
@@ -24,7 +21,7 @@ public:
     void setMET(const uint m = 0);
 
     //@overload operatori
-    Esercizio & operator=(const RiposoAttivo & r);
+    RiposoAttivo & operator=(const RiposoAttivo & e);
 
     //@override Esercizio
     string getDescrizione() const override;
@@ -34,7 +31,8 @@ public:
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     RiposoAttivo * clone() const override;
-    Esercizio & operator=(const Esercizio & e) override;
+
+
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;
