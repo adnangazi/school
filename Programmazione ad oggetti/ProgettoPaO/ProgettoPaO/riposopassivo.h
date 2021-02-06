@@ -9,7 +9,7 @@ private:
 
 public:
     //costruttori e distruttori
-    RiposoPassivo(const string & n, const string & d, const string & ir,const Orario & o = 0);
+    RiposoPassivo(const string & n, const string & d, const string & ir, const Orario & o = 0);
     RiposoPassivo(const RiposoPassivo & e);
     ~RiposoPassivo() = default;
 

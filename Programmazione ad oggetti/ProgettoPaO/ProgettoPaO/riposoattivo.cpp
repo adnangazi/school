@@ -57,7 +57,6 @@ Orario RiposoAttivo::getDurata() const {
     if (temp) {
         return temp->getDurata();
     } else {
-        std::cout << typeid (*esercizioAttivo).name() << std::endl;
         throw std::out_of_range("Impossibile restituire la durata: esercizioAttivo non è un sottitipo di Esercizio!");
         return Orario();
     }

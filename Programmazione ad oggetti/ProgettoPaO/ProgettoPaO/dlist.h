@@ -1,7 +1,7 @@
 #ifndef DLIST_H
 #define DLIST_H
 
-#include <iostream>
+#include <ostream>
 typedef unsigned int uint;
 
 template <class T>
@@ -56,7 +56,7 @@ public:
         friend class DList<T>;
     private:
         Nodo * ptr;
-        bool past_the_end;
+        bool pastTheEnd;
 
     public:
         //costruttori e distruttori
@@ -314,17 +314,17 @@ T & DList<T>::operator[](const uint pos) const {
 }
 
 template<class T>
-DList<T>::Iterator::Iterator(Nodo * const p, const bool pte) : ptr(p), past_the_end(pte) {}
+DList<T>::Iterator::Iterator(Nodo * const p, const bool pte) : ptr(p), pastTheEnd(pte) {}
 
 template<class T>
 typename DList<T>::Iterator & DList<T>::Iterator::operator++() {
     if (ptr != nullptr) {
-        if (!past_the_end) {
+        if (!pastTheEnd) {
             if (ptr->next != nullptr) {
                 ptr = ptr->next;
             } else {
                 ptr++;
-                past_the_end = true;
+                pastTheEnd = true;
             }
         }
     }
@@ -335,12 +335,12 @@ template<class T>
 typename DList<T>::Iterator DList<T>::Iterator::operator++(int) {
     Iterator temp(*this);
     if (ptr != nullptr) {
-        if(!past_the_end) {
+        if(!pastTheEnd) {
             if (ptr->next != nullptr) {
                 ptr = ptr->next;
             } else {
                 ptr++;
-                past_the_end = true;
+                pastTheEnd = true;
             }
         }
     }
@@ -352,11 +352,11 @@ typename DList<T>::Iterator & DList<T>::Iterator::operator--() {
     if (ptr != nullptr) {
         if (ptr->prev == nullptr)
             ptr = nullptr;
-        else if (!past_the_end) {
+        else if (!pastTheEnd) {
             ptr = ptr->prev;
         } else {
             ptr--;
-            past_the_end = false;
+            pastTheEnd = false;
         }
     }
     return *this;
@@ -368,11 +368,11 @@ typename DList<T>::Iterator DList<T>::Iterator::operator--(int) {
     if (ptr != nullptr) {
         if (ptr->prev == nullptr) {
               ptr = nullptr;
-        } else if (!past_the_end) {
+        } else if (!pastTheEnd) {
                ptr = ptr->prev;
         } else {
             ptr--;
-            past_the_end = false;
+            pastTheEnd = false;
         }
     }
     return temp;

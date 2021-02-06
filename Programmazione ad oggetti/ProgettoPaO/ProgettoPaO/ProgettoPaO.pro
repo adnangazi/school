@@ -12,9 +12,11 @@ SOURCES += \
     cardio.cpp \
     creaesercizio.cpp \
     crossfit.cpp \
+    eseguiesercizi.cpp \
     esercizio.cpp \
     main.cpp \
     mainwindow.cpp \
+    model.cpp \
     monoesercizio.cpp \
     orario.cpp \
     riposo.cpp \
@@ -28,8 +30,10 @@ HEADERS += \
     crossfit.h \
     deepptr.h \
     dlist.h \
+    eseguiesercizi.h \
     esercizio.h \
     mainwindow.h \
+    model.h \
     monoesercizio.h \
     orario.h \
     riposo.h \

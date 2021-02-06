@@ -1,9 +1,11 @@
 release/cardio.o
 release/creaesercizio.o
 release/crossfit.o
+release/eseguiesercizi.o
 release/esercizio.o
 release/main.o
 release/mainwindow.o
+release/model.o
 release/monoesercizio.o
 release/orario.o
 release/riposo.o

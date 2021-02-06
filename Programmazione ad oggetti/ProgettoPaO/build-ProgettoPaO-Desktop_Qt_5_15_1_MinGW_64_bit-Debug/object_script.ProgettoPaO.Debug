@@ -1,9 +1,11 @@
 debug/cardio.o
 debug/creaesercizio.o
 debug/crossfit.o
+debug/eseguiesercizi.o
 debug/esercizio.o
 debug/main.o
 debug/mainwindow.o
+debug/model.o
 debug/monoesercizio.o
 debug/orario.o
 debug/riposo.o
