@@ -31,6 +31,11 @@ void Model::addRiposoAttivo(const string & ir, Esercizio * const e) {
     eseguiEsercizi->addBackEsercizio(creator.createRiposoAttivo(ir, e));
 }
 
+void Model::setEsercizio(DeepPtr<Esercizio> e, const uint i) {
+    eseguiEsercizi->setEsercizio(e, i);
+}
+
+/*
 void Model::setCardio(const string & n, const string & d, const uint i, const uint m, const Orario & o, const uint v) {
     CreaEsercizio creator;
     eseguiEsercizi->setEsercizio(creator.createCardio(n, d, m, o, v), i);
@@ -55,6 +60,7 @@ void Model::setRiposoAttivo(const string & ir, const uint i, Esercizio * const e
     CreaEsercizio creator;
     eseguiEsercizi->setEsercizio(creator.createRiposoAttivo(ir, e), i);
 }
+*/
 
 void Model::removeEsercizio(const uint i) {
     eseguiEsercizi->removeEsercizio(i);

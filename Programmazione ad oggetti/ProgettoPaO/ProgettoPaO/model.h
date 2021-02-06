@@ -20,12 +20,7 @@ public:
     void addRiposoPassivo(const string & n, const string & d, const string & ir, const Orario & o = 0);
     void addRiposoAttivo(const string & ir, Esercizio * const e = 0);
 
-    void setCardio(const string & n, const string & d, const uint i, const uint m = 0, const Orario & o = 0, const uint v = 0);
-    void setSollevamentoPesi(const string & n, const string & d, const uint i, const uint m = 0, const uint p = 0, const uint r = 0, const uint s = 0);
-    void setCrossFit(const string & n, const string & d, const uint i, const uint m = 0, const Orario & o = 0, const uint v = 0, const uint p = 0);
-    void setRiposoPassivo(const string & n, const string & d, const string & ir, const uint i, const Orario & o = 0);
-    void setRiposoAttivo(const string & ir, const uint i, Esercizio * const e = 0);
-
+    void setEsercizio(DeepPtr<Esercizio> e, const uint i);
     void removeEsercizio(const uint i = 0);
     DeepPtr<Esercizio> getEsercizio(const uint i = 0);
 
