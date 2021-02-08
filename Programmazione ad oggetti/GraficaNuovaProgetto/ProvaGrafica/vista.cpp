@@ -3,7 +3,8 @@
 Vista::Vista(QWidget * parent) : QWidget(parent) {
     QVBoxLayout * mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
-    resize(QSize(750, 750));
+    resize(QSize(750, 500));
+    setMaximumSize(QSize(1500, 1000));
 
     menus = new Menus(mainLayout);
     screen = new Screen(mainLayout);
@@ -11,11 +12,15 @@ Vista::Vista(QWidget * parent) : QWidget(parent) {
     menus->createMenus();
     screen->createScreen();
 
-    for (int i = 1; i < 6; i++) {
+    //showCreateDialog(1);
+
+    /*for (int i = 1; i < 6; i++) {
         showCreateDialog(i);
     }
+
     showMessageDialog("prova prova showMessaggeDialog()");
     showGetNumberDialog("Rimozione");
+    */
 }
 
 Vista::~Vista() {

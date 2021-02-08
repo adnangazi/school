@@ -4,43 +4,28 @@ ViewCreator::ViewCreator() {}
 
 QDialog * ViewCreator::createQDialog(QWidget * parent, const int MH, const int MW, const int RH, const int RW) {
     QDialog * dialog = new QDialog(parent);
-    if (MH >= 0) {
-        dialog->setMaximumHeight(MH);
-    }
-    if (MW >= 0) {
-        dialog->setMaximumWidth(MW);
-    }
-    if (RH >= 0) {
-        dialog->setMinimumHeight(RH);
-    }
-    if (RW >= 0) {
-        dialog->setMinimumWidth(RW);
-    }
-    if (RH >= 0 && RW >= 0) {
-        dialog->resize(QSize(RH, RW));
-    }
+    dialog->setMaximumHeight(MH);
+    dialog->setMaximumWidth(MW);
+    dialog->setMinimumHeight(RH);
+    dialog->setMinimumWidth(RW);
+    dialog->resize(QSize(RH, RW));
+
     return dialog;
 }
 
-QVBoxLayout * ViewCreator::createQVVLayout(QVBoxLayout * parent) {
+QVBoxLayout * ViewCreator::createQVLayout(QBoxLayout * parent) {
     QVBoxLayout * layout = new QVBoxLayout;
     parent->addLayout(layout);
     return layout;
 }
 
-QVBoxLayout * ViewCreator::createQHVLayout(QHBoxLayout * parent) {
-    QVBoxLayout * layout = new QVBoxLayout;
-    parent->addLayout(layout);
-    return layout;
-}
-
-QHBoxLayout * ViewCreator::createQVHLayout(QVBoxLayout * parent) {
+QHBoxLayout * ViewCreator::createQHLayout(QBoxLayout * parent) {
     QHBoxLayout * layout = new QHBoxLayout;
     parent->addLayout(layout);
     return layout;
 }
 
-QLineEdit * ViewCreator::createQLineEdit(QHBoxLayout * parent, const string & ph, const int ml) {
+QLineEdit * ViewCreator::createQLineEdit(QBoxLayout * parent, const string & ph, const int ml) {
     QLineEdit * line = new QLineEdit;
     line->setAlignment(Qt::AlignCenter);
     line->setPlaceholderText(QString::fromStdString(ph));
@@ -54,43 +39,58 @@ QLineEdit * ViewCreator::createQLineEdit(QHBoxLayout * parent, const string & ph
     return line;
 }
 
-QTextEdit * ViewCreator::createQTextEdit(QHBoxLayout * parent, const string & ph) {
+QTextEdit * ViewCreator::createQTextEdit(QBoxLayout * parent, const string & ph, const int minW, const int minH, const int maxW, const int maxH) {
     QTextEdit * text = new QTextEdit;
     text->setPlaceholderText(QString::fromStdString(ph));
-    text->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    if (minW >= 0) {
+        text->setMinimumSize(QSize(minW, minH));
+        text->setMaximumSize(QSize(maxW, maxH));
+    }
     parent->addWidget(text);
     return text;
 }
 
-void ViewCreator::createQHLabel(QHBoxLayout * parent, const string & nome) {
+void ViewCreator::createQLabel(QBoxLayout * parent, const string & nome) {
     QLabel * label = new QLabel(tr(nome.c_str()));
     label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     parent->addWidget(label);
 }
 
-void ViewCreator::createQVLabel(QVBoxLayout * parent, const string & nome) {
-    QLabel * label = new QLabel(tr(nome.c_str()));
-    label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    parent->addWidget(label);
-}
-
-QPushButton * ViewCreator::createQPushButton(QHBoxLayout * parent, const string & nome) {
+QPushButton * ViewCreator::createQPushButton(QBoxLayout * parent, const string & nome) {
     QPushButton * button = new QPushButton(QString::fromStdString(nome));
     parent->addWidget(button);
-    parent->setAlignment(Qt::AlignRight);
+    parent->setAlignment(nome == "Crea" ? Qt::AlignRight : Qt::AlignCenter);
     return button;
 }
 
-QFrame * ViewCreator::createQVLine(QHBoxLayout * parent) {
-    QFrame * vline = new QFrame;
-    vline->setFrameShape(QFrame::VLine);
-    parent->addWidget(vline);
-    return vline;
+void ViewCreator::createQLine(QBoxLayout * parent, const char tipo) {
+    QFrame * line = new QFrame;
+    line->setFrameShape(tipo == 'H' ? QFrame::HLine : QFrame::VLine);
+    line->setFrameShadow(QFrame::Sunken);
+    parent->addWidget(line);
 }
 
-QFrame * ViewCreator::createQHLine(QVBoxLayout * parent) {
-    QFrame * hline = new QFrame;
-    hline->setFrameShape(QFrame::HLine);
-    parent->addWidget(hline);
-    return hline;
+QWidget *ViewCreator::createQWidget(QBoxLayout *parent, const int minW, const int minH, const int maxW, const int maxH) {
+    QWidget * w = new QWidget;
+    w->setMinimumSize(QSize(minW, minH));
+    w->setMaximumSize(QSize(maxW, maxH));
+    w->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    parent->addWidget(w);
+    return w;
+}
+
+QVBoxLayout * ViewCreator::createQScrollArea(QWidget * parent) {
+    QVBoxLayout * layout = new QVBoxLayout;
+    parent->setLayout(layout);
+    QScrollArea * scrollArea = new QScrollArea;
+    layout->addWidget(scrollArea);
+    QWidget* scrollWidget= new QWidget;
+    scrollArea->setWidget(scrollWidget);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    scrollArea->setWidgetResizable(true);
+    QVBoxLayout * scrollLayout= new QVBoxLayout(scrollWidget);
+    scrollWidget->setLayout(scrollLayout);
+
+    return scrollLayout;
 }

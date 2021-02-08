@@ -3,72 +3,39 @@
 Screen::Screen(QVBoxLayout * const ml) : mainLayout(ml) {}
 
 void Screen::createScreen() {
-    QVBoxLayout * screenLayout = new QVBoxLayout;
-    QHBoxLayout * sopra = new QHBoxLayout;
-    QVBoxLayout * sotto = new QVBoxLayout;
-    QVBoxLayout * sinistra = new QVBoxLayout;
-    QVBoxLayout * destra = new QVBoxLayout;
-    QHBoxLayout * nomeEsercizio = new QHBoxLayout;
-    QVBoxLayout * dettagliEsercizio = new QVBoxLayout;
-    QHBoxLayout * controllerEsercizio = new QHBoxLayout;
-    QVBoxLayout * dettagliAllenamento = new QVBoxLayout;
-    QVBoxLayout * listaAllenamento = new QVBoxLayout;
+    ViewCreator v;
 
-    QFrame * vline = new QFrame;
-    vline->setFrameShape(QFrame::VLine);
+    QVBoxLayout * screenLayout = v.createQVLayout(mainLayout);
+    QHBoxLayout * sopra = v.createQHLayout(screenLayout);
+    v.createQLine(screenLayout, 'H');
+    QVBoxLayout * sotto = v.createQVLayout(screenLayout);
+    QVBoxLayout * sinistra = v.createQVLayout(sopra);
+    v.createQLine(sopra, 'V');
+    QVBoxLayout * destra = v.createQVLayout(sopra);
 
-    QFrame * hline = new QFrame;
-    hline->setFrameShape(QFrame::HLine);
+    QWidget * esercizioW = v.createQWidget(sinistra, 500, 50, 1000, 100);
+    QWidget * dettagliEsercizioW = v.createQWidget(sinistra, 500, 350, 1000, 700);
+    QWidget * controllerEserciziW = v.createQWidget(sinistra, 500, 50, 1000, 100);
+    QWidget * dettagliAllenamentoW = v.createQWidget(destra, 250, 150, 500, 300);
+    QWidget * listaEserciziW = v.createQWidget(destra, 250, 250, 500, 500);
 
-    sopra->addLayout(sinistra);
-    sopra->addWidget(vline);
-    sopra->addLayout(destra);
-    sinistra->addLayout(nomeEsercizio);
-    sinistra->addLayout(dettagliEsercizio);
-    sinistra->addLayout(controllerEsercizio);
-    destra->addLayout(dettagliAllenamento);
-    destra->addLayout(listaAllenamento);
+    // i 3 successivi
+    QVBoxLayout * dettagliEsercizio = v.createQScrollArea(dettagliEsercizioW);
+    QVBoxLayout * dettagliAllenamento = v.createQScrollArea(dettagliAllenamentoW);
+    QVBoxLayout * listaEsercizi = v.createQScrollArea(listaEserciziW);
 
-    screenLayout->addLayout(sopra);
-    screenLayout->addWidget(hline);
-    screenLayout->addLayout(sotto);
+    QHBoxLayout * esercizio = new QHBoxLayout; // *
+    esercizioW->setLayout(esercizio);
+    QHBoxLayout * controllerEsercizi = new QHBoxLayout;
+    controllerEserciziW->setLayout(controllerEsercizi);
 
-    QTextEdit * log = new QTextEdit;
-    log->setMinimumSize(750, 200);
+    // i 5 successivi
+    QPushButton * startButton = v.createQPushButton(controllerEsercizi, "Inizio");
+    QPushButton * previousButton = v.createQPushButton(controllerEsercizi, "Precedente");
+    QPushButton * nextButton = v.createQPushButton(controllerEsercizi, "Successivo");
+    QPushButton * endButton = v.createQPushButton(controllerEsercizi, "Fine");
+    QPushButton * autoPlayButton = v.createQPushButton(controllerEsercizi, "AutoPlay");
 
-    sotto->addWidget(new QLabel(tr("Log delle operazioni effettuate")));
-    sotto->addWidget(log);
-
-    QFrame * nomeEsercizioFrame = new QFrame;
-    QFrame * dettagliEsercizioFrame = new QFrame;
-    QFrame * dettagliAllenamentoFrame = new QFrame;
-    QFrame * listaAllenamentoFrame = new QFrame;
-
-    nomeEsercizioFrame->setFrameShape(QFrame::Box);
-    nomeEsercizioFrame->setMinimumSize(500, 100);
-    dettagliEsercizioFrame->setFrameShape(QFrame::Box);
-    dettagliEsercizioFrame->setMinimumSize(500, 400);
-    dettagliAllenamentoFrame->setFrameShape(QFrame::Box);
-    dettagliAllenamentoFrame->setMinimumSize(250, 100);
-    listaAllenamentoFrame->setFrameShape(QFrame::Box);
-    listaAllenamentoFrame->setMinimumSize(250, 350);
-
-    nomeEsercizio->addWidget(nomeEsercizioFrame);
-    dettagliEsercizio->addWidget(dettagliEsercizioFrame);
-    dettagliAllenamento->addWidget(dettagliAllenamentoFrame);
-    listaAllenamento->addWidget(listaAllenamentoFrame);
-
-    QPushButton * startButton = new QPushButton("Inizio");
-    QPushButton * previousButton = new QPushButton("Precedente");
-    QPushButton * nextButton = new QPushButton("Successiva");
-    QPushButton * endButton = new QPushButton("Fine");
-    QPushButton * autoPlayButton = new QPushButton("AutoPlay");
-
-    controllerEsercizio->addWidget(startButton);
-    controllerEsercizio->addWidget(previousButton);
-    controllerEsercizio->addWidget(nextButton);
-    controllerEsercizio->addWidget(endButton);
-    controllerEsercizio->addWidget(autoPlayButton);
-
-    mainLayout->addLayout(screenLayout);
+    v.createQLabel(sotto, "Log delle operazioni effettuate");
+    QTextEdit * log = v.createQTextEdit(sotto, "Log delle operazioni effettuate ... ", 750, 100, 1500, 200); // *
 }

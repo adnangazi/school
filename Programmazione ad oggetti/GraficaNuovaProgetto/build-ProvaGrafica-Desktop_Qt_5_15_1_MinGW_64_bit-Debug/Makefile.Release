@@ -133,6 +133,7 @@ compiler_moc_header_make_all: release/moc_dialog.cpp release/moc_menus.cpp relea
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_dialog.cpp release\moc_menus.cpp release\moc_screen.cpp release\moc_viewcreator.cpp release\moc_vista.cpp
 release/moc_dialog.cpp: ../ProvaGrafica/dialog.h \
+		../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -236,14 +237,6 @@ release/moc_dialog.cpp: ../ProvaGrafica/dialog.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -256,8 +249,7 @@ release/moc_dialog.cpp: ../ProvaGrafica/dialog.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -273,7 +265,6 @@ release/moc_dialog.cpp: ../ProvaGrafica/dialog.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h \
 		release/moc_predefs.h \
 		C:/Qt/5.15.1/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.1\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/build-ProvaGrafica-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.15.1/mingw81_64/mkspecs/win32-g++ -I"D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/ProvaGrafica" -IC:/Qt/5.15.1/mingw81_64/include -IC:/Qt/5.15.1/mingw81_64/include/QtWidgets -IC:/Qt/5.15.1/mingw81_64/include/QtGui -IC:/Qt/5.15.1/mingw81_64/include/QtANGLE -IC:/Qt/5.15.1/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ProvaGrafica\dialog.h -o release\moc_dialog.cpp
@@ -395,36 +386,12 @@ release/moc_menus.cpp: ../ProvaGrafica/menus.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QLabel \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qframe.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QHBoxLayout \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QLineEdit \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextcursor.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextformat.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qpen.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextoption.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QTextEdit \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtextedit.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h \
 		release/moc_predefs.h \
 		C:/Qt/5.15.1/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.1\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/build-ProvaGrafica-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.15.1/mingw81_64/mkspecs/win32-g++ -I"D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/ProvaGrafica" -IC:/Qt/5.15.1/mingw81_64/include -IC:/Qt/5.15.1/mingw81_64/include/QtWidgets -IC:/Qt/5.15.1/mingw81_64/include/QtGui -IC:/Qt/5.15.1/mingw81_64/include/QtANGLE -IC:/Qt/5.15.1/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ProvaGrafica\menus.h -o release\moc_menus.cpp
 
 release/moc_screen.cpp: ../ProvaGrafica/screen.h \
+		../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -528,14 +495,6 @@ release/moc_screen.cpp: ../ProvaGrafica/screen.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -548,8 +507,7 @@ release/moc_screen.cpp: ../ProvaGrafica/screen.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -563,9 +521,6 @@ release/moc_screen.cpp: ../ProvaGrafica/screen.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtextedit.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h \
 		release/moc_predefs.h \
 		C:/Qt/5.15.1/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.1\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/build-ProvaGrafica-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.15.1/mingw81_64/mkspecs/win32-g++ -I"D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/ProvaGrafica" -IC:/Qt/5.15.1/mingw81_64/include -IC:/Qt/5.15.1/mingw81_64/include/QtWidgets -IC:/Qt/5.15.1/mingw81_64/include/QtGui -IC:/Qt/5.15.1/mingw81_64/include/QtANGLE -IC:/Qt/5.15.1/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ProvaGrafica\screen.h -o release\moc_screen.cpp
@@ -674,14 +629,6 @@ release/moc_viewcreator.cpp: ../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -694,8 +641,7 @@ release/moc_viewcreator.cpp: ../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -709,13 +655,13 @@ release/moc_viewcreator.cpp: ../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtextedit.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
 		release/moc_predefs.h \
 		C:/Qt/5.15.1/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.1\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/build-ProvaGrafica-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.15.1/mingw81_64/mkspecs/win32-g++ -I"D:/GitHub/University/Programmazione ad oggetti/GraficaNuovaProgetto/ProvaGrafica" -IC:/Qt/5.15.1/mingw81_64/include -IC:/Qt/5.15.1/mingw81_64/include/QtWidgets -IC:/Qt/5.15.1/mingw81_64/include/QtGui -IC:/Qt/5.15.1/mingw81_64/include/QtANGLE -IC:/Qt/5.15.1/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ProvaGrafica\viewcreator.h -o release\moc_viewcreator.cpp
 
 release/moc_vista.cpp: ../ProvaGrafica/vista.h \
+		../ProvaGrafica/dialog.h \
+		../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -819,15 +765,6 @@ release/moc_vista.cpp: ../ProvaGrafica/vista.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		../ProvaGrafica/dialog.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -840,8 +777,7 @@ release/moc_vista.cpp: ../ProvaGrafica/vista.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -857,8 +793,14 @@ release/moc_vista.cpp: ../ProvaGrafica/vista.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h \
 		../ProvaGrafica/menus.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		../ProvaGrafica/screen.h \
 		release/moc_predefs.h \
 		C:/Qt/5.15.1/mingw81_64/bin/moc.exe
@@ -883,6 +825,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 ####### Compile
 
 release/dialog.o: ../ProvaGrafica/dialog.cpp ../ProvaGrafica/dialog.h \
+		../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -986,14 +929,6 @@ release/dialog.o: ../ProvaGrafica/dialog.cpp ../ProvaGrafica/dialog.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -1006,8 +941,7 @@ release/dialog.o: ../ProvaGrafica/dialog.cpp ../ProvaGrafica/dialog.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -1022,8 +956,7 @@ release/dialog.o: ../ProvaGrafica/dialog.cpp ../ProvaGrafica/dialog.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\dialog.o ..\ProvaGrafica\dialog.cpp
 
 release/main.o: ../ProvaGrafica/main.cpp C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QApplication \
@@ -1136,16 +1069,9 @@ release/main.o: ../ProvaGrafica/main.cpp C:/Qt/5.15.1/mingw81_64/include/QtWidge
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qinputmethod.h \
 		../ProvaGrafica/vista.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		../ProvaGrafica/dialog.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
+		../ProvaGrafica/viewcreator.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -1158,8 +1084,7 @@ release/main.o: ../ProvaGrafica/main.cpp C:/Qt/5.15.1/mingw81_64/include/QtWidge
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -1175,8 +1100,14 @@ release/main.o: ../ProvaGrafica/main.cpp C:/Qt/5.15.1/mingw81_64/include/QtWidge
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h \
 		../ProvaGrafica/menus.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		../ProvaGrafica/screen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\ProvaGrafica\main.cpp
 
@@ -1296,35 +1227,11 @@ release/menus.o: ../ProvaGrafica/menus.cpp ../ProvaGrafica/menus.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QLabel \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qframe.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QHBoxLayout \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QLineEdit \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextcursor.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextformat.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qpen.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextoption.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QTextEdit \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtextedit.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\menus.o ..\ProvaGrafica\menus.cpp
 
 release/screen.o: ../ProvaGrafica/screen.cpp ../ProvaGrafica/screen.h \
+		../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1428,14 +1335,6 @@ release/screen.o: ../ProvaGrafica/screen.cpp ../ProvaGrafica/screen.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -1448,8 +1347,7 @@ release/screen.o: ../ProvaGrafica/screen.cpp ../ProvaGrafica/screen.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -1462,10 +1360,7 @@ release/screen.o: ../ProvaGrafica/screen.cpp ../ProvaGrafica/screen.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QTextEdit \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtextedit.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\screen.o ..\ProvaGrafica\screen.cpp
 
 release/viewcreator.o: ../ProvaGrafica/viewcreator.cpp ../ProvaGrafica/viewcreator.h \
@@ -1572,14 +1467,6 @@ release/viewcreator.o: ../ProvaGrafica/viewcreator.cpp ../ProvaGrafica/viewcreat
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -1592,8 +1479,7 @@ release/viewcreator.o: ../ProvaGrafica/viewcreator.cpp ../ProvaGrafica/viewcreat
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -1606,12 +1492,12 @@ release/viewcreator.o: ../ProvaGrafica/viewcreator.cpp ../ProvaGrafica/viewcreat
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QTextEdit \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtextedit.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\viewcreator.o ..\ProvaGrafica\viewcreator.cpp
 
 release/vista.o: ../ProvaGrafica/vista.cpp ../ProvaGrafica/vista.h \
+		../ProvaGrafica/dialog.h \
+		../ProvaGrafica/viewcreator.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1715,15 +1601,6 @@ release/vista.o: ../ProvaGrafica/vista.cpp ../ProvaGrafica/vista.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtouchdevice.h \
-		../ProvaGrafica/dialog.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qlayout.h \
@@ -1736,8 +1613,7 @@ release/vista.o: ../ProvaGrafica/vista.cpp ../ProvaGrafica/vista.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QProgressBar \
-		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qprogressbar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
@@ -1753,8 +1629,14 @@ release/vista.o: ../ProvaGrafica/vista.cpp ../ProvaGrafica/vista.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtGui/qtextdocument.h \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QInputDialog \
 		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qinputdialog.h \
-		../ProvaGrafica/viewcreator.h \
 		../ProvaGrafica/menus.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenuBar \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qmenu.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QMenu \
+		C:/Qt/5.15.1/mingw81_64/include/QtWidgets/QAction \
 		../ProvaGrafica/screen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\vista.o ..\ProvaGrafica\vista.cpp
 

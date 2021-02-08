@@ -2,28 +2,28 @@
 
 Dialog::Dialog() {}
 
-void Dialog::createShowCreateCardioDialog(QWidget * parent) {
+QWidget** Dialog::createShowCreateCardioDialog(QWidget * parent) {
     ViewCreator dialog;
     QDialog * d = dialog.createQDialog(parent, 400, 500, 400, 400);
 
     QVBoxLayout * screenLayout = new QVBoxLayout;
     d->setLayout(screenLayout);
 
-    QHBoxLayout * scritta = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * nome = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * MET = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * durata = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * velocita = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * descrizione = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * text = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * bottoni = dialog.createQVHLayout(screenLayout);
+    QHBoxLayout * scritta = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * nome = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * MET = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * durata = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * velocita = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * descrizione = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * text = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * bottoni = dialog.createQHLayout(screenLayout);
 
-    dialog.createQHLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
-    dialog.createQHLabel(nome, "Nome: ");
-    dialog.createQHLabel(MET, "MET: ");
-    dialog.createQHLabel(durata, "Durata: ");
-    dialog.createQHLabel(velocita, "Velocita': ");
-    dialog.createQHLabel(descrizione, "Descrizione");
+    dialog.createQLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
+    dialog.createQLabel(nome, "Nome: ");
+    dialog.createQLabel(MET, "MET: ");
+    dialog.createQLabel(durata, "Durata: ");
+    dialog.createQLabel(velocita, "Velocita': ");
+    dialog.createQLabel(descrizione, "Descrizione");
 
     QLineEdit * nomeLine = dialog.createQLineEdit(nome, "Nome");
     QLineEdit * METLine = dialog.createQLineEdit(MET, "MET", 2);
@@ -36,33 +36,37 @@ void Dialog::createShowCreateCardioDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
+    QWidget ** arr = new QWidget*[8]{nomeLine, METLine, durataLineOre, durataLineMinuti, durataLineSecondi, velocitaLine, textEdit, crea};
+
     d->show();
+
+    return arr;
 }
 
-void Dialog::createShowCreateSollevamentoPesiDialog(QWidget * parent) {
+QWidget** Dialog::createShowCreateSollevamentoPesiDialog(QWidget * parent) {
     ViewCreator dialog;
     QDialog * d = dialog.createQDialog(parent, 400, 500, 400, 400);
 
     QVBoxLayout * screenLayout = new QVBoxLayout;
     d->setLayout(screenLayout);
 
-    QHBoxLayout * scritta = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * nome = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * MET = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * peso = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * ripetizioni = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * serie = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * descrizione = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * text = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * bottoni = dialog.createQVHLayout(screenLayout);
+    QHBoxLayout * scritta = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * nome = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * MET = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * peso = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * ripetizioni = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * serie = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * descrizione = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * text = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * bottoni = dialog.createQHLayout(screenLayout);
 
-    dialog.createQHLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
-    dialog.createQHLabel(nome, "Nome: ");
-    dialog.createQHLabel(MET, "MET: ");
-    dialog.createQHLabel(peso, "Peso: ");
-    dialog.createQHLabel(ripetizioni, "Ripetizioni: ");
-    dialog.createQHLabel(serie, "Serie: ");
-    dialog.createQHLabel(descrizione, "Descrizione");
+    dialog.createQLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
+    dialog.createQLabel(nome, "Nome: ");
+    dialog.createQLabel(MET, "MET: ");
+    dialog.createQLabel(peso, "Peso: ");
+    dialog.createQLabel(ripetizioni, "Ripetizioni: ");
+    dialog.createQLabel(serie, "Serie: ");
+    dialog.createQLabel(descrizione, "Descrizione");
 
     QLineEdit * nomeLine = dialog.createQLineEdit(nome, "Nome");
     QLineEdit * METLine = dialog.createQLineEdit(MET, "MET", 2);
@@ -74,33 +78,37 @@ void Dialog::createShowCreateSollevamentoPesiDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
+    QWidget ** arr = new QWidget*[7]{nomeLine, METLine, PesoLine, RipetizioniLine, SerieLine, textEdit};
+
     d->show();
+
+    return arr;
 }
 
-void Dialog::createShowCreateCrossFitDialog(QWidget * parent) {
+QWidget** Dialog::createShowCreateCrossFitDialog(QWidget * parent) {
     ViewCreator dialog;
     QDialog * d = dialog.createQDialog(parent, 400, 500, 400, 400);
 
     QVBoxLayout * screenLayout = new QVBoxLayout;
     d->setLayout(screenLayout);
 
-    QHBoxLayout * scritta = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * nome = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * MET = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * durata = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * velocita = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * peso = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * descrizione = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * text = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * bottoni = dialog.createQVHLayout(screenLayout);
+    QHBoxLayout * scritta = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * nome = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * MET = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * durata = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * velocita = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * peso = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * descrizione = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * text = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * bottoni = dialog.createQHLayout(screenLayout);
 
-    dialog.createQHLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
-    dialog.createQHLabel(nome, "Nome: ");
-    dialog.createQHLabel(MET, "MET: ");
-    dialog.createQHLabel(durata, "Durata: ");
-    dialog.createQHLabel(velocita, "Velocita': ");
-    dialog.createQHLabel(peso, "Peso: ");
-    dialog.createQHLabel(descrizione, "Descrizione");
+    dialog.createQLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
+    dialog.createQLabel(nome, "Nome: ");
+    dialog.createQLabel(MET, "MET: ");
+    dialog.createQLabel(durata, "Durata: ");
+    dialog.createQLabel(velocita, "Velocita': ");
+    dialog.createQLabel(peso, "Peso: ");
+    dialog.createQLabel(descrizione, "Descrizione");
 
     QLineEdit * nomeLine = dialog.createQLineEdit(nome, "Nome");
     QLineEdit * METLine = dialog.createQLineEdit(MET, "MET", 2);
@@ -108,35 +116,39 @@ void Dialog::createShowCreateCrossFitDialog(QWidget * parent) {
     QLineEdit * durataLineMinuti = dialog.createQLineEdit(durata, "MM", 2);
     QLineEdit * durataLineSecondi = dialog.createQLineEdit(durata, "SS", 2);
     QLineEdit * velocitaLine = dialog.createQLineEdit(velocita, "Velocita'", 2);
-    QLineEdit * PesoLine = dialog.createQLineEdit(peso, "Peso");
+    QLineEdit * pesoLine = dialog.createQLineEdit(peso, "Peso");
 
     QTextEdit * textEdit = dialog.createQTextEdit(text, "Descrizione esercizio ... ");
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
+    QWidget ** arr = new QWidget*[9]{nomeLine, METLine, durataLineOre, durataLineMinuti, durataLineSecondi, velocitaLine, pesoLine, textEdit, crea};
+
     d->show();
+
+    return arr;
 }
 
-void Dialog::createShowCreateRiposoPassivoDialog(QWidget * parent) {
+QWidget** Dialog::createShowCreateRiposoPassivoDialog(QWidget * parent) {
     ViewCreator dialog;
     QDialog * d = dialog.createQDialog(parent, 400, 500, 400, 400);
 
     QVBoxLayout * screenLayout = new QVBoxLayout;
     d->setLayout(screenLayout);
 
-    QHBoxLayout * scritta = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * nome = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * istruzioniRiposo = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * durata = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * descrizione = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * text = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * bottoni = dialog.createQVHLayout(screenLayout);
+    QHBoxLayout * scritta = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * nome = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * istruzioniRiposo = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * durata = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * descrizione = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * text = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * bottoni = dialog.createQHLayout(screenLayout);
 
-    dialog.createQHLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
-    dialog.createQHLabel(nome, "Nome: ");
-    dialog.createQHLabel(istruzioniRiposo, "Istruzioni riposo: ");
-    dialog.createQHLabel(durata, "Durata: ");
-    dialog.createQHLabel(descrizione, "Descrizione");
+    dialog.createQLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
+    dialog.createQLabel(nome, "Nome: ");
+    dialog.createQLabel(istruzioniRiposo, "Istruzioni riposo: ");
+    dialog.createQLabel(durata, "Durata: ");
+    dialog.createQLabel(descrizione, "Descrizione");
 
     QLineEdit * nomeLine = dialog.createQLineEdit(nome, "Nome");
     QLineEdit * istruzioniRiposoLine = dialog.createQLineEdit(istruzioniRiposo, "Istruzioni riposo");
@@ -148,28 +160,36 @@ void Dialog::createShowCreateRiposoPassivoDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
+    QWidget ** arr = new QWidget*[7]{nomeLine, istruzioniRiposoLine, durataLineOre, durataLineMinuti, durataLineSecondi, textEdit, crea};
+
     d->show();
+
+    return arr;
 }
 
-void Dialog::createShowCreateRiposoAttivoDialog(QWidget * parent) {
+QWidget** Dialog::createShowCreateRiposoAttivoDialog(QWidget * parent) {
     ViewCreator dialog;
     QDialog * d = dialog.createQDialog(parent, 100, 500, 100, 400);
 
     QVBoxLayout * screenLayout = new QVBoxLayout;
     d->setLayout(screenLayout);
 
-    QHBoxLayout * scritta = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * istruzioniRiposo = dialog.createQVHLayout(screenLayout);
-    QHBoxLayout * bottoni = dialog.createQVHLayout(screenLayout);
+    QHBoxLayout * scritta = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * istruzioniRiposo = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * bottoni = dialog.createQHLayout(screenLayout);
 
-    dialog.createQHLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
-    dialog.createQHLabel(istruzioniRiposo, "Istruzioni riposo: ");
+    dialog.createQLabel(scritta, "Inserire i dati relativi all'esericizio SollevamentoPesi");
+    dialog.createQLabel(istruzioniRiposo, "Istruzioni riposo: ");
 
     QLineEdit * istruzioniRiposoLine = dialog.createQLineEdit(istruzioniRiposo, "Istruzioni riposo");
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
+    QWidget ** arr = new QWidget*[2]{istruzioniRiposoLine, crea};
+
     d->show();
+
+    return arr;
 }
 
 void Dialog::createShowMessageDialog(QWidget * parent, const string & message) {
