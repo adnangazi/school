@@ -7,15 +7,11 @@ void Menus::createMenus() {
 
     mainLayout->addWidget(menuBar);
 
-    QMenu * file = new QMenu("File", menuBar);
     QMenu * controllerAllenamento = new QMenu("Controller allenamento", menuBar);
     QMenu * aiuto = new QMenu("Aiuto", menuBar);
 
-    menuBar->addMenu(file);
     menuBar->addMenu(controllerAllenamento);
     menuBar->addMenu(aiuto);
-
-    file->addAction(new QAction("Chiudi", file));
 
     QMenu * aggiungiEsercizio = new QMenu("Aggiungi un esercizio", controllerAllenamento);
     QMenu * cambiaEsercizio = new QMenu("Cambia un esercizio", controllerAllenamento);

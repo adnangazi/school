@@ -36,7 +36,7 @@ QWidget** Dialog::createShowCreateCardioDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
-    QWidget ** arr = new QWidget*[8]{nomeLine, METLine, durataLineOre, durataLineMinuti, durataLineSecondi, velocitaLine, textEdit, crea};
+    QWidget ** arr = new QWidget*[7]{nomeLine, METLine, durataLineOre, durataLineMinuti, durataLineSecondi, velocitaLine, textEdit};
 
     d->show();
 
@@ -78,7 +78,7 @@ QWidget** Dialog::createShowCreateSollevamentoPesiDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
-    QWidget ** arr = new QWidget*[7]{nomeLine, METLine, PesoLine, RipetizioniLine, SerieLine, textEdit};
+    QWidget ** arr = new QWidget*[6]{nomeLine, METLine, PesoLine, RipetizioniLine, SerieLine, textEdit};
 
     d->show();
 
@@ -122,7 +122,7 @@ QWidget** Dialog::createShowCreateCrossFitDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
-    QWidget ** arr = new QWidget*[9]{nomeLine, METLine, durataLineOre, durataLineMinuti, durataLineSecondi, velocitaLine, pesoLine, textEdit, crea};
+    QWidget ** arr = new QWidget*[8]{nomeLine, METLine, durataLineOre, durataLineMinuti, durataLineSecondi, velocitaLine, pesoLine, textEdit};
 
     d->show();
 
@@ -160,7 +160,7 @@ QWidget** Dialog::createShowCreateRiposoPassivoDialog(QWidget * parent) {
 
     QPushButton * crea = dialog.createQPushButton(bottoni, "Crea");
 
-    QWidget ** arr = new QWidget*[7]{nomeLine, istruzioniRiposoLine, durataLineOre, durataLineMinuti, durataLineSecondi, textEdit, crea};
+    QWidget ** arr = new QWidget*[6]{nomeLine, istruzioniRiposoLine, durataLineOre, durataLineMinuti, durataLineSecondi, textEdit};
 
     d->show();
 

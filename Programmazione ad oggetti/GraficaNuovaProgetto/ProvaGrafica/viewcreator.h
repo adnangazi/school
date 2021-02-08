@@ -23,11 +23,12 @@ public:
     static QVBoxLayout * createQVLayout(QBoxLayout * parent);
     static QHBoxLayout * createQHLayout(QBoxLayout * parent);
     static QLineEdit * createQLineEdit(QBoxLayout * parent, const string & ph = "", const int ml = -1);
-    static QTextEdit * createQTextEdit(QBoxLayout * parent, const string & ph = "", const int minW = -1, const int minH = -1, const int maxW = -1, const int maxH = -1);
-    static void createQLabel(QBoxLayout * parent, const string & nome);
+    static QTextEdit * createQTextEdit(QBoxLayout * parent, const string & ph = "", const int minW = -1, const int minH = -1);
+    static QLabel * createQLabel(QBoxLayout * parent, const string & nome);
+    static void createQLabelOnQText(QTextEdit * parent, const string & nome);
     static QPushButton * createQPushButton(QBoxLayout * parent, const string & nome);
     static void createQLine(QBoxLayout * parent, const char tipo);
-    static QWidget * createQWidget(QBoxLayout *parent, const int minW, const int minH, const int maxW, const int maxH);
+    static QWidget * createQWidget(QBoxLayout *parent, const int minW, const int minH, const int maxH = -1);
     static QVBoxLayout * createQScrollArea(QWidget *parent);
 };
 

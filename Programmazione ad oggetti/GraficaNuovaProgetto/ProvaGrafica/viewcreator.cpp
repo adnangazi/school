@@ -39,21 +39,26 @@ QLineEdit * ViewCreator::createQLineEdit(QBoxLayout * parent, const string & ph,
     return line;
 }
 
-QTextEdit * ViewCreator::createQTextEdit(QBoxLayout * parent, const string & ph, const int minW, const int minH, const int maxW, const int maxH) {
+QTextEdit * ViewCreator::createQTextEdit(QBoxLayout * parent, const string & ph, const int minW, const int minH) {
     QTextEdit * text = new QTextEdit;
     text->setPlaceholderText(QString::fromStdString(ph));
     if (minW >= 0) {
         text->setMinimumSize(QSize(minW, minH));
-        text->setMaximumSize(QSize(maxW, maxH));
     }
     parent->addWidget(text);
     return text;
 }
 
-void ViewCreator::createQLabel(QBoxLayout * parent, const string & nome) {
+QLabel * ViewCreator::createQLabel(QBoxLayout * parent, const string & nome) {
     QLabel * label = new QLabel(tr(nome.c_str()));
     label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     parent->addWidget(label);
+
+    return label;
+}
+
+void ViewCreator::createQLabelOnQText(QTextEdit *parent, const string & nome) {
+    parent->setText(parent->toPlainText() + QString::fromStdString(nome) + "\n");
 }
 
 QPushButton * ViewCreator::createQPushButton(QBoxLayout * parent, const string & nome) {
@@ -70,10 +75,12 @@ void ViewCreator::createQLine(QBoxLayout * parent, const char tipo) {
     parent->addWidget(line);
 }
 
-QWidget *ViewCreator::createQWidget(QBoxLayout *parent, const int minW, const int minH, const int maxW, const int maxH) {
+QWidget *ViewCreator::createQWidget(QBoxLayout *parent, const int minW, const int minH, const int maxH) {
     QWidget * w = new QWidget;
     w->setMinimumSize(QSize(minW, minH));
-    w->setMaximumSize(QSize(maxW, maxH));
+    if (maxH >= 0) {
+        w->setMaximumHeight(maxH);
+    }
     w->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     parent->addWidget(w);
     return w;

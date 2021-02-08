@@ -3,8 +3,6 @@
 Vista::Vista(QWidget * parent) : QWidget(parent) {
     QVBoxLayout * mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
-    resize(QSize(750, 500));
-    setMaximumSize(QSize(1500, 1000));
 
     menus = new Menus(mainLayout);
     screen = new Screen(mainLayout);
@@ -12,12 +10,9 @@ Vista::Vista(QWidget * parent) : QWidget(parent) {
     menus->createMenus();
     screen->createScreen();
 
-    //showCreateDialog(1);
-
     /*for (int i = 1; i < 6; i++) {
         showCreateDialog(i);
     }
-
     showMessageDialog("prova prova showMessaggeDialog()");
     showGetNumberDialog("Rimozione");
     */
@@ -28,24 +23,20 @@ Vista::~Vista() {
     delete screen;
 }
 
-void Vista::showCreateDialog(const int i) {
+QWidget ** Vista::showCreateDialog(const int i) {
     switch (i) {
     case 1:
-        dialog->createShowCreateCardioDialog(this);
-        break;
+        return dialog->createShowCreateCardioDialog(this);
     case 2:
-        dialog->createShowCreateSollevamentoPesiDialog(this);
-        break;
+        return dialog->createShowCreateSollevamentoPesiDialog(this);
     case 3:
-        dialog->createShowCreateCrossFitDialog(this);
-        break;
+        return dialog->createShowCreateCrossFitDialog(this);
     case 4:
-        dialog->createShowCreateRiposoPassivoDialog(this);
-        break;
+        return dialog->createShowCreateRiposoPassivoDialog(this);
     case 5:
-        dialog->createShowCreateRiposoAttivoDialog(this);
-        break;
+        return dialog->createShowCreateRiposoAttivoDialog(this);
     }
+    return nullptr;
 }
 
 void Vista::showMessageDialog(const string & message) {

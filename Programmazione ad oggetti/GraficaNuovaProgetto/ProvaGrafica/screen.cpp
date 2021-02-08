@@ -13,18 +13,17 @@ void Screen::createScreen() {
     v.createQLine(sopra, 'V');
     QVBoxLayout * destra = v.createQVLayout(sopra);
 
-    QWidget * esercizioW = v.createQWidget(sinistra, 500, 50, 1000, 100);
-    QWidget * dettagliEsercizioW = v.createQWidget(sinistra, 500, 350, 1000, 700);
-    QWidget * controllerEserciziW = v.createQWidget(sinistra, 500, 50, 1000, 100);
-    QWidget * dettagliAllenamentoW = v.createQWidget(destra, 250, 150, 500, 300);
-    QWidget * listaEserciziW = v.createQWidget(destra, 250, 250, 500, 500);
+    QWidget * esercizioW = v.createQWidget(sinistra, 400, 100);
+    QWidget * dettagliEsercizioW = v.createQWidget(sinistra, 400, 350);
+    QWidget * controllerEserciziW = v.createQWidget(sinistra, 400, 50);
+    QWidget * dettagliAllenamentoW = v.createQWidget(destra, 300, 200);
+    QWidget * listaEserciziW = v.createQWidget(destra, 300, 300);
 
-    // i 3 successivi
-    QVBoxLayout * dettagliEsercizio = v.createQScrollArea(dettagliEsercizioW);
-    QVBoxLayout * dettagliAllenamento = v.createQScrollArea(dettagliAllenamentoW);
-    QVBoxLayout * listaEsercizi = v.createQScrollArea(listaEserciziW);
+    dettagliEsercizio = v.createQScrollArea(dettagliEsercizioW);
+    dettagliAllenamento = v.createQScrollArea(dettagliAllenamentoW);
+    listaEsercizi = v.createQScrollArea(listaEserciziW);
 
-    QHBoxLayout * esercizio = new QHBoxLayout; // *
+    esercizio = new QVBoxLayout;
     esercizioW->setLayout(esercizio);
     QHBoxLayout * controllerEsercizi = new QHBoxLayout;
     controllerEserciziW->setLayout(controllerEsercizi);
@@ -34,8 +33,22 @@ void Screen::createScreen() {
     QPushButton * previousButton = v.createQPushButton(controllerEsercizi, "Precedente");
     QPushButton * nextButton = v.createQPushButton(controllerEsercizi, "Successivo");
     QPushButton * endButton = v.createQPushButton(controllerEsercizi, "Fine");
-    QPushButton * autoPlayButton = v.createQPushButton(controllerEsercizi, "AutoPlay");
 
-    v.createQLabel(sotto, "Log delle operazioni effettuate");
-    QTextEdit * log = v.createQTextEdit(sotto, "Log delle operazioni effettuate ... ", 750, 100, 1500, 200); // *
+    QWidget * label = v.createQWidget(sotto, 700, 50, 50);
+    QVBoxLayout * labelSotto = new QVBoxLayout;
+    label->setLayout(labelSotto);
+
+    v.createQLabel(labelSotto, "Log delle operazioni effettuate");
+    log = v.createQTextEdit(sotto, "Log delle operazioni effettuate ... ", 700, 150);
+    log->setReadOnly(true);
+}
+
+QLabel * Screen::createQLabelOnQVLayout(QVBoxLayout * parent, const string & nome) {
+    ViewCreator v;
+    return v.createQLabel(parent, nome);
+}
+
+void Screen::createQLabelOnQtext(QTextEdit * parent, const string & nome) {
+    ViewCreator v;
+    v.createQLabelOnQText(parent, nome);
 }

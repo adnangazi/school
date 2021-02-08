@@ -16,7 +16,7 @@ public:
     explicit Vista(QWidget * parent = nullptr);
     ~Vista();
 
-    void showCreateDialog(const int i); // return DList<QWidget*>
+    QWidget ** showCreateDialog(const int i);
     void showMessageDialog(const string & message);
     int showGetNumberDialog(const string & tipoDialog);
 };
