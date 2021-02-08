@@ -1,0 +1,11 @@
+release/dialog.o
+release/main.o
+release/menus.o
+release/screen.o
+release/viewcreator.o
+release/vista.o
+release/moc_dialog.o
+release/moc_menus.o
+release/moc_screen.o
+release/moc_viewcreator.o
+release/moc_vista.o

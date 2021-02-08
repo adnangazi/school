@@ -17,12 +17,18 @@
 #include <QInputDialog>
 #include <iostream>
 #include <string>
-#include "dialogcreator.h"
+#include "viewcreator.h"
+#include "menus.h"
+#include "screen.h"
+#include "dialog.h"
+
 using std::string;
 
 class View : public QWidget {
     Q_OBJECT
 private:
+
+
     void addMenus(QVBoxLayout * const mainLayout);
     void addScreens(QVBoxLayout * const mainLayout);
 

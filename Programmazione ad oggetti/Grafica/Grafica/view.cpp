@@ -5,7 +5,6 @@ void View::addMenus(QVBoxLayout * const mainLayout) {
 
     QMenu * file = new QMenu("File", menuBar);
     QMenu * controllerAllenamento = new QMenu("Controller allenamento", menuBar);
-    QMenu * visualizza = new QMenu("Visualizza", menuBar);
     QMenu * aiuto = new QMenu("Aiuto", menuBar);
 
     file->addAction(new QAction("Chiudi", file));
@@ -43,141 +42,74 @@ void View::addMenus(QVBoxLayout * const mainLayout) {
     controllerAllenamento->addAction(new QAction("Modifica un esercizio", controllerAllenamento));
     controllerAllenamento->addAction(new QAction("Rimuovi un esercizio", controllerAllenamento));
 
-    visualizza->addAction(new QAction("Chiudi parte sinistra", visualizza));
-    visualizza->addAction(new QAction("Chiudi parte destra", visualizza));
-
     aiuto->addAction(new QAction("Cos'è MET?", aiuto));
     aiuto->addAction(new QAction("Cos'è un CrossFit?", aiuto));
     aiuto->addAction(new QAction("Cos'è un RiposoAttivo?", aiuto));
 
     menuBar->addMenu(file);
     menuBar->addMenu(controllerAllenamento);
-    menuBar->addMenu(visualizza);
     menuBar->addMenu(aiuto);
 
     mainLayout->addWidget(menuBar);
 }
 
 void View::addScreens(QVBoxLayout * const mainLayout) {
-    QHBoxLayout * screenLayout = new QHBoxLayout;
-
+    QVBoxLayout * screenLayout = new QVBoxLayout;
+    QHBoxLayout * sopra = new QHBoxLayout;
+    QVBoxLayout * sotto = new QVBoxLayout;
     QVBoxLayout * sinistra = new QVBoxLayout;
-    QVBoxLayout * centro = new QVBoxLayout;
     QVBoxLayout * destra = new QVBoxLayout;
-
+    QHBoxLayout * nomeEsercizio = new QHBoxLayout;
+    QVBoxLayout * dettagliEsercizio = new QVBoxLayout;
+    QHBoxLayout * controllerEsercizio = new QHBoxLayout;
     QVBoxLayout * dettagliAllenamento = new QVBoxLayout;
-    QVBoxLayout * log = new QVBoxLayout;
+    QVBoxLayout * listaAllenamento = new QVBoxLayout;
 
-    QHBoxLayout * esercizioAttuale = new QHBoxLayout;
-    QHBoxLayout * cronometro = new QHBoxLayout;
-    QVBoxLayout * dettagliEsercizioAttuale = new QVBoxLayout;
-    QHBoxLayout * controllerEsercizi = new QHBoxLayout;
+    QFrame * vline = new QFrame;
+    vline->setFrameShape(QFrame::VLine);
 
-    QVBoxLayout * listaEsercizi = new QVBoxLayout;
+    QFrame * hline = new QFrame;
+    hline->setFrameShape(QFrame::HLine);
 
-    //-----------//
+    sopra->addLayout(sinistra);
+    sopra->addWidget(vline);
+    sopra->addLayout(destra);
+    sinistra->addLayout(nomeEsercizio);
+    sinistra->addLayout(dettagliEsercizio);
+    sinistra->addLayout(controllerEsercizio);
+    destra->addLayout(dettagliAllenamento);
+    destra->addLayout(listaAllenamento);
 
+    screenLayout->addLayout(sopra);
+    screenLayout->addWidget(hline);
+    screenLayout->addLayout(sotto);
+
+    QTextEdit * log = new QTextEdit;
+    log->setMinimumSize(750, 200);
+
+    sotto->addWidget(new QLabel(tr("Log delle operazioni effettuate")));
+    sotto->addWidget(new QLabel(tr("Log delle operazioni effettuate")));
+    sotto->addWidget(new QLabel(tr("Log delle operazioni effettuate")));
+    sotto->addWidget(log);
+
+    QFrame * nomeEsercizioFrame = new QFrame;
+    QFrame * dettagliEsercizioFrame = new QFrame;
     QFrame * dettagliAllenamentoFrame = new QFrame;
+    QFrame * listaAllenamentoFrame = new QFrame;
 
-    QVBoxLayout * dettagliAllenamentoFrameLayout = new QVBoxLayout;
-    dettagliAllenamentoFrameLayout->addWidget(new QLabel(this));
+    nomeEsercizioFrame->setFrameShape(QFrame::Box);
+    nomeEsercizioFrame->setMinimumSize(500, 100);
+    dettagliEsercizioFrame->setFrameShape(QFrame::Box);
+    dettagliEsercizioFrame->setMinimumSize(500, 400);
+    dettagliAllenamentoFrame->setFrameShape(QFrame::Box);
+    dettagliAllenamentoFrame->setMinimumSize(250, 100);
+    listaAllenamentoFrame->setFrameShape(QFrame::Box);
+    listaAllenamentoFrame->setMinimumSize(250, 350);
 
-    dettagliAllenamentoFrame->setStyleSheet("background-color: rgb(0,50,50)");
-    dettagliAllenamentoFrame->setLayout(dettagliAllenamentoFrameLayout);
-    dettagliAllenamentoFrame->layout()->setMargin(0);
-    dettagliAllenamentoFrame->layout()->setSpacing(0);
-    dettagliAllenamentoFrame->layout()->setAlignment(Qt::AlignCenter);
-    dettagliAllenamentoFrame->setMinimumSize(100, 100);
-    dettagliAllenamentoFrame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
+    nomeEsercizio->addWidget(nomeEsercizioFrame);
+    dettagliEsercizio->addWidget(dettagliEsercizioFrame);
     dettagliAllenamento->addWidget(dettagliAllenamentoFrame);
-
-    //---//
-
-    QFrame * logFrame = new QFrame;
-
-    QVBoxLayout * logFrameLayout = new QVBoxLayout;
-    logFrameLayout->addWidget(new QLabel(this));
-
-    logFrame->setStyleSheet("background-color: rgb(50,0,50)");
-    logFrame->setLayout(logFrameLayout);
-    logFrame->layout()->setMargin(0);
-    logFrame->layout()->setSpacing(0);
-    logFrame->layout()->setAlignment(Qt::AlignCenter);
-    logFrame->setMinimumSize(100, 100);
-    logFrame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    log->addWidget(logFrame);
-
-    //---//
-
-    QFrame * esercizioAttualeFrame = new QFrame;
-
-    QVBoxLayout * esercizioAttualeFrameLayout = new QVBoxLayout;
-    esercizioAttualeFrameLayout->addWidget(new QLabel(this));
-
-    esercizioAttualeFrame->setStyleSheet("background-color: rgb(50,50,0)");
-    esercizioAttualeFrame->setLayout(esercizioAttualeFrameLayout);
-    esercizioAttualeFrame->layout()->setMargin(0);
-    esercizioAttualeFrame->layout()->setSpacing(0);
-    esercizioAttualeFrame->layout()->setAlignment(Qt::AlignCenter);
-    esercizioAttualeFrame->setMinimumSize(100, 100);
-    esercizioAttualeFrame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    esercizioAttuale->addWidget(esercizioAttualeFrame);
-
-    //---//
-
-    QFrame * cronometroFrame = new QFrame;
-
-    QVBoxLayout * cronometroFrameLayout = new QVBoxLayout;
-    cronometroFrameLayout->addWidget(new QLabel(this));
-
-    cronometroFrame->setStyleSheet("background-color: rgb(0,0,50)");
-    cronometroFrame->setLayout(cronometroFrameLayout);
-    cronometroFrame->layout()->setMargin(0);
-    cronometroFrame->layout()->setSpacing(0);
-    cronometroFrame->layout()->setAlignment(Qt::AlignCenter);
-    cronometroFrame->setMinimumSize(100, 100);
-    cronometroFrame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    cronometro->addWidget(cronometroFrame);
-
-    //---//
-
-    QFrame * dettagliEsercizioAttualeFrame = new QFrame;
-
-    QVBoxLayout * dettagliEsercizioAttualeFrameLayout = new QVBoxLayout;
-    dettagliEsercizioAttualeFrameLayout->addWidget(new QLabel(this));
-
-    dettagliEsercizioAttualeFrame->setStyleSheet("background-color: rgb(0,50,0)");
-    dettagliEsercizioAttualeFrame->setLayout(dettagliEsercizioAttualeFrameLayout);
-    dettagliEsercizioAttualeFrame->layout()->setMargin(0);
-    dettagliEsercizioAttualeFrame->layout()->setSpacing(0);
-    dettagliEsercizioAttualeFrame->layout()->setAlignment(Qt::AlignCenter);
-    dettagliEsercizioAttualeFrame->setMinimumSize(100, 100);
-    dettagliEsercizioAttualeFrame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    dettagliEsercizioAttuale->addWidget(dettagliEsercizioAttualeFrame);
-
-    //---//
-
-    QFrame * listaEserciziFrame = new QFrame;
-
-    QVBoxLayout * listaEserciziFrameLayout = new QVBoxLayout;
-    listaEserciziFrameLayout->addWidget(new QLabel(this));
-
-    listaEserciziFrame->setStyleSheet("background-color: rgb(50,0,0)");
-    listaEserciziFrame->setLayout(listaEserciziFrameLayout);
-    listaEserciziFrame->layout()->setMargin(0);
-    listaEserciziFrame->layout()->setSpacing(0);
-    listaEserciziFrame->layout()->setAlignment(Qt::AlignCenter);
-    listaEserciziFrame->setMinimumSize(100, 100);
-    listaEserciziFrame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    listaEsercizi->addWidget(listaEserciziFrame);
-
-    //------------------//
+    listaAllenamento->addWidget(listaAllenamentoFrame);
 
     QPushButton * startButton = new QPushButton("Inizio");
     QPushButton * previousButton = new QPushButton("Precedente");
@@ -185,41 +117,11 @@ void View::addScreens(QVBoxLayout * const mainLayout) {
     QPushButton * endButton = new QPushButton("Fine");
     QPushButton * autoPlayButton = new QPushButton("AutoPlay");
 
-    controllerEsercizi->addWidget(startButton);
-    controllerEsercizi->addWidget(previousButton);
-    controllerEsercizi->addWidget(nextButton);
-    controllerEsercizi->addWidget(endButton);
-    controllerEsercizi->addWidget(autoPlayButton);
-    controllerEsercizi->setSpacing(5);
-    controllerEsercizi->setContentsMargins(20, 0, 20, 0);
-
-    //----------------//
-
-    QProgressBar * progressBar = new QProgressBar;
-    progressBar->setRange(0, 0);
-    progressBar->setValue(0);
-    progressBar->setFormat("%v / %m");
-
-    //----------------//
-
-    sinistra->addLayout(dettagliAllenamento);
-    sinistra->addLayout(log);
-
-    centro->addLayout(esercizioAttuale);
-    centro->addLayout(cronometro);
-    centro->addLayout(dettagliEsercizioAttuale);
-    centro->addLayout(controllerEsercizi);
-
-    destra->addLayout(listaEsercizi);
-    destra->addWidget(progressBar);
-
-    screenLayout->addLayout(sinistra);
-    screenLayout->addLayout(centro);
-    screenLayout->addLayout(destra);
-
-    screenLayout->setSpacing(0);
-
-    //----------------//
+    controllerEsercizio->addWidget(startButton);
+    controllerEsercizio->addWidget(previousButton);
+    controllerEsercizio->addWidget(nextButton);
+    controllerEsercizio->addWidget(endButton);
+    controllerEsercizio->addWidget(autoPlayButton);
 
     mainLayout->addLayout(screenLayout);
 }
@@ -232,10 +134,10 @@ View::View(QWidget * parent) : QWidget(parent) {
     addScreens(mainLayout);
 
     setLayout(mainLayout);
-    resize(QSize(1024, 720));
+    //resize(QSize(1024, 720));
 
-    /*showCreateCardioDialog();
-    showCreateSollevamentoPesiDialog();
+    showCreateCardioDialog();
+    /*showCreateSollevamentoPesiDialog();
     showCreateCrossFitDialog();
     showCreateRiposoPassivoDialog();
     showCreateRiposoAttivoDialog();*/
@@ -252,7 +154,7 @@ void View::showCreateCardioDialog() {
     QHBoxLayout * scritta = dialog.createQHLayout(screenLayout);
     QHBoxLayout * nome = dialog.createQHLayout(screenLayout);
     QHBoxLayout * MET = dialog.createQHLayout(screenLayout);
-    QHBoxLayout * durata = dialog.createQHLayout(screenLayout);
+    QHBoxLayout * durata = dialog.createQHLayout(screenLayout);    
     QHBoxLayout * velocita = dialog.createQHLayout(screenLayout);
     QHBoxLayout * descrizione = dialog.createQHLayout(screenLayout);
     QHBoxLayout * text = dialog.createQHLayout(screenLayout);

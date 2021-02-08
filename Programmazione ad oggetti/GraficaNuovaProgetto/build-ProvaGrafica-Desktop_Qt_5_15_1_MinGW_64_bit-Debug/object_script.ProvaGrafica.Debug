@@ -1,0 +1,11 @@
+debug/dialog.o
+debug/main.o
+debug/menus.o
+debug/screen.o
+debug/viewcreator.o
+debug/vista.o
+debug/moc_dialog.o
+debug/moc_menus.o
+debug/moc_screen.o
+debug/moc_viewcreator.o
+debug/moc_vista.o
