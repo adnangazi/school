@@ -1,6 +1,7 @@
-#include "vista.h"
+#include "view.h"
+#include "controller.h"
 
-Vista::Vista(QWidget * parent) : QWidget(parent) {
+View::View(QWidget * parent) : QWidget(parent) {
     QVBoxLayout * mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
@@ -9,74 +10,104 @@ Vista::Vista(QWidget * parent) : QWidget(parent) {
 
     menus->createMenus();
     screen->createScreen();
-
-    /*for (int i = 1; i < 6; i++) {
-        showCreateDialog(i);
-    }
-    showMessageDialog("prova prova showMessaggeDialog()");
-    showGetNumberDialog("Rimozione");
-    */
 }
 
-Vista::~Vista() {
+View::~View() {
     delete menus;
     delete screen;
 }
 
-QWidget ** Vista::showCreateDialog(const int i) {
-    switch (i) {
-    case 1:
-        return dialog->createShowCreateCardioDialog(this);
-    case 2:
-        return dialog->createShowCreateSollevamentoPesiDialog(this);
-    case 3:
-        return dialog->createShowCreateCrossFitDialog(this);
-    case 4:
-        return dialog->createShowCreateRiposoPassivoDialog(this);
-    case 5:
-        return dialog->createShowCreateRiposoAttivoDialog(this);
-    }
-    return nullptr;
+QWidget ** View::showCreateCardioDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateCardioDialog(this);
+    connect(static_cast<QPushButton*>(temp[7]), SIGNAL(clicked()), c, SLOT(createCardio()));
+    return temp;
 }
 
-void Vista::showMessageDialog(const string & message) {
+QWidget ** View::showCreateSollevamentoPesiDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateSollevamentoPesiDialog(this);
+    connect(static_cast<QPushButton*>(temp[6]), SIGNAL(clicked()), c, SLOT(createSollevamentoPesi()));
+    return temp;
+}
+
+QWidget ** View::showCreateCrossFitDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateCrossFitDialog(this);
+    connect(static_cast<QPushButton*>(temp[8]), SIGNAL(clicked()), c, SLOT(createCrossFit()));
+    return temp;
+}
+
+QWidget ** View::showCreateRiposoPassivoDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateRiposoPassivoDialog(this);
+    connect(static_cast<QPushButton*>(temp[6]), SIGNAL(clicked()), c, SLOT(createRiposoPassivo()));
+    return temp;
+}
+
+QWidget ** View::showCreateRiposoAttivoCardioDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateRiposoAttivoCardioDialog(this);
+    connect(static_cast<QPushButton*>(temp[8]), SIGNAL(clicked()), c, SLOT(createRiposoAttivoCardio()));
+    return temp;
+}
+
+QWidget ** View::showCreateRiposoAttivoSollevamentoPesiDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateRiposoAttivoSollevamentoPesiDialog(this);
+    connect(static_cast<QPushButton*>(temp[7]), SIGNAL(clicked()), c, SLOT(createRiposoAttivoSollevamentoPesi()));
+    return temp;
+}
+
+QWidget ** View::showCreateRiposoAttivoCrossFitDialog(Controller * c) {
+    QWidget ** temp = dialog->createShowCreateRiposoAttivoCrossFitDialog(this);
+    connect(static_cast<QPushButton*>(temp[9]), SIGNAL(clicked()), c, SLOT(createRiposoAttivoCrossFit()));
+    return temp;
+}
+
+void View::showMessageDialog(const string & message) {
     dialog->createShowMessageDialog(this, message);
 }
 
-int Vista::showGetNumberDialog(const string & tipoDialog) {
+int View::showGetNumberDialog(const string & tipoDialog) {
     return dialog->createShowGetNumberDialog(this, tipoDialog);
 }
 
-void Vista::setController(Controller * c) {
+void View::setController(Controller * c) {
     controller = c;
 
-    connect(menus->getAggiungiEsercizio()->actions()[0], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getAggiungiEsercizio()->actions()[1], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getAggiungiEsercizio()->actions()[2], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getAggiungiEsercizio()->actions()[3], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
+    connect(menus->getAggiungiEsercizio()->actions()[0], SIGNAL(triggered()), controller, SLOT(addCardio()));
+    connect(menus->getAggiungiEsercizio()->actions()[1], SIGNAL(triggered()), controller, SLOT(addSollevamentoPesi()));
+    connect(menus->getAggiungiEsercizio()->actions()[2], SIGNAL(triggered()), controller, SLOT(addCrossFit()));
+    connect(menus->getAggiungiEsercizio()->actions()[3], SIGNAL(triggered()), controller, SLOT(addRiposoPassivo()));
 
-    connect(menus->getAggiungiRiposoAttivo()->actions()[0], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getAggiungiRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getAggiungiRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
+    connect(menus->getAggiungiRiposoAttivo()->actions()[0], SIGNAL(triggered()), controller, SLOT(addRiposoAttivoCardio()));
+    connect(menus->getAggiungiRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(addRiposoAttivoSollevamentoPesi()));
+    connect(menus->getAggiungiRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(addRiposoAttivoCrossFit()));
 
-    connect(menus->getCambiaEsercizio()->actions()[0], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getCambiaEsercizio()->actions()[1], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getCambiaEsercizio()->actions()[2], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getCambiaEsercizio()->actions()[3], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
+    connect(menus->getCambiaEsercizio()->actions()[0], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaEsercizio()->actions()[1], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaEsercizio()->actions()[2], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaEsercizio()->actions()[3], SIGNAL(triggered()), controller, SLOT(fun()));
 
-    connect(menus->getCambiaRiposoAttivo()->actions()[0], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getCambiaRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getCambiaRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
+    connect(menus->getCambiaRiposoAttivo()->actions()[0], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(fun()));
 
-    connect(menus->getControllerAllenamento()->actions()[0], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
-    connect(menus->getControllerAllenamento()->actions()[1], SIGNAL(triggered()), controller, SLOT(controllerAllenamento(0)));
+    connect(menus->getControllerAllenamento()->actions()[2], SIGNAL(triggered()), controller, SLOT(remove()));
 
-    connect(menus->getAiuto()->actions()[0], SIGNAL(triggered()), controller, SLOT(aiuto(0)));
-    connect(menus->getAiuto()->actions()[1], SIGNAL(triggered()), controller, SLOT(aiuto(1)));
-    connect(menus->getAiuto()->actions()[2], SIGNAL(triggered()), controller, SLOT(aiuto(2)));
+    connect(menus->getAiuto()->actions()[0], SIGNAL(triggered()), controller, SLOT(whatIsMET()));
+    connect(menus->getAiuto()->actions()[1], SIGNAL(triggered()), controller, SLOT(whatIsCrossFit()));
+    connect(menus->getAiuto()->actions()[2], SIGNAL(triggered()), controller, SLOT(whatIsRiposoAttivo()));
 
-    connect(screen->getStart(), SIGNAL(clicked()), controller, SLOT(begin()));
+    connect(screen->getStart(), SIGNAL(clicked()), controller, SLOT(goToStart()));
     connect(screen->getPrevious(), SIGNAL(clicked()), controller, SLOT(previous()));
     connect(screen->getNext(), SIGNAL(clicked()), controller, SLOT(next()));
-    connect(screen->getEnd(), SIGNAL(clicked()), controller, SLOT(end()));
+    connect(screen->getEnd(), SIGNAL(clicked()), controller, SLOT(goToEnd()));
+}
+
+Dialog * View::getDialog() {
+    return dialog;
+}
+
+Menus * View::getMenus() {
+    return menus;
+}
+
+Screen * View::getScreen() {
+    return screen;
 }

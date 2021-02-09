@@ -18,3 +18,8 @@ debug/sollevamentopesi.o
 debug/view.o
 debug/widgetcreator.o
 debug/moc_controller.o
+debug/moc_dialog.o
+debug/moc_menus.o
+debug/moc_screen.o
+debug/moc_view.o
+debug/moc_widgetcreator.o

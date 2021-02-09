@@ -1,8 +1,6 @@
-#include "viewcreator.h"
+#include "widgetcreator.h"
 
-ViewCreator::ViewCreator() {}
-
-QDialog * ViewCreator::createQDialog(QWidget * parent, const int MH, const int MW, const int RH, const int RW) {
+QDialog * WidgetCreator::createQDialog(QWidget * parent, const int MH, const int MW, const int RH, const int RW) {
     QDialog * dialog = new QDialog(parent);
     dialog->setMaximumHeight(MH);
     dialog->setMaximumWidth(MW);
@@ -13,19 +11,19 @@ QDialog * ViewCreator::createQDialog(QWidget * parent, const int MH, const int M
     return dialog;
 }
 
-QVBoxLayout * ViewCreator::createQVLayout(QBoxLayout * parent) {
+QVBoxLayout * WidgetCreator::createQVLayout(QBoxLayout * parent) {
     QVBoxLayout * layout = new QVBoxLayout;
     parent->addLayout(layout);
     return layout;
 }
 
-QHBoxLayout * ViewCreator::createQHLayout(QBoxLayout * parent) {
+QHBoxLayout * WidgetCreator::createQHLayout(QBoxLayout * parent) {
     QHBoxLayout * layout = new QHBoxLayout;
     parent->addLayout(layout);
     return layout;
 }
 
-QLineEdit * ViewCreator::createQLineEdit(QBoxLayout * parent, const string & ph, const int ml) {
+QLineEdit * WidgetCreator::createQLineEdit(QBoxLayout * parent, const string & ph, const int ml) {
     QLineEdit * line = new QLineEdit;
     line->setAlignment(Qt::AlignCenter);
     line->setPlaceholderText(QString::fromStdString(ph));
@@ -39,7 +37,7 @@ QLineEdit * ViewCreator::createQLineEdit(QBoxLayout * parent, const string & ph,
     return line;
 }
 
-QTextEdit * ViewCreator::createQTextEdit(QBoxLayout * parent, const string & ph, const int minW, const int minH) {
+QTextEdit * WidgetCreator::createQTextEdit(QBoxLayout * parent, const string & ph, const int minW, const int minH) {
     QTextEdit * text = new QTextEdit;
     text->setPlaceholderText(QString::fromStdString(ph));
     if (minW >= 0) {
@@ -49,7 +47,7 @@ QTextEdit * ViewCreator::createQTextEdit(QBoxLayout * parent, const string & ph,
     return text;
 }
 
-QLabel * ViewCreator::createQLabel(QBoxLayout * parent, const string & nome) {
+QLabel * WidgetCreator::createQLabel(QBoxLayout * parent, const string & nome) {
     QLabel * label = new QLabel(tr(nome.c_str()));
     label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     parent->addWidget(label);
@@ -57,25 +55,25 @@ QLabel * ViewCreator::createQLabel(QBoxLayout * parent, const string & nome) {
     return label;
 }
 
-void ViewCreator::createQLabelOnQText(QTextEdit *parent, const string & nome) {
+void WidgetCreator::createQLabelOnQText(QTextEdit *parent, const string & nome) {
     parent->setText(parent->toPlainText() + QString::fromStdString(nome) + "\n");
 }
 
-QPushButton * ViewCreator::createQPushButton(QBoxLayout * parent, const string & nome) {
+QPushButton * WidgetCreator::createQPushButton(QBoxLayout * parent, const string & nome) {
     QPushButton * button = new QPushButton(QString::fromStdString(nome));
     parent->addWidget(button);
     parent->setAlignment(nome == "Crea" ? Qt::AlignRight : Qt::AlignCenter);
     return button;
 }
 
-void ViewCreator::createQLine(QBoxLayout * parent, const char tipo) {
+void WidgetCreator::createQLine(QBoxLayout * parent, const char tipo) {
     QFrame * line = new QFrame;
     line->setFrameShape(tipo == 'H' ? QFrame::HLine : QFrame::VLine);
     line->setFrameShadow(QFrame::Sunken);
     parent->addWidget(line);
 }
 
-QWidget *ViewCreator::createQWidget(QBoxLayout *parent, const int minW, const int minH, const int maxH) {
+QWidget * WidgetCreator::createQWidget(QBoxLayout * parent, const int minW, const int minH, const int maxH) {
     QWidget * w = new QWidget;
     w->setMinimumSize(QSize(minW, minH));
     if (maxH >= 0) {
@@ -86,7 +84,7 @@ QWidget *ViewCreator::createQWidget(QBoxLayout *parent, const int minW, const in
     return w;
 }
 
-QVBoxLayout * ViewCreator::createQScrollArea(QWidget * parent) {
+QVBoxLayout * WidgetCreator::createQScrollArea(QWidget * parent) {
     QVBoxLayout * layout = new QVBoxLayout;
     parent->setLayout(layout);
     QScrollArea * scrollArea = new QScrollArea;

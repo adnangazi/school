@@ -2,7 +2,7 @@
 
 Screen::Screen(QVBoxLayout * const ml) : mainLayout(ml) {}
 
-QVBoxLayout * Screen::createMainWindow(ViewCreator & v, QVBoxLayout * screenLayout) {
+QVBoxLayout * Screen::createMainWindow(WidgetCreator & v, QVBoxLayout * screenLayout) {
     QHBoxLayout * sopra = v.createQHLayout(screenLayout);
     v.createQLine(screenLayout, 'H');
     QVBoxLayout * sinistra = v.createQVLayout(sopra);
@@ -24,7 +24,7 @@ QVBoxLayout * Screen::createMainWindow(ViewCreator & v, QVBoxLayout * screenLayo
     return sinistra;
 }
 
-void Screen::createControllerEsercizi(ViewCreator & v, QVBoxLayout * sinistra) {
+void Screen::createControllerEsercizi(WidgetCreator & v, QVBoxLayout * sinistra) {
     QWidget * controllerEserciziW = v.createQWidget(sinistra, 400, 50);
     QHBoxLayout * controllerEsercizi = new QHBoxLayout;
     controllerEserciziW->setLayout(controllerEsercizi);
@@ -35,7 +35,7 @@ void Screen::createControllerEsercizi(ViewCreator & v, QVBoxLayout * sinistra) {
     endButton = v.createQPushButton(controllerEsercizi, "Fine");
 }
 
-void Screen::createLog(ViewCreator & v, QVBoxLayout * screenLayout) {
+void Screen::createLog(WidgetCreator & v, QVBoxLayout * screenLayout) {
     QVBoxLayout * sotto = v.createQVLayout(screenLayout);
     QWidget * label = v.createQWidget(sotto, 700, 50, 50);
     QVBoxLayout * labelSotto = new QVBoxLayout;
@@ -47,7 +47,7 @@ void Screen::createLog(ViewCreator & v, QVBoxLayout * screenLayout) {
 }
 
 void Screen::createScreen() {
-    ViewCreator v;
+    WidgetCreator v;
 
     QVBoxLayout * screenLayout = v.createQVLayout(mainLayout);
 
@@ -56,12 +56,12 @@ void Screen::createScreen() {
 }
 
 QLabel * Screen::createQLabelOnQVLayout(QVBoxLayout * parent, const string & nome) {
-    ViewCreator v;
+    WidgetCreator v;
     return v.createQLabel(parent, nome);
 }
 
 void Screen::createQLabelOnQtext(QTextEdit * parent, const string & nome) {
-    ViewCreator v;
+    WidgetCreator v;
     v.createQLabelOnQText(parent, nome);
 }
 

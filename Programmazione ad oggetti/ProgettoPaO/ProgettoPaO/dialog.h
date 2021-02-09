@@ -7,13 +7,13 @@
 class Dialog : public QWidget {
     Q_OBJECT
 public:
-    Dialog();
-
-    static QWidget** createShowCreateCardioDialog(QWidget * parent);
-    static QWidget** createShowCreateSollevamentoPesiDialog(QWidget * parent);
-    static QWidget** createShowCreateCrossFitDialog(QWidget * parent);
-    static QWidget** createShowCreateRiposoPassivoDialog(QWidget * parent);
-    static QWidget** createShowCreateRiposoAttivoDialog(QWidget * parent);
+    static QWidget ** createShowCreateCardioDialog(QWidget * parent);
+    static QWidget ** createShowCreateSollevamentoPesiDialog(QWidget * parent);
+    static QWidget ** createShowCreateCrossFitDialog(QWidget * parent);
+    static QWidget ** createShowCreateRiposoPassivoDialog(QWidget * parent);
+    static QWidget ** createShowCreateRiposoAttivoCardioDialog(QWidget * parent);
+    static QWidget ** createShowCreateRiposoAttivoSollevamentoPesiDialog(QWidget * parent);
+    static QWidget ** createShowCreateRiposoAttivoCrossFitDialog(QWidget * parent);
 
     static void createShowMessageDialog(QWidget * parent, const string & message);
     static int createShowGetNumberDialog(QWidget * parent, const string & tipoDialog);

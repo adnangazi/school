@@ -1,13 +1,16 @@
+#include "view.h"
+#include "controller.h"
 #include "model.h"
-#include <iostream>
-using namespace std;
+#include <QApplication>
 
 int main(int argc, char * argv[]) {
-    cout << argc << " " << *argv << endl;
-    cout << "Inizio programma" << endl;
-
-    Model model;
-    model.addCardio("Cardio", "Descrizione cardio", 3, Orario(1, 1, 1), 5);
-
-    cout << "Fine programma" << endl;
+    QApplication a(argc, argv);
+    View w;
+    Controller c;
+    Model m;
+    c.setModel(&m);
+    c.setView(&w);
+    w.setController(&c);
+    w.show();
+    return a.exec();
 }

@@ -1,5 +1,5 @@
-#ifndef VIEWCREATOR_H
-#define VIEWCREATOR_H
+#ifndef WIDGETCREATOR_H
+#define WIDGETCREATOR_H
 
 #include <QWidget>
 #include <QVBoxLayout>
@@ -11,14 +11,13 @@
 #include <QScrollArea>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QFont>
 #include <string>
 using std::string;
 
-class ViewCreator : public QWidget {
+class WidgetCreator : public QWidget {
     Q_OBJECT
 public:
-    ViewCreator();
-
     static QDialog * createQDialog(QWidget * parent, const int MH, const int MW, const int RH, const int RW);
     static QVBoxLayout * createQVLayout(QBoxLayout * parent);
     static QHBoxLayout * createQHLayout(QBoxLayout * parent);
@@ -32,4 +31,4 @@ public:
     static QVBoxLayout * createQScrollArea(QWidget *parent);
 };
 
-#endif // VIEWCREATOR_H
+#endif // WIDGETCREATOR_H

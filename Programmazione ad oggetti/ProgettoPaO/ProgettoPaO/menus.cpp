@@ -18,7 +18,6 @@ void Menus::createMenus() {
 
     controllerAllenamento->addMenu(aggiungiEsercizio);
     controllerAllenamento->addMenu(cambiaEsercizio);
-    controllerAllenamento->addAction(new QAction("Modifica un esercizio", controllerAllenamento));
     controllerAllenamento->addAction(new QAction("Rimuovi un esercizio", controllerAllenamento));
 
     aggiungiEsercizio->addAction(new QAction("Aggiungi un Cardio", aggiungiEsercizio));

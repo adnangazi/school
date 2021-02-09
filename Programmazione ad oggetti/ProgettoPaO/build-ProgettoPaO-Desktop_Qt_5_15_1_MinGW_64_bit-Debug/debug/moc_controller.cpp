@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Controller_t {
-    QByteArrayData data[1];
-    char stringdata0[11];
+    QByteArrayData data[24];
+    char stringdata0[390];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,10 +32,43 @@ struct qt_meta_stringdata_Controller_t {
     )
 static const qt_meta_stringdata_Controller_t qt_meta_stringdata_Controller = {
     {
-QT_MOC_LITERAL(0, 0, 10) // "Controller"
+QT_MOC_LITERAL(0, 0, 10), // "Controller"
+QT_MOC_LITERAL(1, 11, 9), // "addCardio"
+QT_MOC_LITERAL(2, 21, 0), // ""
+QT_MOC_LITERAL(3, 22, 12), // "createCardio"
+QT_MOC_LITERAL(4, 35, 19), // "addSollevamentoPesi"
+QT_MOC_LITERAL(5, 55, 22), // "createSollevamentoPesi"
+QT_MOC_LITERAL(6, 78, 11), // "addCrossFit"
+QT_MOC_LITERAL(7, 90, 14), // "createCrossFit"
+QT_MOC_LITERAL(8, 105, 16), // "addRiposoPassivo"
+QT_MOC_LITERAL(9, 122, 19), // "createRiposoPassivo"
+QT_MOC_LITERAL(10, 142, 21), // "addRiposoAttivoCardio"
+QT_MOC_LITERAL(11, 164, 24), // "createRiposoAttivoCardio"
+QT_MOC_LITERAL(12, 189, 31), // "addRiposoAttivoSollevamentoPesi"
+QT_MOC_LITERAL(13, 221, 34), // "createRiposoAttivoSollevament..."
+QT_MOC_LITERAL(14, 256, 23), // "addRiposoAttivoCrossFit"
+QT_MOC_LITERAL(15, 280, 26), // "createRiposoAttivoCrossFit"
+QT_MOC_LITERAL(16, 307, 6), // "remove"
+QT_MOC_LITERAL(17, 314, 9), // "whatIsMET"
+QT_MOC_LITERAL(18, 324, 14), // "whatIsCrossFit"
+QT_MOC_LITERAL(19, 339, 18), // "whatIsRiposoAttivo"
+QT_MOC_LITERAL(20, 358, 4), // "next"
+QT_MOC_LITERAL(21, 363, 8), // "previous"
+QT_MOC_LITERAL(22, 372, 9), // "goToStart"
+QT_MOC_LITERAL(23, 382, 7) // "goToEnd"
 
     },
-    "Controller"
+    "Controller\0addCardio\0\0createCardio\0"
+    "addSollevamentoPesi\0createSollevamentoPesi\0"
+    "addCrossFit\0createCrossFit\0addRiposoPassivo\0"
+    "createRiposoPassivo\0addRiposoAttivoCardio\0"
+    "createRiposoAttivoCardio\0"
+    "addRiposoAttivoSollevamentoPesi\0"
+    "createRiposoAttivoSollevamentoPesi\0"
+    "addRiposoAttivoCrossFit\0"
+    "createRiposoAttivoCrossFit\0remove\0"
+    "whatIsMET\0whatIsCrossFit\0whatIsRiposoAttivo\0"
+    "next\0previous\0goToStart\0goToEnd"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,21 +78,95 @@ static const uint qt_meta_data_Controller[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: name, argc, parameters, tag, flags
+       1,    0,  124,    2, 0x0a /* Public */,
+       3,    0,  125,    2, 0x0a /* Public */,
+       4,    0,  126,    2, 0x0a /* Public */,
+       5,    0,  127,    2, 0x0a /* Public */,
+       6,    0,  128,    2, 0x0a /* Public */,
+       7,    0,  129,    2, 0x0a /* Public */,
+       8,    0,  130,    2, 0x0a /* Public */,
+       9,    0,  131,    2, 0x0a /* Public */,
+      10,    0,  132,    2, 0x0a /* Public */,
+      11,    0,  133,    2, 0x0a /* Public */,
+      12,    0,  134,    2, 0x0a /* Public */,
+      13,    0,  135,    2, 0x0a /* Public */,
+      14,    0,  136,    2, 0x0a /* Public */,
+      15,    0,  137,    2, 0x0a /* Public */,
+      16,    0,  138,    2, 0x0a /* Public */,
+      17,    0,  139,    2, 0x0a /* Public */,
+      18,    0,  140,    2, 0x0a /* Public */,
+      19,    0,  141,    2, 0x0a /* Public */,
+      20,    0,  142,    2, 0x0a /* Public */,
+      21,    0,  143,    2, 0x0a /* Public */,
+      22,    0,  144,    2, 0x0a /* Public */,
+      23,    0,  145,    2, 0x0a /* Public */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+
        0        // eod
 };
 
 void Controller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<Controller *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->addCardio(); break;
+        case 1: _t->createCardio(); break;
+        case 2: _t->addSollevamentoPesi(); break;
+        case 3: _t->createSollevamentoPesi(); break;
+        case 4: _t->addCrossFit(); break;
+        case 5: _t->createCrossFit(); break;
+        case 6: _t->addRiposoPassivo(); break;
+        case 7: _t->createRiposoPassivo(); break;
+        case 8: _t->addRiposoAttivoCardio(); break;
+        case 9: _t->createRiposoAttivoCardio(); break;
+        case 10: _t->addRiposoAttivoSollevamentoPesi(); break;
+        case 11: _t->createRiposoAttivoSollevamentoPesi(); break;
+        case 12: _t->addRiposoAttivoCrossFit(); break;
+        case 13: _t->createRiposoAttivoCrossFit(); break;
+        case 14: _t->remove(); break;
+        case 15: _t->whatIsMET(); break;
+        case 16: _t->whatIsCrossFit(); break;
+        case 17: _t->whatIsRiposoAttivo(); break;
+        case 18: _t->next(); break;
+        case 19: _t->previous(); break;
+        case 20: _t->goToStart(); break;
+        case 21: _t->goToEnd(); break;
+        default: ;
+        }
+    }
     Q_UNUSED(_a);
 }
 
@@ -89,6 +196,17 @@ void *Controller::qt_metacast(const char *_clname)
 int Controller::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 22)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 22;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 22)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 22;
+    }
     return _id;
 }
 QT_WARNING_POP

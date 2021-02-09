@@ -1,7 +1,7 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#include "viewcreator.h"
+#include "widgetcreator.h"
 
 class Screen : public QWidget {
     Q_OBJECT
@@ -19,9 +19,9 @@ private:
 
 public:
     Screen(QVBoxLayout * const ml);
-    QVBoxLayout * createMainWindow(ViewCreator & v, QVBoxLayout * screenLayout);
-    void createControllerEsercizi(ViewCreator & v, QVBoxLayout * sinistra);
-    void createLog(ViewCreator & v, QVBoxLayout * screenLayout);
+    QVBoxLayout * createMainWindow(WidgetCreator & v, QVBoxLayout * screenLayout);
+    void createControllerEsercizi(WidgetCreator & v, QVBoxLayout * sinistra);
+    void createLog(WidgetCreator & v, QVBoxLayout * screenLayout);
     void createScreen();
     QLabel * createQLabelOnQVLayout(QVBoxLayout * parent, const string & nome);
     void createQLabelOnQtext(QTextEdit * parent, const string & nome);

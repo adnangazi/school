@@ -18,3 +18,8 @@ release/sollevamentopesi.o
 release/view.o
 release/widgetcreator.o
 release/moc_controller.o
+release/moc_dialog.o
+release/moc_menus.o
+release/moc_screen.o
+release/moc_view.o
+release/moc_widgetcreator.o
