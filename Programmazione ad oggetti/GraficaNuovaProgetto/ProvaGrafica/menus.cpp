@@ -1,20 +1,20 @@
 #include "menus.h"
 
-Menus::Menus(QVBoxLayout * const ml) : mainLayout(ml) {}
+Menus::Menus(QVBoxLayout * ml) : mainLayout(ml) {}
 
 void Menus::createMenus() {
     QMenuBar * menuBar = new QMenuBar;
 
     mainLayout->addWidget(menuBar);
 
-    QMenu * controllerAllenamento = new QMenu("Controller allenamento", menuBar);
-    QMenu * aiuto = new QMenu("Aiuto", menuBar);
+    controllerAllenamento = new QMenu("Controller allenamento", menuBar);
+    aiuto = new QMenu("Aiuto", menuBar);
 
     menuBar->addMenu(controllerAllenamento);
     menuBar->addMenu(aiuto);
 
-    QMenu * aggiungiEsercizio = new QMenu("Aggiungi un esercizio", controllerAllenamento);
-    QMenu * cambiaEsercizio = new QMenu("Cambia un esercizio", controllerAllenamento);
+    aggiungiEsercizio = new QMenu("Aggiungi un esercizio", controllerAllenamento);
+    cambiaEsercizio = new QMenu("Cambia un esercizio", controllerAllenamento);
 
     controllerAllenamento->addMenu(aggiungiEsercizio);
     controllerAllenamento->addMenu(cambiaEsercizio);
@@ -26,7 +26,7 @@ void Menus::createMenus() {
     aggiungiEsercizio->addAction(new QAction("Aggiungi un CrossFit", aggiungiEsercizio));
     aggiungiEsercizio->addAction(new QAction("Aggiungi un RiposoPassivo", aggiungiEsercizio));
 
-    QMenu * aggiungiRiposoAttivo = new QMenu("Aggiungi un RiposoAttivo", aggiungiEsercizio);
+    aggiungiRiposoAttivo = new QMenu("Aggiungi un RiposoAttivo", aggiungiEsercizio);
 
     aggiungiEsercizio->addMenu(aggiungiRiposoAttivo);
 
@@ -39,7 +39,7 @@ void Menus::createMenus() {
     cambiaEsercizio->addAction(new QAction("Cambia con un CrossFit", cambiaEsercizio));
     cambiaEsercizio->addAction(new QAction("Cambia con un RiposoPassivo", cambiaEsercizio));
 
-    QMenu * cambiaRiposoAttivo = new QMenu("Cambia un RiposoAttivo", aggiungiEsercizio);
+    cambiaRiposoAttivo = new QMenu("Cambia un RiposoAttivo", aggiungiEsercizio);
 
     cambiaEsercizio->addMenu(cambiaRiposoAttivo);
 
@@ -50,4 +50,28 @@ void Menus::createMenus() {
     aiuto->addAction(new QAction("Cos'è MET?", aiuto));
     aiuto->addAction(new QAction("Cos'è un CrossFit?", aiuto));
     aiuto->addAction(new QAction("Cos'è un RiposoAttivo?", aiuto));
+}
+
+QMenu * Menus::getControllerAllenamento() {
+    return controllerAllenamento;
+}
+
+QMenu * Menus::getAiuto() {
+    return aiuto;
+}
+
+QMenu * Menus::getAggiungiEsercizio() {
+    return aggiungiEsercizio;
+}
+
+QMenu * Menus::getCambiaEsercizio() {
+    return cambiaEsercizio;
+}
+
+QMenu * Menus::getAggiungiRiposoAttivo() {
+    return aggiungiRiposoAttivo;
+}
+
+QMenu * Menus::getCambiaRiposoAttivo() {
+    return cambiaRiposoAttivo;
 }

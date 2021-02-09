@@ -10,36 +10,46 @@ CONFIG += c++11
 
 SOURCES += \
     cardio.cpp \
+    controller.cpp \
     creaesercizio.cpp \
     crossfit.cpp \
+    dialog.cpp \
     eseguiesercizi.cpp \
     esercizio.cpp \
     main.cpp \
-    mainwindow.cpp \
+    menus.cpp \
     model.cpp \
     monoesercizio.cpp \
     orario.cpp \
     riposo.cpp \
     riposoattivo.cpp \
     riposopassivo.cpp \
-    sollevamentopesi.cpp
+    screen.cpp \
+    sollevamentopesi.cpp \
+    view.cpp \
+    widgetcreator.cpp
 
 HEADERS += \
     cardio.h \
+    controller.h \
     creaesercizio.h \
     crossfit.h \
     deepptr.h \
+    dialog.h \
     dlist.h \
     eseguiesercizi.h \
     esercizio.h \
-    mainwindow.h \
+    menus.h \
     model.h \
     monoesercizio.h \
     orario.h \
     riposo.h \
     riposoattivo.h \
     riposopassivo.h \
-    sollevamentopesi.h
+    screen.h \
+    sollevamentopesi.h \
+    view.h \
+    widgetcreator.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

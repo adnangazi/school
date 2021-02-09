@@ -19,6 +19,9 @@ public:
     QWidget ** showCreateDialog(const int i);
     void showMessageDialog(const string & message);
     int showGetNumberDialog(const string & tipoDialog);
+
+public slots:
+    void setController(Controller * c);
 };
 
 #endif // VISTA_H
