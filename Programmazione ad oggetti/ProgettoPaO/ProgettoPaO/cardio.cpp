@@ -1,6 +1,6 @@
 #include "cardio.h"
 
-Cardio::Cardio(const string & n, const string & d, const uint m, const Orario & o, const uint v) : MonoEsercizio(n, d, m), durata(o), velocita(v) {}
+Cardio::Cardio(const string & n, const string & d, const uint m, const Orario & o, const uint v) : MonoEsercizio(n, d, m), durata(o), velocita(v <= 10 ? v : 10) {}
 
 Cardio::Cardio(const Cardio & e) : MonoEsercizio(e), durata(e.durata), velocita(e.velocita) {}
 
@@ -13,8 +13,14 @@ void Cardio::setVelocita(const uint v) {
         velocita = v;
     } else {
         velocita = 10;
-        throw std::out_of_range("Impossibile impostare la velocità a tale valore (troppo elevato). Velocità impostata al valore massimo 10!");
     }
+}
+
+Cardio & Cardio::operator=(const Cardio & e) {
+    MonoEsercizio::operator=(e);
+    durata = e.durata;
+    velocita = e.velocita;
+    return * this;
 }
 
 string Cardio::getDescrizione() const {
@@ -30,22 +36,18 @@ void Cardio::setDurata(const Orario & o) {
 }
 
 uint Cardio::stimaCalorieBruciate() const {
-    return (velocita * (durata.getOre() * 3600 + durata.getMinuti() * 60 + durata.getSecondi()) * getMET()) / 80;
+    return (velocita * (durata.getOre() * 3600 + durata.getMinuti() * 60 + durata.getSecondi()) * getMET()) / fattoreCalorico;
 }
 
 void Cardio::incrementaIntensita() {
     if (velocita < 10) {
         velocita++;
-    } else {
-        throw std::out_of_range("Impossibile incrementare ulteriormente la velocità!");
     }
 }
 
 void Cardio::decrementaIntesita() {
     if (velocita > 0) {
         velocita--;
-    } else {
-        throw std::out_of_range("Impossibile decrementare ulteriormente la velocità!");
     }
 }
 
@@ -53,16 +55,9 @@ Cardio * Cardio::clone() const {
     return new Cardio(*this);
 }
 
-Cardio & Cardio::operator=(const Cardio & e) {
-    MonoEsercizio::operator=(e);
-    durata = e.durata;
-    velocita = e.velocita;
-    return *this;
-}
-
 bool Cardio::operator==(const Esercizio & e) const {
-    const Cardio temp = dynamic_cast<const Cardio&>(e); //dynamic_cast per via della base virtuale
-    return MonoEsercizio::operator== (e) && durata == temp.durata && velocita == temp.velocita;
+    const Cardio * const temp = dynamic_cast<const Cardio*>(&e);
+    return MonoEsercizio::operator== (e) && durata == temp->durata && velocita == temp->velocita;
 }
 
 bool Cardio::operator!=(const Esercizio & e) const {
@@ -76,3 +71,5 @@ std::ostream & Cardio::operator<<(std::ostream & os) const {
     os << " +---";
     return os;
 }
+
+const uint Cardio::fattoreCalorico = 80;

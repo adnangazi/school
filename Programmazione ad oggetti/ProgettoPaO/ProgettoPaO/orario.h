@@ -9,10 +9,9 @@ private:
     uint sec;
 
 public:
-    //costruttori e distruttori
+    //costruttori
     Orario(const uint secondi = 0, const uint minuti = 0, const uint ore = 0);
     Orario(const Orario & o);
-    ~Orario() = default;
 
     //metodi della classe
     uint getSecondi() const;
@@ -22,11 +21,11 @@ public:
     void setMinuti(const uint m = 0);
     void setOre(const uint o = 0);
 
-    //@overload operatori
+    //overload operatori interni alla classe
     Orario & operator=(const Orario & o);
 };
 
-//@overload operatori esterni alla classe
+//overload operatori esterni alla classe
 bool operator==(const Orario & a, const Orario & b);
 bool operator!=(const Orario & a, const Orario & b);
 bool operator>(const Orario & a, const Orario & b);

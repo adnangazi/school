@@ -21,8 +21,7 @@ uint RiposoAttivo::getMET() const {
     if (temp) {
         return temp->getMET();
     } else {
-        throw std::out_of_range("Impossibile restituire il MET: esercizioAttivo non è un sottitipo di Esericizio!");
-        return 0;
+        throw std::runtime_error("Impossibile restituire il MET: esercizioAttivo non è un sottitipo di Esericizio!");
     }
 }
 
@@ -31,7 +30,7 @@ void RiposoAttivo::setMET(const uint m) {
     if (temp) {
         temp->setMET(m);
     } else {
-        throw std::out_of_range("Impossibile impostare il MET: esercizioAttivo non è un sottitipo di Esericizio!");
+        throw std::runtime_error("Impossibile impostare il MET: esercizioAttivo non è un sottitipo di Esericizio!");
     }
 }
 
@@ -39,63 +38,60 @@ void RiposoAttivo::setMET(const uint m) {
 RiposoAttivo & RiposoAttivo::operator=(const RiposoAttivo & e) {
     Riposo::operator=(e);
     esercizioAttivo = e.esercizioAttivo ? e.esercizioAttivo->clone() : nullptr;
-    return *this;
+    return * this;
 }
 
 std::string RiposoAttivo::getDescrizione() const {
-    MonoEsercizio * temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
+    MonoEsercizio * const temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
     if (temp) {
         return temp->getDescrizione();
     } else {
-        throw std::out_of_range("Impossibile restituire la descrzione: esercizioAttivo non è un sottitipo di Esercizio!");
-        return "";
+        throw std::runtime_error("Impossibile restituire la descrzione: esercizioAttivo non è un sottitipo di Esercizio!");
     }
 }
 
 Orario RiposoAttivo::getDurata() const {
-    MonoEsercizio * temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
+    MonoEsercizio * const temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
     if (temp) {
         return temp->getDurata();
     } else {
-        throw std::out_of_range("Impossibile restituire la durata: esercizioAttivo non è un sottitipo di Esercizio!");
-        return Orario();
+        throw std::runtime_error("Impossibile restituire la durata: esercizioAttivo non è un sottitipo di Esercizio!");
     }
 }
 
 void RiposoAttivo::setDurata(const Orario & o) {
-    MonoEsercizio * temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
+    MonoEsercizio * const temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
     if (temp) {
         temp->setDurata(o);
     } else {
-        throw std::out_of_range("Impossibile impostare la durata: esercizioAttivo non è un sottitipo di Esercizio!");
+        throw std::runtime_error("Impossibile impostare la durata: esercizioAttivo non è un sottitipo di Esercizio!");
     }
 }
 
 uint RiposoAttivo::stimaCalorieBruciate() const {
-    MonoEsercizio * temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
+    MonoEsercizio * const temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
     if (temp) {
         return temp->stimaCalorieBruciate();
     } else {
-        throw std::out_of_range("Impossibile restituire la stima delle colorie bruciate: esercizioAttivo non è un sottitipo di Esercizio!");
-        return 0;
+        throw std::runtime_error("Impossibile restituire la stima delle colorie bruciate: esercizioAttivo non è un sottitipo di Esercizio!");
     }
 }
 
 void RiposoAttivo::incrementaIntensita() {
-    MonoEsercizio * temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
+    MonoEsercizio * const temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
     if (temp) {
         temp->incrementaIntensita();
     } else {
-        throw std::out_of_range("Impossibile incrementare l'intesità: esercizioAttivo non è un sottitipo di Esercizio!");
+        throw std::runtime_error("Impossibile incrementare l'intesità: esercizioAttivo non è un sottitipo di Esercizio!");
     }
 }
 
 void RiposoAttivo::decrementaIntesita() {
-    MonoEsercizio * temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
+    MonoEsercizio * const temp = dynamic_cast<MonoEsercizio*>(esercizioAttivo);
     if (temp) {
         temp->decrementaIntesita();
     } else {
-        throw std::out_of_range("Impossibile decrementare l'intesità: esercizioAttivo non è un sottitipo di Esercizio!");
+        throw std::runtime_error("Impossibile decrementare l'intesità: esercizioAttivo non è un sottitipo di Esercizio!");
     }
 }
 
@@ -104,8 +100,8 @@ RiposoAttivo * RiposoAttivo::clone() const {
 }
 
 bool RiposoAttivo::operator==(const Esercizio & e) const {
-    const RiposoAttivo temp = static_cast<const RiposoAttivo&>(e);
-    return getIstruzioneRiposo() == temp.getIstruzioneRiposo() && (temp.esercizioAttivo != nullptr && esercizioAttivo != nullptr ? *(temp.esercizioAttivo) == *esercizioAttivo : temp.esercizioAttivo == esercizioAttivo);
+    const RiposoAttivo * const temp = static_cast<const RiposoAttivo*>(&e);
+    return getIstruzioneRiposo() == temp->getIstruzioneRiposo() && (temp->esercizioAttivo != nullptr && esercizioAttivo != nullptr ? *(temp->esercizioAttivo) == *esercizioAttivo : temp->esercizioAttivo == esercizioAttivo);
 }
 
 bool RiposoAttivo::operator!=(const Esercizio & e) const {

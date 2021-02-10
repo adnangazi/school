@@ -25,9 +25,9 @@ Esercizio & Esercizio::operator=(const Esercizio & e) {
         nome = e.nome;
         descrizione = e.descrizione;
     } else {
-        throw std::out_of_range("Impossibile assegnare un oggetto a se stesso!");
+        throw std::logic_error("Impossibile assegnare un oggetto a se stesso!");
     }
-    return *this;
+    return * this;
 }
 
 bool Esercizio::operator==(const Esercizio & e) const {

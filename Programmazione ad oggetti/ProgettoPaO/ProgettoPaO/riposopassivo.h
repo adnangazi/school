@@ -9,21 +9,22 @@ private:
 
 public:
     //costruttori e distruttori
-    RiposoPassivo(const string & n, const string & d, const string & ir, const Orario & o = 0);
+    RiposoPassivo(const string & n, const string & d = 0, const string & ir = 0, const Orario & o = 0);
     RiposoPassivo(const RiposoPassivo & e);
     ~RiposoPassivo() = default;
 
-    //@override Esercizio
+    //overload operatori
+    RiposoPassivo & operator=(const RiposoPassivo & e);
+
+    //override Esercizio
     string getDescrizione() const override;
     Orario getDurata() const override;
-    void setDurata(const Orario & o) override;
+    void setDurata(const Orario & o = 0) override;
     uint stimaCalorieBruciate() const override;
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     RiposoPassivo * clone() const override;
 
-
-    RiposoPassivo & operator=(const RiposoPassivo & e);
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;

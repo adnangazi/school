@@ -10,7 +10,7 @@ private:
 
 public:
     //costruttori e distruttori
-    RiposoAttivo(const string & ir, Esercizio * const e = 0);
+    RiposoAttivo(const string & ir = 0, Esercizio * const e = nullptr);
     RiposoAttivo(const RiposoAttivo & e);
     ~RiposoAttivo();
 
@@ -20,18 +20,17 @@ public:
     uint getMET() const;
     void setMET(const uint m = 0);
 
-    //@overload operatori
+    //overload operatori
     RiposoAttivo & operator=(const RiposoAttivo & e);
 
-    //@override Esercizio
+    //override Esercizio
     string getDescrizione() const override;
     Orario getDurata() const override;
-    void setDurata(const Orario & o) override;
+    void setDurata(const Orario & o = 0) override;
     uint stimaCalorieBruciate() const override;
     void incrementaIntensita() override;
     void decrementaIntesita() override;
     RiposoAttivo * clone() const override;
-
 
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;

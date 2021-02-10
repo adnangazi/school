@@ -3,14 +3,17 @@
 
 #include "monoesercizio.h"
 
-class Cardio : virtual public MonoEsercizio {
+class Cardio : virtual public MonoEsercizio { // base virtuale per via di CrossFit
 private:
     Orario durata;
     uint velocita;
 
 public:
+    //attributi statici della classe
+    static const uint fattoreCalorico;
+
     //costruttori e distruttori
-    Cardio(const string & n, const string & d, const uint m = 0, const Orario & o = 0, const uint v = 0);
+    Cardio(const string & n, const string & d = "", const uint m = 0, const Orario & o = 0, const uint v = 0);
     Cardio(const Cardio & e);
     ~Cardio() = default;
 
@@ -18,17 +21,18 @@ public:
     uint getVelocita() const;
     void setVelocita(const uint v = 0);
 
-    //@override Esercizio
+    //overload operatori
+    Cardio & operator=(const Cardio & e);
+
+    //override Esercizio
     string getDescrizione() const override;
     Orario getDurata() const override;
-    void setDurata(const Orario & o) override;
+    void setDurata(const Orario & o = 0) override;
     uint stimaCalorieBruciate() const override;
     void incrementaIntensita() override;
     void decrementaIntesita() override;
+
     Cardio * clone() const override;
-
-
-    Cardio & operator=(const Cardio & e);
     bool operator==(const Esercizio & e) const override;
     bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;

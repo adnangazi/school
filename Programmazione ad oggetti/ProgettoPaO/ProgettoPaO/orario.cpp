@@ -40,7 +40,7 @@ Orario & Orario::operator=(const Orario & o) {
     if (this != & o) {
         this->sec = o.sec;
     } else {
-        throw std::out_of_range("Impossibile assegnare un oggetto a se stesso!");
+        throw std::logic_error("Impossibile assegnare un oggetto a se stesso!");
     }
     return *this;
 }
@@ -74,7 +74,7 @@ Orario operator+(const Orario & a, const Orario & b) {
 }
 
 Orario operator-(const Orario & a, const Orario & b) {
-    if (a < b) return Orario();
+    if (a < b) return Orario(); //azzeramento
 
     int secondi = a.getSecondi() - b.getSecondi(); //int perchè può andare in negativo (riporto necessario)
     int minuti = a.getMinuti() - b.getMinuti(); //int perchè può andare in negativo (riporto necessario)

@@ -9,16 +9,18 @@ private:
 
 public:
     //costruttori e distruttori
-    Riposo(const string & n, const string & d, const string & ir);
+    Riposo(const string & n, const string & d = "", const string & ir = "");
     Riposo(const Riposo & e);
     virtual ~Riposo() = default;
 
     //metodi della classe
     string getIstruzioneRiposo() const;
-    void setIstruzioneRiposo(const string & ir);
+    void setIstruzioneRiposo(const string & ir = "");
 
-    //@override Esericizio
+    //overload operatori
     Riposo & operator=(const Riposo & e);
+
+    //override Esericizio
     virtual bool operator==(const Esercizio & e) const override;
     virtual bool operator!=(const Esercizio & e) const override;
     std::ostream & operator<<(std::ostream & os) const override;

@@ -15,11 +15,12 @@ void Riposo::setIstruzioneRiposo(const string & ir) {
 Riposo & Riposo::operator=(const Riposo & e) {
     Esercizio::operator=(e);
     istruzioneRiposo = e.istruzioneRiposo;
-    return *this;
+    return * this;
 }
 
 bool Riposo::operator==(const Esercizio & e) const {
-    return Esercizio::operator==(e) && istruzioneRiposo == static_cast<const Riposo&>(e).istruzioneRiposo;
+    return Esercizio::operator==(e) && istruzioneRiposo == static_cast<const Riposo*>(&e)->istruzioneRiposo;
+    //istruzioneRiposo == static_cast<const Riposo*>(&e)->istruzioneRiposo è un controllo sicuro nonostante lo static_cast, per via del controllo del tipo dinamico fatto in Esercizio::operator==(e)
 }
 
 bool Riposo::operator!=(const Esercizio & e) const {

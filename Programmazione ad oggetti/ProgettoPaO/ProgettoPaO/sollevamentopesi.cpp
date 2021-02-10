@@ -28,6 +28,14 @@ void SollevamentoPesi::setSerie(const uint s) {
     serie = s;
 }
 
+SollevamentoPesi & SollevamentoPesi::operator=(const SollevamentoPesi & e) {
+    MonoEsercizio::operator=(e);
+    peso = e.peso;
+    ripetizioni = e.ripetizioni;
+    serie = e.serie;
+    return * this;
+}
+
 string SollevamentoPesi::getDescrizione() const {
     return Esercizio::getDescrizione() + " i altre sborae varie su SollevamentoPesi...";
 }
@@ -42,7 +50,7 @@ void SollevamentoPesi::setDurata(const Orario & o) {
         totaleSec -= (serie - 1) * 60; //tolgo il minuto di riposo obbligatorio tra una serie e l'altra
         ripetizioni = (totaleSec / serie) / tempoDiRipetizione.getSecondi();
     } else {
-        throw std::out_of_range("Impossibile impostare la durata: numero di serie troppo basso!");
+        throw std::runtime_error("Impossibile impostare la durata: numero di serie troppo basso!");
     }
 }
 
@@ -52,7 +60,7 @@ uint SollevamentoPesi::stimaCalorieBruciate() const {
 
 void SollevamentoPesi::incrementaIntensita() {
     if (serie <= 1 || ripetizioni <= 0) {
-        throw std::out_of_range("Impossibile incrementare ulteriormente l'intensità: numero di serie o ripetizioni troppo basso!");
+        throw std::runtime_error("Impossibile incrementare ulteriormente l'intensità: numero di serie o ripetizioni troppo basso!");
     } else {
         if (serie > ripetizioni) {
             serie = round(static_cast<double>(ripetizioni * serie) / static_cast<double>(ripetizioni + 1));
@@ -67,7 +75,7 @@ void SollevamentoPesi::incrementaIntensita() {
 
 void SollevamentoPesi::decrementaIntesita() {
     if (serie <= 0 || ripetizioni <= 1) {
-        throw std::out_of_range("Impossibile decrementare ulteriormente l'intensità: numero di serie o ripetizioni troppo basso!");
+        throw std::runtime_error("Impossibile decrementare ulteriormente l'intensità: numero di serie o ripetizioni troppo basso!");
     } else {
         if (ripetizioni > serie) {
             ripetizioni = round(static_cast<double>(ripetizioni * serie) / static_cast<double>(serie + 1));
@@ -84,17 +92,9 @@ SollevamentoPesi * SollevamentoPesi::clone() const {
     return new SollevamentoPesi(*this);
 }
 
-SollevamentoPesi & SollevamentoPesi::operator=(const SollevamentoPesi & e) {
-    MonoEsercizio::operator=(e);
-    peso = e.peso;
-    ripetizioni = e.ripetizioni;
-    serie = e.serie;
-    return *this;
-}
-
 bool SollevamentoPesi::operator==(const Esercizio & e) const {
-    const SollevamentoPesi temp = dynamic_cast<const SollevamentoPesi&>(e); //dynamic_cast necessario per visa della base virtuale
-    return MonoEsercizio::operator==(e) && peso == temp.peso && ripetizioni == temp.ripetizioni && serie == temp.serie;
+    const SollevamentoPesi * temp = dynamic_cast<const SollevamentoPesi*>(&e);
+    return MonoEsercizio::operator==(e) && peso == temp->peso && ripetizioni == temp->ripetizioni && serie == temp->serie;
 }
 
 bool SollevamentoPesi::operator!=(const Esercizio & e) const {

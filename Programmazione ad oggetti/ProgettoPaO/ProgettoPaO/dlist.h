@@ -15,7 +15,7 @@ private:
         Nodo * next;
 
     public:
-        //costruttori e distruttori
+        //costruttori
         Nodo(const T & i, Nodo * const p = nullptr, Nodo * const n = nullptr);
     };
 
@@ -30,8 +30,8 @@ private:
 public:
     //costruttori e distruttori
     DList(Nodo * const f = nullptr, Nodo * const l = nullptr);
-    ~DList();
     DList(const DList & d);
+    ~DList();
 
     //metodi della classe
     uint getSize() const;
@@ -46,7 +46,7 @@ public:
     bool deepCheckEquals(const DList & d) const;
     bool deepCheckNotEquals(const DList & d) const;
 
-    //@overload operatori
+    //overload operatori
     DList & operator=(const DList & d);
     bool operator==(const DList & d) const;
     bool operator!=(const DList & d) const;
@@ -113,13 +113,13 @@ DList<T>::DList(Nodo * const f, Nodo * const l) : first(f), last(l) {
 }
 
 template<class T>
-DList<T>::~DList() {
-    destroy(first);
+DList<T>::DList(const DList<T> & d) : size(d.size) {
+    deepCopy(d.first, first, last);
 }
 
 template<class T>
-DList<T>::DList(const DList<T> & d) : size(d.size) {
-    deepCopy(d.first, first, last);
+DList<T>::~DList() {
+    destroy(first);
 }
 
 template<class T>

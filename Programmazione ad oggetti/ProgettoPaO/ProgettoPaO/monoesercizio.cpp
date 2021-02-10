@@ -15,7 +15,7 @@ void MonoEsercizio::setMET(const uint m) {
 MonoEsercizio & MonoEsercizio::operator=(const MonoEsercizio & e) {
     Esercizio::operator=(e);
     MET = e.MET;
-    return *this;
+    return * this;
 }
 
 bool MonoEsercizio::operator==(const Esercizio & e) const {

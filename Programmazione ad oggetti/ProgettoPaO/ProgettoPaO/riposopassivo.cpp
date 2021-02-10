@@ -4,6 +4,12 @@ RiposoPassivo::RiposoPassivo(const string & n, const string & d, const string & 
 
 RiposoPassivo::RiposoPassivo(const RiposoPassivo & e) : Riposo(e), durata(e.durata) {}
 
+RiposoPassivo & RiposoPassivo::operator=(const RiposoPassivo & e) {
+    Riposo::operator=(e);
+    durata = e.durata;
+    return * this;
+}
+
 string RiposoPassivo::getDescrizione() const {
     return Esercizio::getDescrizione() + " i altre sborae varie su RiposoPassivo...";
 }
@@ -32,14 +38,9 @@ RiposoPassivo * RiposoPassivo::clone() const {
     return new RiposoPassivo(*this);
 }
 
-RiposoPassivo & RiposoPassivo::operator=(const RiposoPassivo & e) {
-    Riposo::operator=(e);
-    durata = e.durata;
-    return *this;
-}
-
 bool RiposoPassivo::operator==(const Esercizio & e) const {
-    return Riposo::operator==(e) && durata == static_cast<const RiposoPassivo&>(e).durata;
+    return Riposo::operator==(e) && durata == static_cast<const RiposoPassivo*>(&e)->durata;
+    //durata == static_cast<const RiposoPassivo*>(&e)->durata è un controllo sicuro nonostante lo static_cast, per via del controllo del tipo dinamico fatto in Riposo::operator==(e)
 }
 
 bool RiposoPassivo::operator!=(const Esercizio & e) const {

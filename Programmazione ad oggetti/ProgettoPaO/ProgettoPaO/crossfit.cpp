@@ -7,8 +7,15 @@ CrossFit::CrossFit(const string & n, const string & d, const uint m, const Orari
 
 CrossFit::CrossFit(const CrossFit & e) : MonoEsercizio(e), Cardio(e), SollevamentoPesi(e) {}
 
+CrossFit & CrossFit::operator=(const CrossFit & e) {
+    Cardio::operator=(e);
+    SollevamentoPesi::operator=(e);
+    return * this;
+}
+
 string CrossFit::getDescrizione() const {
     return Esercizio::getDescrizione() + " i altre sborae varie su CrossFit...";
+    //prendo la descrizione direttamente da Esercizio::getDescrizione(), altrimenti avrei parti della frase della descrizione che si ripetono più volte
 }
 
 Orario CrossFit::getDurata() const {
@@ -40,15 +47,9 @@ CrossFit * CrossFit::clone() const {
     return new CrossFit(*this);
 }
 
-CrossFit & CrossFit::operator=(const CrossFit & e) {
-    Cardio::operator=(e);
-    SollevamentoPesi::operator=(e);
-    return *this;
-}
-
 bool CrossFit::operator==(const Esercizio & e) const {
-    const SollevamentoPesi temp = dynamic_cast<const SollevamentoPesi&>(e); //dynamic_cast per base virtuale. Non faccio SollevamentoPeso::operator==(): evito di chiamarre MonoEsercizio::operator==() e Esercizio::operator==() perchè già chiamati da Cardio::operator==()
-    return Cardio::operator==(e) && getPeso() == temp.getPeso() && getRipetizioni() == temp.getRipetizioni() && getSerie() == temp.getSerie();
+    const SollevamentoPesi * const temp = dynamic_cast<const SollevamentoPesi*>(&e); //dynamic_cast per base virtuale. Non faccio SollevamentoPeso::operator==(): evito di chiamarre MonoEsercizio::operator==() e Esercizio::operator==() perchè già chiamati da Cardio::operator==()
+    return Cardio::operator==(e) && getPeso() == temp->getPeso() && getRipetizioni() == temp->getRipetizioni() && getSerie() == temp->getSerie();
 }
 
 bool CrossFit::operator!=(const Esercizio & e) const {
