@@ -4,6 +4,8 @@
 #include "view.h"
 #include "model.h"
 
+#include <QLabel>
+
 #include <QObject>
 #include <iostream>
 using namespace std;
@@ -14,6 +16,8 @@ private:
     View * view;
     Model * model;
     QWidget ** dialogPointer;
+    bool cambia;
+    uint posizione;
 
     void drawEsercizio();
     void drawAllenamento();
@@ -25,18 +29,25 @@ public:
 
 public slots:
     void addCardio();
+    void setCardio();
     void createCardio();
     void addSollevamentoPesi();
+    void setSollevamentoPesi();
     void createSollevamentoPesi();
     void addCrossFit();
+    void setCrossFit();
     void createCrossFit();
     void addRiposoPassivo();
+    void setRiposoPassivo();
     void createRiposoPassivo();
     void addRiposoAttivoCardio();
+    void setRiposoAttivoCardio();
     void createRiposoAttivoCardio();
     void addRiposoAttivoSollevamentoPesi();
+    void setRiposoAttivoSollevamentoPesi();
     void createRiposoAttivoSollevamentoPesi();
     void addRiposoAttivoCrossFit();
+    void setRiposoAttivoCrossFit();
     void createRiposoAttivoCrossFit();
 
     void remove();

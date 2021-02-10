@@ -35,33 +35,6 @@ void Model::setEsercizio(DeepPtr<Esercizio> e, const uint i) {
     eseguiEsercizi->setEsercizio(e, i);
 }
 
-/*
-void Model::setCardio(const string & n, const string & d, const uint i, const uint m, const Orario & o, const uint v) {
-    CreaEsercizio creator;
-    eseguiEsercizi->setEsercizio(creator.createCardio(n, d, m, o, v), i);
-}
-
-void Model::setSollevamentoPesi(const string & n, const string & d, const uint i, const uint m, const uint p, const uint r, const uint s) {
-    CreaEsercizio creator;
-    eseguiEsercizi->setEsercizio(creator.createSollevamentoPesi(n, d, m, p, r, s), i);
-}
-
-void Model::setCrossFit(const string & n, const string & d, const uint i, const uint m, const Orario & o, const uint v, const uint p) {
-    CreaEsercizio creator;
-    eseguiEsercizi->setEsercizio(creator.createCrossFit(n, d, m, o, v, p), i);
-}
-
-void Model::setRiposoPassivo(const string & n, const string & d, const string & ir, const uint i, const Orario & o) {
-    CreaEsercizio creator;
-    eseguiEsercizi->setEsercizio(creator.createRiposoPassivo(n, d, ir, o), i);
-}
-
-void Model::setRiposoAttivo(const string & ir, const uint i, Esercizio * const e) {
-    CreaEsercizio creator;
-    eseguiEsercizi->setEsercizio(creator.createRiposoAttivo(ir, e), i);
-}
-*/
-
 void Model::removeEsercizio(const uint i) {
     eseguiEsercizi->removeEsercizio(i);
 }

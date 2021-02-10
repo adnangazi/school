@@ -8,6 +8,9 @@ int main(int argc, char * argv[]) {
     View w;
     Controller c;
     Model m;
+
+
+
     c.setModel(&m);
     c.setView(&w);
     w.setController(&c);

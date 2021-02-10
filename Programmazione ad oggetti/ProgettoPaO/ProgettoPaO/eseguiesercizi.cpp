@@ -74,5 +74,5 @@ void EseguiEsercizi::goToStart() {
 }
 
 void EseguiEsercizi::goToEnd() {
-    esercizioCorrente = esercizi.getSize() - 1;
+    esercizioCorrente = esercizi.getSize() == 0 ? 0 : esercizi.getSize() - 1;
 }

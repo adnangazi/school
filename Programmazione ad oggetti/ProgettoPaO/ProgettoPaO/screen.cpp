@@ -9,9 +9,13 @@ QVBoxLayout * Screen::createMainWindow(WidgetCreator & v, QVBoxLayout * screenLa
     v.createQLine(sopra, 'V');
     QVBoxLayout * destra = v.createQVLayout(sopra);
 
+    v.createQLabel(sinistra, "Esercizio attuale");
     QWidget * esercizioW = v.createQWidget(sinistra, 400, 100);
+    v.createQLabel(sinistra, "Dettagli dell'esercizio attuale");
     QWidget * dettagliEsercizioW = v.createQWidget(sinistra, 400, 350);
+    v.createQLabel(destra, "Dettagli dell'allenamento");
     QWidget * dettagliAllenamentoW = v.createQWidget(destra, 300, 200);
+    v.createQLabel(destra, "Lista degli esercizi");
     QWidget * listaEserciziW = v.createQWidget(destra, 300, 300);
 
     dettagliEsercizio = v.createQScrollArea(dettagliEsercizioW);

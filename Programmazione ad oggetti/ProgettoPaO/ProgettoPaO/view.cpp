@@ -79,14 +79,14 @@ void View::setController(Controller * c) {
     connect(menus->getAggiungiRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(addRiposoAttivoSollevamentoPesi()));
     connect(menus->getAggiungiRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(addRiposoAttivoCrossFit()));
 
-    connect(menus->getCambiaEsercizio()->actions()[0], SIGNAL(triggered()), controller, SLOT(fun()));
-    connect(menus->getCambiaEsercizio()->actions()[1], SIGNAL(triggered()), controller, SLOT(fun()));
-    connect(menus->getCambiaEsercizio()->actions()[2], SIGNAL(triggered()), controller, SLOT(fun()));
-    connect(menus->getCambiaEsercizio()->actions()[3], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaEsercizio()->actions()[0], SIGNAL(triggered()), controller, SLOT(setCardio()));
+    connect(menus->getCambiaEsercizio()->actions()[1], SIGNAL(triggered()), controller, SLOT(setSollevamentoPesi()));
+    connect(menus->getCambiaEsercizio()->actions()[2], SIGNAL(triggered()), controller, SLOT(setCrossFit()));
+    connect(menus->getCambiaEsercizio()->actions()[3], SIGNAL(triggered()), controller, SLOT(setRiposoPassivo()));
 
-    connect(menus->getCambiaRiposoAttivo()->actions()[0], SIGNAL(triggered()), controller, SLOT(fun()));
-    connect(menus->getCambiaRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(fun()));
-    connect(menus->getCambiaRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(fun()));
+    connect(menus->getCambiaRiposoAttivo()->actions()[0], SIGNAL(triggered()), controller, SLOT(setRiposoAttivoCardio()));
+    connect(menus->getCambiaRiposoAttivo()->actions()[1], SIGNAL(triggered()), controller, SLOT(setRiposoAttivoSollevamentoPesi()));
+    connect(menus->getCambiaRiposoAttivo()->actions()[2], SIGNAL(triggered()), controller, SLOT(setRiposoAttivoCrossFit()));
 
     connect(menus->getControllerAllenamento()->actions()[2], SIGNAL(triggered()), controller, SLOT(remove()));
 
