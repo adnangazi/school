@@ -1,0 +1,2 @@
+Errore relativo di x1: 400.000000%
+Errore relativo di x2: 133.333333%
