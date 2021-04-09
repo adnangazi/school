@@ -42,15 +42,11 @@ else
         % delta positivo
         delta = delta^(1/2);
         if b == 0
-            % utilizzo delle formule standard
-            % calcolo delle radici x1 x2 e visualizzazione a video
             x1 = (-(b + delta)) / (2 * a);
             x2 = ((-b) + delta) / (2 * a);
             fprintf('Valore della radice x1: %f\n', x1);
             fprintf('Valore della radice x2: %f\n', x2);
         else
-            % utilizzo delle formule stabili
-            % calcolo delle radici x1 x2 e visualizzazione a video
             x1 = (-(b + sign(b) * delta) / (2 * a));
             x2 = c / (a * x1);
             fprintf('Valore della radice x1: %f\n', x1);

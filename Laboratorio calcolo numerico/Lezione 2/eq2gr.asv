@@ -1,7 +1,7 @@
 % impostazione formato
 format long;
 % titolo programma
-fprintf('Risuluzione eq. secondo grado con formule stabili\n');
+fprintf('Risuluzione eq. secondo grado\n');
 % inserimento dei coefficienti
 a = input('Inserire il valore di a: ');
 b = input('Inserire il valore di b: ');
@@ -21,16 +21,16 @@ else
         % delta positivo
         fprintf('Delta positivo\n');
         delta = delta^(1/2);
-        % calcolo di x1 e x2 con formule stabili e visualizzazione a video
-        x1 = (-(b + sign(b) * delta) / (2 * a));
-        x2 = c / (a * x1);
+        % calcolo di x1 e x2 e visualizzazione a video
+        x1 = (-(b + delta)) / (2 * a);
+        x2 = ((-b) + delta) / (2 * a);
         fprintf('Valore della radice x1: %f\n', x1);
         fprintf('Valore della radice x2: %f\n', x2);
     else
         % delta uguale a zero
         fprintf('Delta uguale a zero\n');
         delta = delta^(1/2);
-        % calcolo di x (= x1 = x2) e visualizzazione a video
+        % calcol
         x = (-b) / (2 * a);
         fprintf('Valore della radice: %f\n', x);
     end
