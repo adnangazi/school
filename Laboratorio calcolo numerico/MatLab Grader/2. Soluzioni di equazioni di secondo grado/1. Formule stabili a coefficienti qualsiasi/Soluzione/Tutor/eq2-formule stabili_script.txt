@@ -1,0 +1,30 @@
+load mydata;
+if a==0
+    if b==0
+        y1=NaN;  y2=NaN;
+        fprintf('Equazione impossibile nei reali \n');
+    else  y1=-c/b;  y2=y1;
+    end
+else
+delta=b^2-4*a*c;
+if delta<0
+    y1=NaN;  y2=NaN;
+elseif delta==0
+     y1=-b/(2*a);  y2=y1
+else if b==0
+    y1=-sqrt(delta); y2=sqrt(delta);
+    else y1=((-b-sqrt(delta)))/(2*a);  y2=((-b+sqrt(delta)))/(2*a); 
+     end
+end
+end
+
+%ordino le soluzioni e calcolo errore relativo
+if y1==NaN fprintf('Impossibile calcolare gli errori \n');
+else
+    if y1<y2
+        x1=y1;  x2=y2;
+    else x1=y2; x2=y1;
+    end
+    assx1=x1-x1vera;  assx2=x2-x2vera;
+    err_rel_1=assx1/x1;   err_rel_2=assx2/x2;    
+end
