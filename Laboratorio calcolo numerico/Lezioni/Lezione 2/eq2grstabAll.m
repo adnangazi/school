@@ -1,60 +1,33 @@
-% impostazione formato
-format long;
-% titolo programma
-fprintf('Risuluzione eq. secondo grado per qualsiasi coefficienti\n');
-% inserimento dei coefficienti
-a = input('Inserire il valore di a: ');
-b = input('Inserire il valore di b: ');
-c = input('Inserire il valore di c: ');
-% calcolo delle radici
+% Adnan Latif Gazi Matricola 1224442
 if a == 0
-    % equazione di grado massimo a 1
     if b == 0
-        % equazione di grado 0
-        % calcolo delle radici x1 x2 e visualizzazione a video
         x1 = NaN;
         x2 = NaN;
-        fprintf('Radici non definite!\n');
+        fprintf('x1 = %f, x2 = %f\n', x1, x2);
     else
-        % equazione di primo grado
-        % calcolo delle radici x1 x2 e visualizzazione a video
-        x1 = -c / b;
+        x1 = -c/b;
         x2 = x1;
-        fprintf('x1 = x2: %f\n', x2);
+        fprintf('x1 = %f, x2 = %f\n', x1, x2);
     end
 else
-    % equazione di secondo grado
-    % calcolo del discriminante
-    delta = ((b^2) - (4 * a * c));
+    delta = sqrt(b^2 - 4 * a * c);
     if delta < 0
-        % delta negativo
-        % calcolo delle radici x1 x2 e visualizzazione a video
         x1 = NaN;
         x2 = NaN;
-        fprintf('Radici non definite!\n');
+        fprintf('Nessuna soluzione reale. x1 = %f, x2 = %f\n', x1, x2);
     elseif delta == 0
-        % delta uguale a zero
-        % calcolo delle radici x1 = x2 e visualizzazione a video
-        x1 = -b / (2 * a);
+        x1 = ((-b) / (2 * a));
         x2 = x1;
-        fprintf('x1 = x2: %f\n', x2);
-    else
-        % delta positivo
-        delta = delta^(1/2);
+        fprintf('Due soluzioni reali coincidenti. x1 = x2 = %f\n', x1);
+    else 
         if b == 0
-            % utilizzo delle formule standard
-            % calcolo delle radici x1 x2 e visualizzazione a video
-            x1 = (-(b + delta)) / (2 * a);
-            x2 = ((-b) + delta) / (2 * a);
-            fprintf('Valore della radice x1: %f\n', x1);
-            fprintf('Valore della radice x2: %f\n', x2);
+            x1 = ((-delta) / (2 * a));
+            x2 = ((delta) / (2 * a));
+            fprintf('x1 e x2 reali e distinte con b == 0 ==> formule instabili. x1 = %f, x2 = %f\n', x1, x2);
         else
-            % utilizzo delle formule stabili
-            % calcolo delle radici x1 x2 e visualizzazione a video
-            x1 = (-(b + sign(b) * delta) / (2 * a));
-            x2 = c / (a * x1);
-            fprintf('Valore della radice x1: %f\n', x1);
-            fprintf('Valore della radice x2: %f\n', x2);
+            x1 = (-(b+sign(b)*sqrt(delta))/(2*a));
+            x2 = ((c)/(a*x1));
+            fprintf('x1 e x2 reali e distinte con b ~= 0 ==> formule stabili. x1 = %f, x2 = %f\n', x1, x2);
         end
     end
 end

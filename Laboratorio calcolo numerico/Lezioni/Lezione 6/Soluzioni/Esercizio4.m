@@ -20,6 +20,7 @@ for n=degs
     xinterp_cheb=5*cos((2*(N-1:-1:0)+1)./(2*N+1)*pi); % pti di Chebyshev
     %xinterp_cheb=5*cos((n:-1:0)./n*pi); % pti di Gauss-Chebyshev
     yinterp_cheb=f(xinterp_cheb)';
+    
     P_equi=polyfit(xinterp_equi,yinterp_equi,n);
     P_cheb=polyfit(xinterp_cheb,yinterp_cheb,n);
     yeval_equi=polyval(P_equi,xinterp_equi);
