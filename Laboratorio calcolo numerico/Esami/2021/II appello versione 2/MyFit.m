@@ -27,8 +27,8 @@ function [peval, coeff] = MyFit(xsample, ysample, deg, xeval, method)
             coeff = U \ (L \ (P * (A' * ysample)));
             peval = Aeval * coeff;
         case 2
-            [Q0, R0] = qr(A, 0);
-            coeff = R0 \ (Q0' * (ysample));
+            [Q0, R0] = qr(A, 0); % non posso fare fattorizzazione QR di A' * A perchè questa restituisce una matrice quadrata e invece si vuole risolvere un sistema sovradeterminato rettangolare con il metodo QR, quidi occorre una matrice rettangolare che costituisca un sistema sovradeterminato rettangolare. Si esegue per questo la fattorizzazione QR di solo A
+            coeff = R0 \ (Q0' * (ysample)); % il vettore dei termini noti non è A' * ysample perchè questo produrrebbe un vettore colonna lungo n, mentre c'è bisogno di un vettore colonna lungo m, ovvero quanto la matrice del sistema
             peval = Aeval * coeff;
         case 3
             coeff = (A' * A) \ (A' * ysample);
