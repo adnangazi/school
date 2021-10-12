@@ -1,0 +1,30 @@
+#insiemi
+set Risorse := cup1 cup2 cup3 cup4 cup5 cup6;
+set Domande := q1 q2 q3 q4 q5 q6;
+
+#parametri
+param  C :=
+cup1   1
+cup2   1
+cup3   1
+cup4   1
+cup5   1
+cup6   1
+;
+param  D  :=
+q1	   1
+q2	   1
+q3     1
+q4	   1
+q5	   1
+q6     1
+;
+
+param A	(tr):	cup1	cup2	cup3	cup4 	cup5	cup6 :=
+q1				1		1		0		0		0		0
+q2				1		1		0		0		0		1
+q3				0		0		1		1		0		1
+q4				0		0		1		1		1		0
+q5				0		0		0		1		1		1
+q6				0		1		0		0		1		1
+;

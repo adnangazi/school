@@ -1,0 +1,6 @@
+reset;
+option solver cplex;
+model mixOpt.mod;
+data mixOpt.dat;
+solve;
+display rendita, x;

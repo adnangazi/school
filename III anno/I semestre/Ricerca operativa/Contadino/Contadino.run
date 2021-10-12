@@ -1,0 +1,6 @@
+# run contadino
+reset;
+model Contadino.mod;
+option solver cplex; # anche gurobi
+solve;
+display rendita, xL, xP;

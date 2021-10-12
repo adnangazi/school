@@ -1,0 +1,21 @@
+#insiemi
+set Risorse := 1 2 3;
+set Domande := proteine ferro calcio;
+
+#parametri
+param  C :=
+1	    4
+2	   10
+3       7
+;
+param	    D  :=
+proteine    20
+ferro       30
+calcio      10
+;
+
+param A	:	proteine ferro calcio :=
+1		    5        6     5
+2	 	    15       10    3
+3           4        5     12
+;

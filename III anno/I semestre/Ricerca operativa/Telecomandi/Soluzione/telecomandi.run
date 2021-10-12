@@ -1,0 +1,9 @@
+reset; # cancella dati memorizzati
+
+model telecomandi.mod; # carica il modello
+data telecomandi.dat; # carica i dati
+
+option solver cplex; # scelta del motore di ottimizzazione
+solve; # risolve il modello
+
+display xA, xB; # visualizza il valore (ottimo) delle variabili

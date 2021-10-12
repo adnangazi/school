@@ -1,0 +1,9 @@
+reset; # cancella dati memorizzati
+
+model contadino.mod; # carica il modello
+data contadino.dat; # carica i dati
+
+option solver cplexamp; # scelta del solver (motore di ottimizzazione)
+solve; # risolve il modello
+
+display xL, xP; # visualizza il valore (ottimo) delle variabili

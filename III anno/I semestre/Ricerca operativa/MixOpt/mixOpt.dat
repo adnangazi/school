@@ -1,0 +1,35 @@
+set Prodotti := 
+	lattuga patata;
+;
+
+set Risorse := 
+	ettari semi patate fertilizzate
+;
+
+param N :=
+	lattuga 10
+;
+
+param P :=
+	lattuga 3000
+	patata 5000
+;
+
+param R := 
+	ettari 11
+	semi 70
+	patate 18
+	fertilizzate 145
+;
+
+param A :=
+	lattuga ettari 1
+	lattuga semi 7
+	lattuga patate 0
+	lattuga fertilizzate 10
+	
+	patata ettari 1
+	patata semi 0
+	patata patate 3
+	patata fertilizzate 20
+;

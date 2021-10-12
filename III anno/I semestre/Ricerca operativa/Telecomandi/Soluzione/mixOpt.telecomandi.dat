@@ -1,0 +1,24 @@
+#insiemi
+
+set Prodotti := telA telB;
+set Risorse := modisplay navigazione tastierini logica tx led;
+
+
+#parametri
+param:	P  MaxNumProd :=
+telA	3  5
+telB	6  999
+;
+param	     Q  :=
+modisplay   10
+navigazione  9
+tastierini  21
+logica      18
+tx          12
+led         10
+;
+
+param A	:	modisplay navigazione tastierini logica tx led :=
+telA		 1         1           2          2 	 1  1
+telB	 	 2         0           3          2 	 3  0
+;

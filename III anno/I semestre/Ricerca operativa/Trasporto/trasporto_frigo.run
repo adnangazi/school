@@ -1,0 +1,56 @@
+option solver 'C:\Users\luigi\University\Teaching\Materiale\AMPL\amplcml\cplex';
+
+reset;
+model trasporto.mod;
+data  trasporto_frigo.dat;
+option solver xpress;
+solve;
+
+#DEBUG:
+#######
+
+#visualizza l'insieme degli stabilimenti e dei magazzini
+display I;
+display J;
+
+#visualizza altri parametri
+display O;
+display D;
+
+#visualizza i costi di trasporto;
+display C;
+
+#visualizza i costi di trasporti verso il magazzino m3;
+display {i in I} C[i,"m3"];
+
+#visualizza i costi di trasporto "elevati"
+display {i in I, j in J: C[i,j] >= 5} C[i,j];
+
+
+#SOLUZIONE
+##########
+
+#visualizza valore della funzione obiettivo:
+display costo_totale;
+
+#visualizza il piano dei trasporti
+display x;
+
+#visualizza il piano dei trasporti "pulito";
+display {i in I, j in J: x[i,j] > 0} x[i,j];
+
+
+#INTERPRETAZIONE
+################
+
+#visualizza la produzione effettiva in ogni stabilimento
+display origine.body, O;
+
+#visualizza le capacità produttive in eccesso
+display 
+	{i in I: origine[i].body - O[i] != 0} origine[i].body,
+	{i in I: origine[i].body - O[i] != 0} O[i],  
+	{i in I: origine[i].body - O[i] != 0} O[i]-origine[i].body;
+
+
+

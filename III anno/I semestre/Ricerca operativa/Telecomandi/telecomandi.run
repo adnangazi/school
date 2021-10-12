@@ -1,0 +1,7 @@
+# run telecomandi
+
+reset;
+option solver cplex;
+model telecomandi.mod;
+solve;
+display rendita, xA, xB;

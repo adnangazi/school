@@ -1,0 +1,9 @@
+reset; # cancella dati memorizzati
+
+model diet.mod; # carica il modello
+data diet.1.dat; # carica i dati
+
+option solver cplex; # scelta del motore di ottimizzazione
+solve; # risolve il modello
+
+display x; # visualizza il valore (ottimo) delle variabili

@@ -1,0 +1,9 @@
+reset; # cancella dati memorizzati
+
+model mixOpt.mod; # carica il modello
+data mixOpt.telecomandi.dat; # carica i dati
+
+option solver xpress; # scelta del motore di ottimizzazione
+solve; # risolve il modello
+
+display x; # visualizza il valore (ottimo) delle variabili
