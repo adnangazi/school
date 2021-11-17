@@ -1,0 +1,37 @@
+#Esercizio IndagineMercato.dat
+
+#set
+set I := 
+	1
+	2
+;
+	
+set J:=
+	ds
+	dn
+	us
+	un
+;
+
+#param
+param C := 
+	1
+	1.1
+	2
+	1.6
+;
+
+param D :=
+	ds 150
+	dn 110
+	us 120
+	un 100
+;
+
+param A :    
+			 1   2 :=
+	ds       0.3 0.3
+	dn       0.1 0.2
+	us       0.1 0.3
+	un       0.1 0.15
+;

@@ -1,0 +1,9 @@
+reset; # cancella dati memorizzati
+
+model moneymaker.mod; # carica il modello
+#data moneymaker.dat; # carica i dati
+
+option solver cplex; # scelta del motore di ottimizzazione
+solve; # risolve il modello
+
+display xM, xB; # visualizza il valore (ottimo) delle variabili

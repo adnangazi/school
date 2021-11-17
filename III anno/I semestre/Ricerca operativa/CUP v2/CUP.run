@@ -1,0 +1,7 @@
+#Esercizio CUP.run
+reset;
+option solver cplex;
+model CUP.mod;
+data CUP.dat;
+solve;
+display costo, x;

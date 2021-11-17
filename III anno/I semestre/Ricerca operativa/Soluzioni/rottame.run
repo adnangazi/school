@@ -1,0 +1,10 @@
+reset;
+model rottame.mod;
+data rottame.dat;
+
+option solver cplexamp;
+
+solve;
+
+display f;
+display x;

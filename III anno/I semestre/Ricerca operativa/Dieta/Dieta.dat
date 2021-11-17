@@ -1,0 +1,37 @@
+#Esercizio Dieta.dat
+
+#set
+set I := 
+	verdura 
+	carne 
+	frutta
+	pesce
+;
+	
+set J:=
+	proteine 
+	ferro 
+	calcio
+;
+
+#param
+param C := 
+	verdura 4
+	carne 10
+	frutta 7
+	pesce 3
+;
+
+param D :=
+	proteine 20
+	ferro 30
+	calcio 10
+;
+
+param A :    
+			 proteine ferro calcio :=
+	verdura  5        6     5
+	carne    15       10    3
+	frutta   4        5     12
+	pesce    10       15    2
+;

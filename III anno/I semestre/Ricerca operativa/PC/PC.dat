@@ -1,0 +1,37 @@
+### PC: dati ###
+#############################
+
+
+#INSIEMI
+set I := Italia Cina Francia;
+set J := BancaIntesa UniCredit AntonVeneta CreditSuisse BancaCina;
+
+#PARAMETRI
+param C : 
+				Italia	Cina	Francia :=
+BancaIntesa		5.5		15		6
+UniCredit   	7.5		14.3	7.8	
+AntonVeneta 	6.9		13		6.3	
+CreditSuisse	8		16.4	6.8
+BancaCina		10.3	5		11
+;
+
+param E:= Italia 220 Cina 180 Francia 200;
+
+param O:= Italia 10000 Cina 20000 Francia 10000;
+
+param D := BancaIntesa 7100 UniCredit 3400 AntonVeneta 9700 CreditSuisse 5200 BancaCina 3050;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+#Esercizio Telecomandi.dat
+
+#set
+set I := 
+	telA 
+	telB
+;
+
+set J := 
+	disp 
+	navigazione 
+	tastierini 
+	logica 
+	trasmissione
+	led
+;
+
+#param
+param maxNP : 
+			  P     maxNP :=
+	telA	  3     5
+	telB	  6     9
+;
+
+param Q :=
+	trasmissione 12 
+	disp 10 
+	navigazione 9 
+	logica 18 
+	tastierini 21
+;
+
+param A : 
+			   disp navigazione tastierini logica trasmissione led :=
+	telA  1    1           2          2      1            1
+	telB  2    0           3          2      3            0
+;

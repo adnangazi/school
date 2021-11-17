@@ -1,0 +1,49 @@
+#Esercizio CUP.dat
+
+#set
+set I := 
+	c1
+	c2
+	c3
+	c4
+	c5
+	c6
+;
+	
+set J:=
+	q1
+	q2
+	q3
+	q4
+	q5
+	q6
+;
+
+#param
+param C := 
+	c1 1
+	c2 1
+	c3 1
+	c4 1
+	c5 1
+	c6 1
+;
+
+param D :=
+	q1 1
+	q2 1
+	q3 1
+	q4 1
+	q5 1
+	q6 1
+;
+
+param A (tr) :    
+			 c1 c2 c3 c4 c5 c6 :=
+	q1		 1  1  0  0  0  0
+	q2		 1  1  0  0  0  1
+	q3		 0  0  1  1  0  0
+	q4		 0  0  1  1  1  0
+	q5		 0  0  0  1  1  1
+	q6		 0  1  0  0  1  1
+;

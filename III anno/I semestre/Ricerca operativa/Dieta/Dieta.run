@@ -1,0 +1,7 @@
+#Esercizio Dieta.run
+reset;
+option solver cplex;
+model Dieta.mod;
+data Dieta.dat;
+solve;
+display costo, x;

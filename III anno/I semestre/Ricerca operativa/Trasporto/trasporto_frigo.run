@@ -1,4 +1,4 @@
-option solver 'C:\Users\luigi\University\Teaching\Materiale\AMPL\amplcml\cplex';
+#option solver 'C:\Users\luigi\University\Teaching\Materiale\AMPL\amplcml\cplex; # si può usare risolutore da file
 
 reset;
 model trasporto.mod;
@@ -37,18 +37,18 @@ display costo_totale;
 display x;
 
 #visualizza il piano dei trasporti "pulito";
-display {i in I, j in J: x[i,j] > 0} x[i,j];
+display {i in I, j in J: x[i,j] > 0} x[i,j]; # display condizionale: itera i in I e j in J e display se mantiene condizione
 
 
 #INTERPRETAZIONE
 ################
 
 #visualizza la produzione effettiva in ogni stabilimento
-display origine.body, O;
+display origine.body, O; # chiamo il corpo di un vincolo per non dover riscrivere codice. Chiamo il corpo O
 
 #visualizza le capacità produttive in eccesso
 display 
-	{i in I: origine[i].body - O[i] != 0} origine[i].body,
+	{i in I: origine[i].body - O[i] != 0} origine[i].body, # display multiplo: i cicli non valgono per le stampe successive
 	{i in I: origine[i].body - O[i] != 0} O[i],  
 	{i in I: origine[i].body - O[i] != 0} O[i]-origine[i].body;
 

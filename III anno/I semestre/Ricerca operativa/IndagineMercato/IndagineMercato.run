@@ -1,0 +1,7 @@
+#Esercizio IndagineMercato.run
+reset;
+option solver cplex;
+model IndagineMercato.mod;
+data IndagineMercato.dat;
+solve;
+display costo, x;

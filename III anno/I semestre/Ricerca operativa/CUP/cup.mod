@@ -1,17 +1,19 @@
-#DICHIARAZIONE INSIEMI
-set F;							# facilities
-set I;							# centroids
+#Esercizio Cup.mod
 
-#DICHIARAZIONE PARAMETRI
-param minFacilities;			# minimum number of facilities
-param tresholdQoS;				# threshold distance
-param A {I,F};					# distance fality-centroid
+#set
+set I;
 
-var x {F} binary;
+#param
+param C{I, I};
+param T;
 
-minimize cost: sum {f in F} x[f];
+#variabili decisionali
+var x {i in I} binary;
 
-subject to soddisfazione {i in I}:
-	sum {f in F : A[i,f] <= tresholdQoS} x[f] >= minFacilities;
+#funzione obiettivo
+minimize costo: 
+	sum{i in I} x[i];
 
-
+#sistema di vincoli
+s.t. cover{i in I}:
+	sum{i in I : C[i, j] <= T} x[j] >= D[1];

@@ -1,0 +1,37 @@
+### PRODUZIONE E DISTRIBUZIONE DI PC: dati ###
+##############################################
+
+
+#INSIEMI
+set S := Italia Cina Francia;
+set B := AntonVeneta Intesa Unicredit CredSuisse BancaCina;
+
+#PARAMETRI
+param costo_spedizione (tr): 
+			Italia 	Cina 	Francia	:=
+Intesa	 	 5.5	15.0	 6.0
+Unicredit 	 7.5	14.3	 7.8
+AntonVeneta  6.9	13.0	 6.3
+CredSuisse 	 8.0	16.4	 6.8
+BancaCina	10.3	 5.0	11.0
+;
+
+
+
+param: costo_produzione capacita := 
+Italia	220				10000
+Cina	180				20000
+Francia	200	 			10000
+;
+
+param richiesta := 
+AntonVeneta	9700
+Intesa 		7100
+Unicredit 	3400
+CredSuisse 	5200
+BancaCina	3050
+;
+
+param stab_bilan := Italia;
+param bilan1 := 0.25;
+param bilan2 := 0.30;

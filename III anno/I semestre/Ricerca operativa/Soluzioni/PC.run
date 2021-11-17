@@ -1,0 +1,125 @@
+reset;
+model PC.mod;
+data  PC.dat;
+
+option solver cplex;
+option solver_msg 1;
+
+#parametri di lavoro 
+param old_fo;
+param diminuzione_max;
+param diminuzione_step;
+param scen4_aumento_produzione := 5000;
+param scen4_aumento_costo := 4000;
+
+#ATTENZIONE: i parametri saranno utili nel seguito 
+# ma sono dichiariati prima: sono ammesse dichiarazioni 
+# di soli parametri globali (non è ad esempio possibile 
+# dichiarare un parametro in un solo ramo dell'istruzione 
+# "if" sotto)
+
+printf "\n\n* * * P U N T O   1 * * *\n"; 
+
+printf "\n\n***IPOTESI 1:***\n SOLUZIONE:\n";
+# il valore di bilan2 nel .dat corrisponde all'ipotesi 1
+solve;
+
+if solve_result = "infeasible" then {
+	#questo controllo andrebbe fatto sempre
+	# lo facciamo solo qui per comodità espositiva
+	printf("infeasible!\n")
+} else {
+display {i in S, j in B: x[i,j] > 0} x[i,j];
+
+printf "\nBILANCIAMENTO %s: %8.2f\n", 
+				stab_bilan, 
+				sum {j in B} x[stab_bilan, j] / if (sum {i in S, jj in B} x[i,jj]) > 0 
+						then sum {i in S, jj in B} x[i,jj] 
+						else -1;
+#display equivalente
+display sum {j in B} x[stab_bilan, j] / if (sum {i in S, jj in B} x[i,jj]) > 0 
+						then sum {i in S, jj in B} x[i,jj] 
+						else 0;
+
+printf "\n\n***IPOTESI 2:***\n SOLUZIONE:\n";
+let bilan2 := 0.40;
+solve;
+
+display {i in S, j in B: x[i,j] > 0} x[i,j];
+
+printf "\nBILANCIAMENTO %s: %8.2f\n", 
+				stab_bilan, 
+				sum {j in B} x[stab_bilan, j] / if (sum {i in S, jj in B} x[i,jj]) > 0 then sum {i in S, jj in B} x[i,jj] else -1;
+
+
+
+printf "\n\n* * * P U N T O   2 * * *\n";
+let bilan2 := 0.30; #torno allo scenario 1
+solve;
+printf "\nRICERCA FORNITURE 'ESCLUSIVE' (indicate con *):\n";
+for { j in B , i in S : x[i,j] > 0} {
+	printf "%12s -> %12s: %8.2f / %8.2f %c\n", 
+				i, j, x[i,j], richiesta[j], 
+				if (x[i,j]==richiesta[j]) then '*' else '';
+}
+
+printf "\n\n* * * P U N T O   3 * * *\n";
+printf "\nSITUAZIONE FORNITORI\n";
+for {i in S} {
+	printf "%12s: %8.2f / %8.2f : %6.2f\%\n", i, 
+				produzione[i].body, capacita[i], 
+				produzione[i].body/capacita[i]*100;
+}
+
+printf "\n\n* * * P U N T O   4 * * *\n";
+let bilan2 := 0.40; #considero lo scenario 2
+printf "\n\nSCENARIO CON CAPACITA' PRODUTTIVA CINESE AUMENTATA DI 5000 UNITA'\n";
+option solver_msg 0;
+solve;
+#deve essere dichiarato fuori dall'if: param old_fo;
+let old_fo := costo_totale;
+let capacita['Cina'] := capacita['Cina'] + scen4_aumento_produzione;
+solve;
+printf "\ncosto passa da %12.2f a %12.2f: \
+		risparmio %12.2f - %12.2f = %12.2f\n", 
+        	old_fo, costo_totale, old_fo - costo_totale, 
+        	scen4_aumento_costo, old_fo - costo_totale - scen4_aumento_costo;
+if old_fo-(costo_totale + scen4_aumento_costo) < 0 then { printf "NON "; }
+printf "CONVIENE!\n\n";
+
+printf "\nSITUAZIONE FORNITORI\n";
+for {i in S} {
+	printf "%12s: %8.2f / %8.2f :  %6.2f\%\n", i, 
+				produzione[i].body, capacita[i], 
+				produzione[i].body/capacita[i]*100;
+}
+
+
+printf "\n\n* * * P U N T O   5 * * *\n";
+
+printf "\n\nCALCOLO EFFETTI COSTI ITALIA\n";
+let bilan1 := 0.00;
+let bilan2 := 0.00;
+let diminuzione_max := 40;
+let diminuzione_step := 6;
+for { diminuzione in 0..diminuzione_max by diminuzione_step }
+{
+	let costo_produzione['Italia'] := costo_produzione['Italia'] - diminuzione;
+	printf "\nCosto produzione Italia %8.2f (- %8.2f)\t", 
+		costo_produzione['Italia'], diminuzione;
+	solve;
+	printf "\tcosto: %12.2f, Italia: %8.2f, Francia: %8.2f", 
+				costo_totale, 
+				produzione['Italia'].body, 
+				produzione['Francia'].body;
+	if ( produzione['Italia'].body > produzione['Francia'].body ) then
+		printf "\t\tSUPERATO!";
+	else
+		printf "\t\tNON SUPERATO";
+	let costo_produzione['Italia'] := costo_produzione['Italia'] + diminuzione;
+}
+
+} # not infeasible
+
+
+

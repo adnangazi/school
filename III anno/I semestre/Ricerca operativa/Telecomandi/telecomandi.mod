@@ -1,16 +1,16 @@
-# model telecomandi
+#DICHIARAZIONE VARIABILI
 
-# variabili decisionali
-var xA >= 0, <= 5 integer;
-var xB >= 0 integer;
+var xA >= 0 , <= 5 integer;	# numero di telecomandi A
+var xB >= 0 integer;	# numero di telecomandi B
 
-# funzione obiettivo
-maximize rendita: 3 * xA + 6 * xB;
 
-# sistema di vincoli
-subject to display: xA + 2 * xB <= 10;
-subject to logica: 2 * xA + 2 * xB <= 18;
-subject to trasmissione: xA + 3 * xB <= 12;
-subject to tastierini: 2 * xA + 3 * xB <= 21;
-subject to navigazione: xA <= 9;
-subject to led: xA <= 10;
+#MODELLO
+
+maximize 	profitto:	3 * xA + 6 * xB;
+
+s.t.	display:	    xA + 2 * xB <= 10;
+s.t.	navigation:	    xA          <= 9;
+s.t. 	keyboard:	2 * xA + 3 * xB <= 21;
+s.t.	logic: 	    2 * xA + 2 * xB <= 18;
+s.t.	tx:			    xA + 3 * xB <= 12;
+s.t.	led:            xA          <= 10;
