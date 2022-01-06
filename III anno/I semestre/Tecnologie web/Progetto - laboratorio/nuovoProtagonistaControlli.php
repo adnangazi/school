@@ -12,7 +12,7 @@
 	$descrizione = "";
 	$edizioni = array();
 
-	if (isset(%_POST['submit'])) {
+	if (isset($_POST['submit'])) {
 		$nome = $_POST['nome'];
 		if (strlen($nome) == 0) {
 			$messaggi .= "<li>Nome non presente</li>";
@@ -64,8 +64,8 @@
 	} else {
 		$messaggi = '<div id="errors"><p>...</p></div>';
 	}
-//manca chiusura db
-}
+	$connessione->closeConnection();
+	}
 
 	$paginaHTML = str_replace("<messaggiForm/>", $messaggi, $paginaHTML);
 	$paginaHTML .= str_replace("<messaggiForm/>", $nome, $paginaHTML);
