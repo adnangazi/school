@@ -1,0 +1,1717 @@
+:root {
+	--colore-sfondo-div: #fffde9e6;
+	--colore-testo-contrasto-sfondi: #fdf1ce;
+	--colore-testo-principale: #473603;
+	--colore-errore: #d10000;
+	--colore-successo: #007500;
+	--colore-link-da-visitare: #01490a;
+	--colore-sfondo-article-p: #d7c99e;
+	--colore-hover-link: #cfbe96;
+	--colore-hover-menu: #d6c8a6;
+	--colore-background-menu: #bfb394;
+	--colore-sfondo-footer: #000000cc;
+	--colore-testo-footer: #fdf1ce;
+	--colore-bordi-form: #8f8156;
+	--immagine-background: url("immagini/sfondo-light.jpg");
+	--icona-autenticazione: url("immagini/logo/user.png");
+	--icona-autenticazione-current: url("immagini/logo/user-light.png");
+	--icona-torna-su: url("immagini/torna-su-light.svg");
+	--icona-burger-menu: url("immagini/logo/burger-menu-light.svg");
+	--icona-chiudi-burger-menu: url("immagini/logo/chiudi-menu.svg");
+}
+
+[data-theme="dark"] {
+	--colore-sfondo-div: #000000cc;
+	--colore-testo-contrasto-sfondi: #473603;
+	--colore-testo-principale: #dfd0ab;
+	--colore-errore: #ff0000;
+	--colore-successo: #00b800;
+	--colore-link-da-visitare: #a7e08c;
+	--colore-sfondo-article-p: #382c1f;
+	--colore-hover-link: #5f4a31;
+	--colore-hover-menu: #5f4a31;
+	--colore-background-menu: #473725;
+	--colore-sfondo-footer: #000000cc;
+	--colore-testo-footer: #fdf1ce;
+	--colore-bordi-form: #796544;
+	--immagine-background: url("immagini/sfondo-dark.jpg");
+	--icona-autenticazione: url("immagini/logo/user-light-darkmode.png");
+	--icona-autenticazione-current: url("immagini/logo/user.png");
+	--icona-torna-su: url("immagini/torna-su-dark.svg");
+	--icona-burger-menu: url("immagini/logo/burger-menu-dark.svg");
+	--icona-chiudi-burger-menu: url("immagini/logo/chiudi-menu.svg");
+}
+
+* {
+	padding: 0;
+	margin: 0 auto;
+	word-wrap: break-word;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+	font-size: 95%;
+	font-family: sans-serif;
+	max-width: 1200px;
+	background-image: var(--immagine-background);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+header {
+	background-color: var(--colore-sfondo-div);
+	color: var(--colore-testo-principale);
+	text-align: center;
+}
+
+.hide {
+	text-indent: -9999px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+h1.hide {
+	transition: transform 0.5s cubic-bezier(0.15, 1, 0.15, 1);
+	background-image: url("immagini/titolo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 4em;
+	margin: 0 2em;
+}
+
+#logo {
+	padding-top: 4em;
+}
+
+h1.hide:hover {
+	transform: scale(1.02);
+}
+
+#breadcrumb {
+	font-size: 1.2em;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+
+.aiuti {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+a {
+	color: var(--colore-link-da-visitare);
+	background-color: var(--colore-background-menu);
+	padding: 0.4em 0.8em;
+	border-radius: 10px;
+	display: inline-block;
+	text-align: center;
+	transition: background-color 0.1s ease-in-out;
+}
+
+a:visited {
+	color: var(--colore-testo-principale);
+}
+
+a:hover {
+	background-color: var(--colore-hover-link);
+}
+
+button {
+	padding: 0.3em 1em;
+	border-radius: 1em;
+	border: none;
+	font-size: 1em;
+	color: var(--colore-testo-contrasto-sfondi);
+	background-color: var(--colore-testo-principale);
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.03);
+}
+
+button::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	border-radius: 40px;
+	box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.4);
+	transition: opacity 0.17s ease-in-out;
+}
+
+button:hover::after {
+	opacity: 1;
+}
+
+small {
+	font-size: 1em;
+}
+
+#content p.alert {
+	color: var(--colore-errore);
+}
+
+#content p.notification {
+	color: var(--colore-successo);
+}
+
+#deleted {
+	flex-basis: 95%;
+}
+
+#content p.followNotification {
+	color: var(--colore-link-da-visitare);
+	margin-left: 0;
+}
+
+#content p.follow {
+	color: var(--colore-successo);
+	flex-basis: 100%;
+}
+
+/*==================== MENU ====================*/
+#topbar {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	width: 100%;
+	max-width: 1200px;
+	font-size: 1.1em;
+}
+
+#menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #bfb394; /* per degradazione elegante */
+	background-color: var(--colore-background-menu);
+	border-radius: 0 0 10px 10px;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu li a,
+#currentLink {
+	display: block;
+	text-align: center;
+	padding: 1em 0.8em;
+	border-radius: 10px;
+	background-color: unset;
+}
+
+#currentLink {
+	color: var(--colore-testo-contrasto-sfondi);
+	background-color: var(--colore-testo-principale);
+}
+
+#menu li a {
+	transition: background-color 0.1s ease-in-out;
+}
+
+#menu li a:hover {
+	background-color: var(--colore-hover-menu);
+}
+
+#menu #userIcon {
+	width: 3.5em;
+	float: right;
+}
+
+#userIcon a,
+#userIcon a:hover {
+	background-image: url("immagini/logo/user.png"); /*per degradazione elegante */
+	background-image: var(--icona-autenticazione);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2em;
+}
+
+#userIcon span {
+	background-image: url("immagini/logo/user.png"); /*per degradazione elegante */
+	background-image: var(--icona-autenticazione-current);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2em;
+}
+
+#burger-menu,
+#closebtn {
+	display: none;
+}
+
+#titolo > a {
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+
+/*==================== TOGGLE DARK MODE ====================*/
+#darkmode-switch {
+	margin-top: 0.35em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 4em;
+	height: 2.3em;
+	width: 4.7em;
+}
+
+#darkmode-switch input {
+	opacity: 0;
+}
+
+.slider {
+	background-color: var(--colore-testo-principale);
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	transition: 0.4s;
+	background-image: url("immagini/toggle-darkmode/sun.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.slider:before {
+	background-color: var(--colore-testo-contrasto-sfondi);
+	bottom: 0.3em;
+	content: "";
+	height: 1.72em;
+	left: 0.27em;
+	position: absolute;
+	transition: 0.4s;
+	width: 1.72em;
+}
+
+#darkmode-switch input:checked + .slider {
+	background-color: #66bb6a;
+	background-image: url("immagini/toggle-darkmode/moon.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+#darkmode-switch input:checked + .slider:before {
+	transform: translateX(2.4em);
+}
+
+.slider.round {
+	border-radius: 5em;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+#displayMenuButton {
+	display: none;
+}
+
+/*==================== CONTENT ====================*/
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+}
+
+#content > div,
+#content > article {
+	background-color: var(--colore-sfondo-div);
+	padding: 2em;
+	border-radius: 2em;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	overflow: auto;
+}
+
+#content #titolo {
+	border-top-left-radius: 0%;
+	border-top-right-radius: 0%;
+	margin-top: 0;
+	padding-top: 0;
+	text-align: center;
+}
+
+#content h1 {
+	text-align: center;
+	color: var(--colore-testo-principale);
+	padding-top: 0.1em;
+	font-size: 4em;
+}
+
+#content h2 {
+	text-align: center;
+	margin-bottom: 1em;
+	font-size: 2.5em;
+	color: var(--colore-testo-principale);
+}
+
+#content h3 {
+	text-align: center;
+	margin-bottom: 1em;
+	font-size: 2em;
+}
+
+#content h3:not(a > h3) {
+	color: var(--colore-testo-principale);
+}
+
+#content dl,
+#content form {
+	color: var(--colore-testo-principale);
+	font-size: 1.3em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#content legend > h2 {
+	font-size: 1.925em;
+}
+
+#content p {
+	font-size: 1.3em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#content p:not(a > p) {
+	color: var(--colore-testo-principale);
+}
+
+#content label {
+	text-align: center;
+	font-weight: bold;
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	font-size: 1em;
+}
+
+#content select option {
+	background-color: var(--colore-sfondo-div);
+}
+
+#content input,
+#content textarea,
+#content select {
+	display: block;
+	color: var(--colore-testo-principale);
+	font-size: 1em;
+	width: 100%;
+	margin-top: 0.5em;
+	padding: 0.5em;
+	box-sizing: border-box;
+	border: 2px solid var(--colore-bordi-form);
+	background-color: unset;
+	outline: none;
+	resize: none;
+}
+
+#content input:focus,
+#content textarea:focus,
+#content select:focus {
+	border: 2px solid var(--colore-testo-principale);
+}
+
+#content
+	form:not(#accesso, #registrazione, #inserimentoEsercizio, #inserimentoAllenamento)
+	input:invalid,
+#content textarea:invalid {
+	border: 2px solid var(--colore-errore);
+}
+
+#content input[type="date"] {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+#content input:disabled {
+	color: grey;
+	border: 2px solid grey;
+}
+
+#content dt {
+	font-weight: bold;
+}
+
+#content img {
+	border-radius: 2em;
+}
+
+#content li {
+	font-size: 1.1em;
+}
+
+#content label:after {
+	content: ":";
+}
+
+#titolo h2 {
+	margin-bottom: 0em;
+}
+
+/*==================== FOOTER ====================*/
+footer {
+	clear: both;
+	text-align: center;
+	max-width: 1200px;
+	background-color: var(--colore-sfondo-footer);
+	border-radius: 2em 2em 0 0;
+	color: var(--colore-testo-footer);
+	padding-bottom: 1em;
+}
+
+footer h2 {
+	padding-top: 1em;
+}
+
+footer a {
+	padding: 0;
+	background-color: unset;
+}
+footer a:hover {
+	background-color: unset;
+}
+
+.social {
+	margin: 1em;
+	height: 3.5em;
+}
+
+footer[class="footer-bottom"] {
+	margin-top: 15%;
+}
+
+/*======================= HOME ========================*/
+#titolo h2 {
+	padding-top: 0.5em;
+}
+
+#motivazioni {
+	color: var(--colore-testo-principale);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 -1em;
+}
+
+.motivazione {
+	text-align: center;
+	max-width: 300px;
+	background-color: var(--colore-sfondo-article-p);
+	border-radius: 2em;
+	padding: 1em;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+	margin: 1em;
+}
+
+.motivazione dt {
+	text-align: center;
+	font-size: 1.5em;
+}
+.motivazione .numero {
+	display: block;
+	font-size: 1.8em;
+}
+
+.motivazione dd {
+	padding: 1em;
+}
+
+#diventaMembro {
+	text-align: center;
+}
+
+#diventaMembro a {
+	font-size: 1.5em;
+}
+
+#pannelloInfo {
+	text-align: center;
+}
+
+#vieniATrovarci {
+	display: grid;
+	grid-template-columns: 57%;
+	align-items: start;
+	column-gap: 5em;
+	grid-template-areas:
+		"e e"
+		"a b"
+		"a c"
+		"a d";
+}
+
+#mappa {
+	margin-top: 1em;
+	width: 100%;
+}
+
+#doveSiamo {
+	grid-area: a;
+	text-align: center;
+}
+
+#doveSiamo p {
+	text-align: left;
+}
+
+#doveSiamo a {
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+
+#orari {
+	grid-area: b;
+}
+
+#contaPersone {
+	grid-area: c;
+}
+
+#gotoAllenamenti {
+	text-align: center;
+	grid-area: d;
+	font-size: 1.5em;
+}
+
+#vieniATrovarci h2 {
+	grid-area: e;
+}
+
+/*==================== ABBONAMENTI ====================*/
+#abbonamenti {
+	text-align: center;
+}
+
+#offerteAbbonamenti {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em 1.4em;
+}
+
+.offertaAbbonamento,
+.esercizio {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"a"
+		"b"
+		"c";
+	background-color: var(--colore-sfondo-article-p);
+	color: var(--colore-testo-principale);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+	padding: 2em 2em;
+	width: 16em;
+	text-align: center;
+	border-radius: 40px;
+}
+
+#content .offertaAbbonamento h2,
+.esercizio h2 {
+	grid-area: a;
+	align-self: start;
+	font-size: 2.5em;
+}
+
+.offertaAbbonamento ul,
+.esercizio ul {
+	grid-area: b;
+	align-self: start;
+	list-style-type: none;
+}
+
+#content .offertaAbbonamento p {
+	display: inline-block;
+	padding: 0.4em 0.8em;
+	margin-top: 1em;
+	margin-bottom: 0;
+	font-size: 1.5em;
+	grid-area: c;
+	align-self: baseline;
+}
+
+#content .offertaAbbonamento a {
+	margin-top: 1em;
+	font-size: 1.5em;
+	grid-area: c;
+	align-self: baseline;
+}
+
+#link_compra_abbonamento {
+	font-size: 1.7em;
+	margin-top: 2em;
+}
+
+#resortPass ul {
+	display: inline-block;
+	margin-top: 1.5em;
+	color: var(--colore-testo-principale);
+}
+
+#resortPass li {
+	float: left;
+	background-color: var(--colore-sfondo-article-p);
+	margin: 0.5em;
+	padding: 0.5em 1em;
+	list-style-type: none;
+	border-radius: 5em;
+}
+
+#clausolaIscrizione p {
+	font-size: 1em;
+}
+
+/*==================== TRAINER ====================*/
+#content .personalTrainer h2 {
+	margin: 0em 0em 0.7em 35%;
+}
+
+#content .personalTrainer img {
+	float: left;
+	width: 30%;
+}
+
+#content .personalTrainer blockquote {
+	font-style: italic;
+	font-size: 1.5em;
+	color: var(--colore-testo-principale);
+	padding: 1.5em;
+}
+
+#content .personalTrainer .descrizioneTrainer p {
+	color: var(--colore-testo-principale);
+	background-color: var(--colore-sfondo-article-p);
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 1.5em;
+	padding-top: 0;
+	border-radius: 0em 0em 1em 1em;
+}
+
+#content .personalTrainer .descrizioneTrainer {
+	background-color: var(--colore-sfondo-article-p);
+	border-radius: 1em;
+}
+
+#content .personalTrainer div {
+	margin-left: 35%;
+	margin-bottom: 1em;
+}
+
+#content .personalTrainer .corsiTrainer p {
+	display: inline-block;
+	color: var(--colore-testo-contrasto-sfondi);
+	background-color: var(--colore-testo-principale);
+	padding: 0.5em 1em;
+	border-radius: 2em;
+	margin-bottom: 0.5em;
+}
+
+#content .personalTrainer .corsiTrainer div ul {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#content .personalTrainer .corsiTrainer li {
+	color: var(--colore-testo-principale);
+	background-color: var(--colore-sfondo-article-p);
+	padding: 0.5em 1em;
+	margin: 0.5em 0 0;
+	border-radius: 2em;
+	list-style-type: none;
+	display: inline-block;
+}
+
+/*==================== ATTREZZATURE ====================*/
+
+#content .attrezzature article {
+	margin-bottom: 4em;
+}
+
+#content .attrezzature article h3 {
+	color: var(--colore-testo-principale);
+	font-size: 2.5em;
+	text-align: center;
+	clear: both;
+}
+
+.attrezzature img {
+	float: left;
+	width: 280px;
+	margin-right: 2em;
+	margin-bottom: 2em;
+	border-radius: 2em;
+}
+
+#content .attrezzature article p {
+	clear: right;
+	margin-bottom: 1em;
+	color: var(--colore-testo-principale);
+	border-radius: 2em;
+	font-size: 1.8em;
+}
+
+#content .attrezzature h2 {
+	font-size: 3.2em;
+}
+
+/*==================== STORIA ======================*/
+
+#presente h2,
+#passato h2 {
+	font-size: 3em;
+	margin-bottom: 0em;
+}
+
+#presente h3,
+#passato h3 {
+	clear: left;
+	padding-top: 1em;
+}
+
+#palestraAnticaImg {
+	float: left;
+	width: 60%;
+	margin-right: 1.5em;
+	margin-bottom: 1em;
+	border-radius: 2em;
+}
+
+#secondaGuerraImg {
+	float: right;
+	width: 50%;
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+	border-radius: 2em;
+}
+
+#canoeImg {
+	float: left;
+	width: 60%;
+	margin-right: 1.5em;
+	margin-bottom: 1em;
+	border-radius: 2em;
+}
+
+#presente p,
+#passato p {
+	padding: 0em 1.4em 1em 1.4em;
+}
+
+#secondaGuerra p {
+	margin-top: 0em;
+}
+
+#secondaGuerraImg img {
+	float: left;
+	margin-top: 0em;
+}
+
+/*==================== GALLERIA ====================*/
+#subMenu ul {
+	text-align: left;
+	list-style: none;
+}
+
+#subMenu li {
+	display: inline-block;
+	margin: 0.5em 1em;
+}
+
+div div .gallery {
+	max-width: 1000px;
+}
+
+.gallery {
+	display: grid;
+	grid-gap: 1em;
+	width: 100%;
+	height: 100%;
+}
+
+.gallery_img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 2em;
+}
+
+.gridQuadrata {
+	grid-template-areas:
+		"x y"
+		"z w";
+}
+
+/*==================== GALLERIA SALA PESI ====================*/
+#gallerySalaPesi {
+	grid-template-areas:
+		"a a b b c c"
+		"d d d e e e"
+		"f f f g g g";
+	padding-bottom: 3em;
+}
+
+#gallerySalaPesi #pesi1 {
+	grid-area: a;
+}
+
+#gallerySalaPesi #pesi2 {
+	grid-area: b;
+}
+
+#gallerySalaPesi #pesi3 {
+	grid-area: c;
+}
+
+#gallerySalaPesi #pesi5 {
+	grid-area: d;
+}
+
+#gallerySalaPesi #pesi6 {
+	grid-area: e;
+}
+
+#gallerySalaPesi #pesi7 {
+	grid-area: f;
+}
+
+#gallerySalaPesi #pesi8 {
+	grid-area: g;
+}
+
+/*==================== GALLERIA SALA CARDIO ====================*/
+#gallerySalaCardio {
+	grid-template-areas:
+		"a a"
+		"b c"
+		"d e";
+	padding-bottom: 3em;
+}
+
+#gallerySalaCardio #cardio1 {
+	grid-area: a;
+}
+
+#gallerySalaCardio #cardio2 {
+	grid-area: b;
+}
+
+#gallerySalaCardio #cardio3 {
+	grid-area: c;
+}
+
+#gallerySalaCardio #cardio4 {
+	grid-area: d;
+}
+
+#gallerySalaCardio #cardio6 {
+	grid-area: e;
+}
+
+/*==================== GALLERIA SALA FITNESS ====================*/
+#gallerySalaFitness {
+	padding-bottom: 3em;
+}
+
+#gallerySalaFitness #fitness1 {
+	grid-area: x;
+}
+
+#gallerySalaFitness #fitness2 {
+	grid-area: y;
+}
+
+#gallerySalaFitness #fitness3 {
+	grid-area: z;
+}
+
+#gallerySalaFitness #fitness4 {
+	grid-area: w;
+}
+
+/*==================== GALLERIA PISCINA ====================*/
+#galleryPiscina {
+	padding-bottom: 3em;
+}
+
+#galleryPiscina #piscina1 {
+	grid-area: x;
+}
+
+#galleryPiscina #piscina2 {
+	grid-area: y;
+}
+
+#galleryPiscina #piscina3 {
+	grid-area: z;
+}
+
+#galleryPiscina #piscina4 {
+	grid-area: w;
+}
+
+/*==================== GALLERIA OUTDOOR ====================*/
+#galleryOutdoor {
+	grid-template-areas:
+		"a b"
+		"c d"
+		"e e";
+	padding-bottom: 3em;
+}
+
+#galleryOutdoor #outdoor1 {
+	grid-area: a;
+}
+
+#galleryOutdoor #outdoor2 {
+	grid-area: b;
+}
+
+#galleryOutdoor #outdoor3 {
+	grid-area: c;
+}
+
+#galleryOutdoor #outdoor4 {
+	grid-area: d;
+}
+
+#galleryOutdoor #outdoor6 {
+	grid-area: e;
+}
+
+/*==================== GALLERIA COCKTAIL BAR ====================*/
+#galleryCocktailBar {
+	padding-bottom: 3em;
+}
+
+#galleryCocktailBar #cocktailbar1 {
+	grid-area: x;
+}
+
+#galleryCocktailBar #cocktailbar2 {
+	grid-area: y;
+}
+
+#galleryCocktailBar #cocktailbar3 {
+	grid-area: z;
+}
+
+#galleryCocktailBar #cocktailbar4 {
+	grid-area: w;
+}
+
+/*==================== GALLERIA GIARDINO ZEN ====================*/
+#galleryGiardinoZen {
+	padding-bottom: 3em;
+}
+
+#galleryGiardinoZen #zen1 {
+	grid-area: x;
+}
+
+#galleryGiardinoZen #zen2 {
+	grid-area: y;
+}
+
+#galleryGiardinoZen #zen3 {
+	grid-area: z;
+}
+
+#galleryGiardinoZen #zen4 {
+	grid-area: w;
+}
+
+/*==================== GALLERIA SPOGLIATOI ====================*/
+#gallerySpogliatoio {
+	grid-template-areas:
+		"a b"
+		"c d";
+	padding-bottom: 3em;
+}
+
+#gallerySpogliatoio #spogliatoio2 {
+	grid-area: a;
+}
+
+#gallerySpogliatoio #spogliatoio4 {
+	grid-area: b;
+}
+
+#gallerySpogliatoio #spogliatoio5 {
+	grid-area: c;
+}
+
+#gallerySpogliatoio #spogliatoio6 {
+	grid-area: d;
+}
+
+/*==================== AREA PERSONALE ====================*/
+#content dl[class="dl_inline"] {
+	text-align: center;
+	width: 80%;
+}
+
+#content .dl_inline dt {
+	float: left;
+	clear: left;
+	width: 40%;
+	text-align: left;
+}
+
+.dl_inline dd {
+	padding-bottom: 1em;
+	text-align: left;
+}
+
+.dl_inline dt::after {
+	content: ": ";
+}
+
+#content #widget_area_personale {
+	background-color: transparent;
+	display: grid;
+	grid-gap: 3em;
+	padding: 0em;
+	grid-template-columns: 50%;
+	grid-template-areas:
+		"c a"
+		"c b";
+}
+
+.widget,
+.dati_personali {
+	background-color: var(--colore-sfondo-div);
+	border-radius: 2em;
+	padding: 2em 0;
+	width: 100%;
+}
+
+.widget > a {
+	font-size: 1.4em;
+}
+
+#dettagli_abbonamento {
+	grid-area: a;
+}
+
+#dettagli_abbonamento .dl_inline dt {
+	width: 60%;
+}
+
+#ultimo-ingresso {
+	grid-area: b;
+}
+
+.dati_personali {
+	text-align: center;
+}
+
+#dati_personali_widget {
+	grid-area: c;
+}
+
+#dati_personali_form legend h2 {
+	margin-bottom: 0;
+}
+
+#schede_seguite,
+#schede_create {
+	text-align: center;
+	margin-bottom: 3em;
+}
+
+#schede_allenamento .display_allenamenti {
+	display: flex;
+	text-align: left;
+	flex-wrap: wrap;
+	gap: 2em;
+}
+
+#schede_allenamento .scheda_allenamento {
+	text-align: center;
+	min-width: 13em;
+	width: 25%;
+	background-color: var(--colore-sfondo-article-p);
+	padding: 2em;
+	border-radius: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+	transition: transform 0.17s ease-in-out;
+}
+
+#schede_allenamento .scheda_allenamento:hover {
+	transform: scale(1.02);
+}
+
+#schede_allenamento .scheda_allenamento::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	border-radius: 2em;
+	box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+	transition: opacity 0.2s ease-in-out;
+}
+
+#schede_allenamento .scheda_allenamento:hover::after {
+	opacity: 1;
+}
+
+.dati_personali form {
+	width: 60%;
+	text-align: left;
+}
+
+.dati_personali form label {
+	font-weight: bold;
+}
+
+.dati_personali input[type="date"] {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.dati_personali select {
+	width: 100%;
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+	padding-top: 0.2em;
+}
+
+#content .dati_personali .errore_form {
+	color: var(--colore-errore);
+	margin: 0;
+	padding-bottom: 1em;
+	font-size: 0.8em;
+	max-width: 320px;
+}
+
+.dati_personali button {
+	display: block;
+}
+
+.dati_personali dl {
+	margin-top: 3em;
+}
+
+#dettagli_abbonamento {
+	text-align: center;
+}
+
+/*==================== AREA PERSONALE ADMIN ====================*/
+#content #widget_area_personale_admin {
+	background-color: transparent;
+	display: grid;
+	grid-gap: 3em;
+	padding: 0;
+	grid-template-columns: 50%;
+	grid-template-areas:
+		"c d"
+		"a b";
+}
+
+#gestione_utenti #ricerca-utente {
+	text-align: center;
+	display: block;
+	width: 80%;
+	margin: 0.5em auto;
+}
+
+#ricerca-utente label {
+	font-size: 1.2em;
+	text-align: left;
+}
+
+#ricerca-utente a {
+	font-size: 1.2em;
+	margin: 0.5em 0.2em;
+}
+
+#ricerca-utente button {
+	font-size: 1.2em;
+	margin: 0.5em 0.2em 0;
+}
+
+#ricerca-utente input {
+	width: 100%;
+	display: inline;
+}
+
+#gestione_utenti {
+	grid-area: d;
+	text-align: center;
+}
+#gestione_utenti p {
+	text-align: center;
+}
+
+#gestione_utenti ul {
+	margin-top: 1em;
+	max-height: 11em;
+	border: solid 1px var(--colore-testo-principale);
+	width: 80%;
+	list-style: none;
+	overflow-y: scroll;
+	padding: 0 1.5em;
+}
+
+#gestione_utenti li {
+	border-bottom: solid 1px var(--colore-testo-principale);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#gestione_utenti #last_user {
+	border-bottom: none;
+}
+
+#gestione_utenti form {
+	font-size: 1em;
+	margin: 0.5em 0;
+}
+
+#lista_utenti form {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+#lista_utenti li form a {
+	margin: 0;
+}
+
+#lista_utenti button {
+	margin: 0;
+}
+
+/*==================== ACQUISTO ABBONAMENTO ====================*/
+#acquisto_abbonamento form {
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+#annulla {
+	text-align: center;
+	margin-top: 1.5em;
+	font-size: 1.3em;
+}
+
+#acquisto_abbonamento p {
+	text-align: center;
+}
+
+#form_acquisto select {
+	display: inline;
+	width: auto;
+	margin-right: 1em;
+}
+
+#form_acquisto button {
+	margin-top: 1em;
+}
+
+/*==================== CONFERMA ACQUISTO =======================*/
+#avviso_pagamento {
+	font-size: 0em;
+}
+
+#content #caricamento {
+	margin-top: 1em;
+	width: 100%;
+	height: 30px;
+	border: 1px solid var(--colore-testo-principale);
+	border-radius: 7px;
+	padding: 4px;
+}
+
+#content #progressBar {
+	margin: 0;
+	width: 0%;
+	height: 100%;
+	background-color: var(--colore-testo-principale);
+	animation-name: progressBarAnimation;
+	animation-iteration-count: 1;
+	animation-duration: 8s;
+}
+
+#content #acquisto_abbonamento {
+	text-align: center;
+}
+
+@keyframes progressBarAnimation {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+/*==================== ALLENAMENTI ====================*/
+.allenamenti,
+.dettagli-allenamento {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -1em;
+	justify-content: center;
+}
+
+.allenamenti article {
+	min-width: 10em;
+	width: 40%;
+	background-color: var(--colore-sfondo-article-p);
+	color: var(--colore-testo-principale);
+	padding: 2em 3%;
+	border-radius: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.allenamenti ul,
+.dettagli-allenamento ul,
+#specifiche-utente-dettaglio-allenamento {
+	margin: 0;
+}
+
+#titolo button {
+	font-size: 1.3em;
+}
+
+.dettagli-allenamento article {
+	width: 20em;
+	background-color: var(--colore-sfondo-article-p);
+	color: var(--colore-testo-principale);
+	padding: 2em 3%;
+	border-radius: 2em;
+	margin: 0 1em;
+	margin-bottom: 2em;
+	box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+#content .allenamenti ul li,
+#content .dettagli-allenamento ul li,
+#content #specifiche-utente-dettaglio-allenamento li,
+#content .bottoni-allenamenti ul li {
+	padding: 0.5em 1em;
+	margin: 0.5em 0.2em 0;
+	border-radius: 2em;
+	font-size: 1.3em;
+	list-style-type: none;
+	display: inline-block;
+}
+
+.allenamenti ul li,
+.dettagli-allenamento ul li,
+#specifiche-utente-dettaglio-allenamento li {
+	color: var(--colore-testo-principale);
+	background-color: var(--colore-background-menu);
+}
+
+#content .bottoni-allenamenti ul li {
+	padding: 0;
+	background-color: transparent;
+}
+
+#content .bottoni-allenamenti ul {
+	margin: 0em;
+	margin-right: 0.5em;
+}
+
+#content .bottoni-allenamenti form {
+	margin: 0;
+	margin-top: 0.5em;
+}
+
+.bottoni-allenamenti {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0em 0em 1em 0em;
+}
+
+#naviga-pagine {
+	display: flex;
+}
+
+#naviga-pagine a {
+	padding: 0.5em 0.8em;
+	font-size: 1.5em;
+}
+
+#naviga-pagine #currentPage {
+	color: var(--colore-testo-contrasto-sfondi);
+	background-color: var(--colore-testo-principale);
+	padding: 0.6em 0.95em;
+	margin: 0em 0.2em;
+	border-radius: 10px;
+	font-size: 1.5em;
+}
+
+#naviga-pagine li {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0em 0.2em;
+}
+
+#bottoni-allenamenti,
+#bottoni-dettagli-allenamento {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#bottoni-allenamenti {
+	justify-content: right;
+}
+
+#bottone-iniziale {
+	margin: 0;
+	font-size: 1.5em;
+}
+
+#bottone-iniziale-sinistra {
+	margin: 0;
+	font-size: 1.5em;
+}
+
+#titolo-allenamenti {
+	margin-top: 1em;
+}
+
+#titolo-dettagli-allenamento {
+	margin-top: 0.5em;
+}
+
+#naviga-pagine ul li#fine-pagine-iniziali {
+	margin-left: 3em;
+}
+
+#naviga-pagine ul li#inizio-pagine-finali {
+	margin-right: 3em;
+}
+
+#modificaAllenamento {
+	text-align: center;
+}
+
+#modificaAllenamento a {
+	font-size: 1.5em;
+}
+
+.eliminaAllenamentoButton {
+	margin-right: 0.5em;
+}
+
+/*==================== TORNA SU ====================*/
+#tornaSu {
+	position: fixed;
+	bottom: 2em;
+	right: 3em;
+	height: 3em;
+	width: 2em;
+	background-color: var(--colore-sfondo-article-p);
+	border-radius: 10px;
+	color: var(--colore-testo-principale);
+	opacity: 0.9;
+	background-image: var(--icona-torna-su);
+	background-repeat: no-repeat;
+	background-size: 3em;
+	text-indent: -999999em;
+	background-position: center;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#tornaSu:hover {
+	opacity: 1;
+}
+
+/*==================== FORM INSERIMENTO ALLENAMENTO ====================*/
+#inserimentoForm button {
+	display: inline;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#inserimentoForm form {
+	text-align: center;
+}
+
+fieldset {
+	border: 2px solid var(--colore-background-menu);
+	background-color: unset;
+	border: none;
+}
+
+#inserimentoForm input,
+#inserimentoEsercizio input,
+#inserimentoForm textarea,
+#inserimentoEsercizio textarea,
+#inserimentoForm select,
+#inserimentoEsercizio select {
+	width: 75%;
+}
+
+#inserimentoForm input,
+#inserimentoForm textarea,
+#inserimentoForm select {
+	resize: none;
+	width: 60%;
+}
+
+#inserimentoForm .errore_form {
+	color: var(--colore-errore);
+	margin: 0;
+	padding-bottom: 1em;
+	font-size: 0.8em;
+	text-align: left;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+#inserimentoForm p {
+	text-align: center;
+}
+
+#submitButtons {
+	display: inline;
+}
+
+#errore {
+	display: flex;
+	text-align: center;
+}
+
+#errore a {
+	font-size: 1.2em;
+}
+
+#errore p {
+	font-size: 1.5em;
+}
+
+#errore div {
+	display: inline-block;
+	width: 40%;
+}
+
+#errore img {
+	float: right;
+	width: 40%;
+}
+
+/*==================== FORM INSERIMENTO ESERCIZIO ====================*/
+#inserimentoEsercizio fieldset {
+	display: grid;
+	grid-template-columns: 75% 25%;
+	grid-gap: 0.5em;
+	grid-template-areas:
+		"a e"
+		"b h"
+		"c f"
+		"d i"
+		"d g"
+		"m l"
+		"n ."
+		"o o";
+}
+
+#nomeEsercizioL {
+	grid-area: a;
+}
+
+#nomeEsercizioI {
+	grid-area: b;
+	width: 75%;
+}
+
+#descrizioneEsercizioL {
+	grid-area: c;
+}
+
+#descrizioneEsercizioI {
+	grid-area: d;
+	width: 75%;
+}
+
+#pesoEsercizioL {
+	grid-area: e;
+}
+
+#serieEsercizioL {
+	grid-area: f;
+}
+
+#ripetizioniEsercizioL {
+	grid-area: g;
+}
+
+#pesoEsercizioI {
+	grid-area: h;
+	width: 25%;
+}
+
+#serieEsercizioI {
+	grid-area: i;
+	width: 25%;
+}
+
+#ripetizioniEsercizioI {
+	grid-area: l;
+	width: 25%;
+}
+
+#durataEsercizioL {
+	grid-area: m;
+}
+
+#durataEsercizioI {
+	grid-area: n;
+	width: 75%;
+}
+
+#buttonAddEsercizio {
+	grid-area: o;
+	margin: 1em auto;
+}
+
+#inserimentoForm #buttonDelEsercizio {
+	margin: 1em auto;
+	display: block;
+}
+
+#datiScheda p.notification {
+	display: inline;
+	margin-right: 1em;
+}
+
+#datiScheda > a {
+	font-size: 1.5em;
+}
+
+.imgValidCode {
+	margin: 1em;
+	height: 3em;
+}

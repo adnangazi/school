@@ -1,0 +1,48 @@
+#darkmode-switch{
+	display: none;
+}
+
+#stampa-allenamento{
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	#burger-menu,#closebtn{
+		display: none;
+	}
+
+	#topbar{
+		width: 100%;
+		position: static;
+		margin: 1em 0em;
+		background-color: unset;
+		border-radius: 0.5em;
+	}
+
+	#menu li a{
+		color: var(--colore-testo-principale);
+	}
+
+	#userIcon a,
+	#userIcon a:hover{
+		background-image: var(--icona-autenticazione);
+	}
+
+	#currentLink[title="Area personale"]{
+		display: block;
+	}
+
+	#userIcon #currentLink{
+		background-image: var(--icona-autenticazione-current);
+	}
+
+	#currentLink{
+		background-color: var(--colore-testo-principale);
+		color: var(--colore-testo-contrasto-sfondi);
+		display: inline-block;
+	}
+
+	#breadcrumb{
+		margin-bottom: 0em;
+	}
+}

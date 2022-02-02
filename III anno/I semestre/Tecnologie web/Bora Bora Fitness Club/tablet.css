@@ -1,0 +1,192 @@
+/*==================== MENU ====================*/
+h1.hide {
+	margin: 0 3em;
+}
+
+#content h1 {
+	font-size: 3em;
+}
+
+#content h2 {
+	font-size: 2em;
+}
+
+#logo {
+	padding: 0;
+}
+
+#topbar {
+	max-width: 768px;
+	width: 0%;
+}
+
+#burger-menu,
+#closebtn {
+	display: block;
+	position: absolute;
+	top: 0.7em;
+	left: 0.6em;
+	font-size: 2em;
+	border-radius: unset;
+	background-repeat: no-repeat;
+	background-color: unset;
+	background-size: 1.5em;
+}
+
+#burger-menu {
+	background-image: var(--icona-burger-menu);
+}
+
+#closebtn {
+	background-image: var(--icona-chiudi-burger-menu);
+}
+
+#darkmode-switch {
+	top: 0.7em;
+	margin-right: 0;
+	right: 1em;
+	font-size: 1.3em;
+}
+
+.slider {
+	background-color: var(--colore-sfondo-article-p);
+}
+.slider:before {
+	background-color: #473603;
+}
+
+#menu li {
+	float: none;
+}
+
+#menu li a,
+#currentLink,
+#userIcon {
+	color: var(--colore-testo-footer);
+	padding: 0.6em;
+	background-color: transparent;
+}
+
+#menu li a:hover {
+	background-color: transparent;
+}
+
+#menu ul {
+	background-color: transparent;
+}
+
+#menu #userIcon {
+	float: none;
+	width: auto;
+}
+
+#userIcon a,
+#userIcon a:hover {
+	background-image: url("immagini/logo/user-light.png");
+}
+
+#userIcon #currentLink {
+	background-image: url("immagini/logo/user.png");
+}
+
+#currentLink {
+	background-color: #fdf1ceb6;
+	color: #473603;
+}
+
+.overlay {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background-color: var(--colore-sfondo-footer);
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.overlay span {
+	text-decoration: none;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.overlay-content {
+	position: relative;
+	top: 15%;
+	min-width: 22em;
+	text-align: center;
+	margin-top: 1em;
+}
+
+.overlay li {
+	padding: 0em;
+	text-decoration: none;
+	font-size: 1.5em;
+	display: block;
+	transition: 0.3s;
+	margin: 0 22%;
+}
+
+#tornaSu {
+	right: 2%;
+}
+
+/*==================== ALLENAMENTI ====================*/
+.dettagli-allenamento article {
+	width: 60%;
+}
+
+#errore {
+	display: block;
+}
+
+#errore div {
+	width: 80%;
+}
+
+#errore img {
+	float: none;
+	width: 40%;
+}
+
+/*==================== TRAINER ====================*/
+#content .personalTrainer .corsiTrainer {
+	margin-left: unset;
+}
+
+/*============= AREA PERSONALE =============*/
+#content #widget_area_personale {
+	gap: 1em;
+	grid-template-areas:
+		"c"
+		"a"
+		"b";
+	grid-template-columns: 100%;
+}
+
+#content #widget_area_personale_admin {
+	gap: 1em;
+	grid-template-areas:
+		"c"
+		"a"
+		"b"
+		"d";
+	grid-template-columns: 100%;
+}
+
+.widget,
+.dati_personali {
+	border-radius: 0.5em;
+}
+
+#gestione_utenti ul,
+#gestione_utenti > form {
+	width: 65%;
+}
+
+#schede_allenamento .scheda_allenamento {
+	width: 70%;
+}
