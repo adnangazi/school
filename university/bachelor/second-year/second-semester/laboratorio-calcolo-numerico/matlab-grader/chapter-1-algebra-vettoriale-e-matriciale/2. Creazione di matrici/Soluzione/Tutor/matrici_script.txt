@@ -1,0 +1,21 @@
+N=10;
+u=1:2:N;
+v=2:2:N-1;
+%A da Grader  N/2xN/2  forse diagonale centrale e quella sopra/sotto ?? non ho la soluzione del tutor
+a1=diag(u);
+a2=diag(v, -1);
+a3=diag(v, 1);
+A=a1+a2+a3;
+%B NxN cioÃ¨(1:1:N; 2:2:2N, .... e prima colonna corrisponde a prima riga...
+z=1:N;
+B=z'*z;
+%C NxN  (1, -1, 1, -1,...; -1, 1, -1,....)
+t=(-1).^(0:N-1);
+C=t'*t;
+%D 2Nx2N  usare definizione per blocchi, (ogni blocco Ã¨ calcolato per somma
+%o differenza del vettore riga/colonna 1:1:20)
+hsx=z+z';
+hdx=z-z';
+lsx=hdx';
+ldx=hsx';
+D=[hsx, hdx; lsx, ldx];
