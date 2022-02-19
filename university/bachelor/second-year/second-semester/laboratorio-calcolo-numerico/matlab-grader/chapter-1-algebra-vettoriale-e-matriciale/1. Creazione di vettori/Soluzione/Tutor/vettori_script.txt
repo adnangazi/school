@@ -1,0 +1,16 @@
+N=20; %limite vettori
+%u=(1,3,5,...)
+u=1:2:N;  %da 1 a N, saltando 2
+%v=(-1,2,-5,...) vettore colonna
+v=(u.*(-1).^(1:length(u)))';
+%w=(-1, 3^2, -5^3, 7^4,...) con al piÃ¹ sqrt(N)elementi  
+%(quindi io mi son fermata a 7^4)
+w=((v(1:(floor(sqrt(N))))').^(1:(floor(sqrt(N)))));
+%z=(1,3,2,4,3,5,..) vettore colonna
+%per z usare Z che Ã¨ una matrice di 2 colonne ((1;3) (2;4) (3;5)
+Z=[1:N-2; 3:N];
+z=Z(:);
+%c='coefficienti dello sviluppo di Taylor di e^x che sono 1/n!
+c=1./(factorial(0:1:N-1));
+%d='coefficienti dello sviluppo di Taylor di log(x+1) che sono ((-1^(n-1))/n
+d=[0,(((-1).^(1:N-1))./(1:N-1))]; 
