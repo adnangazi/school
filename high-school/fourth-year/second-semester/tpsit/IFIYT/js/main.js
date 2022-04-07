@@ -195,9 +195,9 @@ function onYouTubeIframeAPIReady() {
 /****************************
    AUTHENTICATION & API CLASS
 *****************************/
-var CLIENT_ID = '548474516755-p035k1hs3nji28ocs7udlfmkqcqovtvf.apps.googleusercontent.com';
+var CLIENT_ID = '564523778237-8edpbucloov7ga0atoqk46su979vpmvc.apps.googleusercontent.com'; //'564523778237-2aigpfl5c7els3cbhcook1091ld6r9bm.apps.googleusercontent.com'; //'548474516755-p035k1hs3nji28ocs7udlfmkqcqovtvf.apps.googleusercontent.com';
 var SCOPES = 'https://www.googleapis.com/auth/youtube';
-var API_KEY = 'AIzaSyBBGz-MQudU6P6EBfepWAYABVO1qTrUYZE';
+var API_KEY = 'AIzaSyDr7skrNG3d5RXLxc2rHZABKxk6Eu0m7VA'; //'AIzaSyBBGz-MQudU6P6EBfepWAYABVO1qTrUYZE';
 var GoogleAuth;
 
 /********************
