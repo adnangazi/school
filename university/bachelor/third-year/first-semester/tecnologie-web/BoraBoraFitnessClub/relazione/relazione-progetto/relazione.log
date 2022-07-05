@@ -1,0 +1,681 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.20)  1 MAY 2022 13:50
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**d:/GitHub/collaborations/ProgettoTecWeb/relazione/relazione-progetto/relazione.tex
+(d:/GitHub/collaborations/ProgettoTecWeb/relazione/relazione-progetto/relazione.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-04-10> (C:\Program Files\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(C:\Program Files\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2022/02/26 3.73 The Babel package
+\babel@savecnt=\count193
+\U@D=\dimen139
+\l@unhyphenated=\language79
+ (C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count194
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/babel-italian\italian.ldf
+Language: italian 2022/03/27 v.1.4.07 Italian support for the babel system
+\it@lettering=\count195
+\it@doublequoteactive=\count196
+\it@ISOcompliance=\count197
+)) (C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count198
+) (C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+) (C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count199
+\Gm@cntv=\count266
+\c@Gm@tempcnt=\count267
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks19
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (C:\Program Files\MiKTeX\tex/latex/tools\array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen150
+\ar@mcellbox=\box50
+\extrarowheight=\dimen151
+\NC@list=\toks20
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box51
+)
+\rotheadsize=\dimen152
+\c@nlinenum=\count268
+\TeXr@lab=\toks21
+) (C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks22
+\minrowclearance=\skip51
+)
+\rownum=\count269
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (C:\Program Files\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen153
+\TX@old@table=\dimen154
+\TX@old@col=\dimen155
+\TX@target=\dimen156
+\TX@delta=\dimen157
+\TX@cols=\count270
+\TX@ftn=\toks23
+) (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen158
+\Hy@linkcounter=\count271
+\Hy@pagecounter=\count272
+ (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count273
+ (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count274
+ (C:\Program Files\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen159
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count275
+\Field@Width=\dimen160
+\Fld@charsize=\dimen161
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+ (C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count276
+\c@Item=\count277
+\c@Hfootnote=\count278
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+ (C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count279
+\c@bookmark@seq@number=\count280
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+)
+\Hy@SectionHShift=\skip52
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count281
+\float@exts=\toks24
+\float@box=\box52
+\@float@everytoks=\toks25
+\@floatcapt=\box53
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/bold-extra\bold-extra.sty
+Package: bold-extra 2001/11/13 v0.1 Use fonts from cm/mf-extra/bold
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box54
+\beforetitleunit=\skip62
+\aftertitleunit=\skip63
+\ttl@plus=\dimen162
+\ttl@minus=\dimen163
+\ttl@toksa=\toks26
+\titlewidth=\dimen164
+\titlewidthlast=\dimen165
+\titlewidthfirst=\dimen166
+)
+\@indexfile=\write3
+\openout3 = `relazione.idx'.
+
+
+Writing index file relazione.idx
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count282
+\l__pdf_internal_box=\box55
+) (relazione.aux)
+\openout1 = `relazione.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Info: Redefining \it@ocap on input line 35.
+LaTeX Info: Redefining \it@ccap on input line 35.
+ (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count283
+\scratchdimen=\dimen167
+\scratchbox=\box56
+\nofMPsegments=\count284
+\nofMParguments=\count285
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count286
+\MPscratchDim=\dimen168
+\MPnumerator=\count287
+\makeMPintoPDFobject=\count288
+\everyMPtoPDFconversion=\toks28
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 35.
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\adnan\AppData\Roaming\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count289
+)
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
+ (relazione.out) (relazione.out)
+\@outlinefile=\write4
+\openout4 = `relazione.out'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 37.
+
+
+LaTeX Warning: No \author given.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 43.
+[1
+
+{C:/Users/adnan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.73 
+     ] (relazione.toc)
+\tf@toc=\write5
+\openout5 = `relazione.toc'.
+
+ [2]
+<../immagini/mappa_sito.png, id=240, 1146.2825pt x 638.385pt>
+File: ../immagini/mappa_sito.png Graphic file (type png)
+<use ../immagini/mappa_sito.png>
+Package pdftex.def Info: ../immagini/mappa_sito.png  used on input line 101.
+(pdftex.def)             Requested size: 343.8874pt x 191.51697pt.
+ [3]
+<../immagini/header.png, id=247, 1202.4925pt x 236.885pt>
+File: ../immagini/header.png Graphic file (type png)
+<use ../immagini/header.png>
+Package pdftex.def Info: ../immagini/header.png  used on input line 116.
+(pdftex.def)             Requested size: 420.87868pt x 82.91098pt.
+ [4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.121 		\item i
+               l menù di navigazione, sempre disponibile in cima alla pagin...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.121 		\item i
+               l menù di navigazione, sempre disponibile in cima alla pagin... <../immagini/mappa_sito.png> <../immagini/header.png>] [5]
+<../immagini/schemaER.png, id=260, 741.77126pt x 457.71pt>
+File: ../immagini/schemaER.png Graphic file (type png)
+<use ../immagini/schemaER.png>
+Package pdftex.def Info: ../immagini/schemaER.png  used on input line 164.
+(pdftex.def)             Requested size: 445.0662pt x 274.62813pt.
+ [6]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 188.
+ (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 188.
+ (C:\Program Files\MiKTeX\tex/latex/base\ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Overfull \hbox (51.3534pt too wide) in paragraph at lines 188--189
+\T1/cmr/bx/n/10 utente \T1/cmtt/m/n/10 (username, password, nome, cognome, email, data_nascita, badge, entrate, numero_telefono,
+ []
+
+
+Overfull \hbox (16.79239pt too wide) in paragraph at lines 188--189
+\T1/cmr/bx/n/10 allenamento \T1/cmtt/m/n/10 (id, nome, descrizione, username_utente, data_creazione, id_personal_trainer) 
+ []
+
+[7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.192 	\begin{itemize}
+                       <../immagini/schemaER.png>] [8]
+Overfull \hbox (119.64117pt too wide) in paragraph at lines 228--229
+\T1/cmr/m/n/10 Per man-te-ne-re un al-to li-vel-lo di ac-ces-si-bi-li-t� ci sia-mo at-te-nu-ti al-lo stan-dard WCAG 2.0 ([]https://www.w3.org/Translations/WCAG20-
+ []
+
+[9]
+<../immagini/controllo-colori/light-mode/errore_sfondo-div.png, id=290, 730.73pt x 702.625pt>
+File: ../immagini/controllo-colori/light-mode/errore_sfondo-div.png Graphic file (type png)
+<use ../immagini/controllo-colori/light-mode/errore_sfondo-div.png>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/errore_sfondo-div.png  used on input line 247.
+(pdftex.def)             Requested size: 219.22069pt x 210.78912pt.
+<../immagini/controllo-colori/light-mode/link-da-visitare_background-menu.png, id=291, 729.72626pt x 698.61pt>
+File: ../immagini/controllo-colori/light-mode/link-da-visitare_background-menu.png Graphic file (type png)
+<use ../immagini/controllo-colori/light-mode/link-da-visitare_background-menu.png>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/link-da-visitare_background-menu.png  used on input line 253.
+(pdftex.def)             Requested size: 218.91957pt x 209.58461pt.
+<../immagini/controllo-colori/light-mode/link-da-visitare_sfondo-article-p.png, id=292, 731.73375pt x 707.64375pt>
+File: ../immagini/controllo-colori/light-mode/link-da-visitare_sfondo-article-p.png Graphic file (type png)
+<use ../immagini/controllo-colori/light-mode/link-da-visitare_sfondo-article-p.png>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/link-da-visitare_sfondo-article-p.png  used on input line 259.
+(pdftex.def)             Requested size: 219.52182pt x 212.29475pt.
+ [10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.262 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.262 
+       <../immagini/controllo-colori/light-mode/errore_sfondo-div.png> <../immagini/controllo-colori/light-mode/link-da-visitare_background-menu.png>]
+<../immagini/controllo-colori/light-mode/successo_sfondo-div.png, id=301, 733.74126pt x 706.64pt>
+File: ../immagini/controllo-colori/light-mode/successo_sfondo-div.png Graphic file (type png)
+<use ../immagini/controllo-colori/light-mode/successo_sfondo-div.png>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/successo_sfondo-div.png  used on input line 265.
+(pdftex.def)             Requested size: 220.12407pt x 211.99364pt.
+<../immagini/controllo-colori/light-mode/testo-contrasto-sfondi_testo-principale.JPG, id=302, 545.78906pt x 523.20468pt>
+File: ../immagini/controllo-colori/light-mode/testo-contrasto-sfondi_testo-principale.JPG Graphic file (type jpg)
+<use ../immagini/controllo-colori/light-mode/testo-contrasto-sfondi_testo-principale.JPG>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/testo-contrasto-sfondi_testo-principale.JPG  used on input line 271.
+(pdftex.def)             Requested size: 191.02902pt x 183.12437pt.
+ [11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.274 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.274 
+       <../immagini/controllo-colori/light-mode/link-da-visitare_sfondo-article-p.png> <../immagini/controllo-colori/light-mode/successo_sfondo-div.png>]
+<../immagini/controllo-colori/light-mode/testo-principale_background-menu.JPG, id=311, 545.03625pt x 520.94624pt>
+File: ../immagini/controllo-colori/light-mode/testo-principale_background-menu.JPG Graphic file (type jpg)
+<use ../immagini/controllo-colori/light-mode/testo-principale_background-menu.JPG>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/testo-principale_background-menu.JPG  used on input line 277.
+(pdftex.def)             Requested size: 190.76555pt x 182.33391pt.
+<../immagini/controllo-colori/light-mode/testo-principale_sfondo-article-p.JPG, id=312, 549.55313pt x 520.94624pt>
+File: ../immagini/controllo-colori/light-mode/testo-principale_sfondo-article-p.JPG Graphic file (type jpg)
+<use ../immagini/controllo-colori/light-mode/testo-principale_sfondo-article-p.JPG>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/testo-principale_sfondo-article-p.JPG  used on input line 283.
+(pdftex.def)             Requested size: 192.34647pt x 182.33391pt.
+<../immagini/controllo-colori/light-mode/testo-principale_sfondo-div.png, id=313, 728.7225pt x 704.6325pt>
+File: ../immagini/controllo-colori/light-mode/testo-principale_sfondo-div.png Graphic file (type png)
+<use ../immagini/controllo-colori/light-mode/testo-principale_sfondo-div.png>
+Package pdftex.def Info: ../immagini/controllo-colori/light-mode/testo-principale_sfondo-div.png  used on input line 289.
+(pdftex.def)             Requested size: 218.61844pt x 211.39139pt.
+ [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.292 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.292 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.292 
+       <../immagini/controllo-colori/light-mode/testo-contrasto-sfondi_testo-principale.JPG> <../immagini/controllo-colori/light-mode/testo-principale_background-menu.JPG> <../immagini/controllo-colori/light-mode/testo-principale_sfondo-article-p.JPG>]
+<../immagini/controllo-colori/dark-mode/errore_sfondo-div.png, id=321, 735.74875pt x 703.62875pt>
+File: ../immagini/controllo-colori/dark-mode/errore_sfondo-div.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/errore_sfondo-div.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/errore_sfondo-div.png  used on input line 296.
+(pdftex.def)             Requested size: 220.72632pt x 211.09026pt.
+<../immagini/controllo-colori/dark-mode/link-da-visitare_background-menu.png, id=322, 731.73375pt x 708.6475pt>
+File: ../immagini/controllo-colori/dark-mode/link-da-visitare_background-menu.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/link-da-visitare_background-menu.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/link-da-visitare_background-menu.png  used on input line 302.
+(pdftex.def)             Requested size: 219.52182pt x 212.59589pt.
+ [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.305 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.305 
+       <../immagini/controllo-colori/light-mode/testo-principale_sfondo-div.png> <../immagini/controllo-colori/dark-mode/errore_sfondo-div.png>]
+<../immagini/controllo-colori/dark-mode/link-da-visitare_sfondo-article-p.png, id=332, 733.74126pt x 704.6325pt>
+File: ../immagini/controllo-colori/dark-mode/link-da-visitare_sfondo-article-p.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/link-da-visitare_sfondo-article-p.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/link-da-visitare_sfondo-article-p.png  used on input line 308.
+(pdftex.def)             Requested size: 220.12407pt x 211.39139pt.
+<../immagini/controllo-colori/dark-mode/successo_sfondo-div.png, id=333, 733.74126pt x 709.65125pt>
+File: ../immagini/controllo-colori/dark-mode/successo_sfondo-div.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/successo_sfondo-div.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/successo_sfondo-div.png  used on input line 314.
+(pdftex.def)             Requested size: 220.12407pt x 212.897pt.
+ [14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.317 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.317 
+       <../immagini/controllo-colori/dark-mode/link-da-visitare_background-menu.png> <../immagini/controllo-colori/dark-mode/link-da-visitare_sfondo-article-p.png>]
+<../immagini/controllo-colori/dark-mode/testo-contrasto-sfondi_testo-principale.JPG, id=342, 545.03625pt x 517.935pt>
+File: ../immagini/controllo-colori/dark-mode/testo-contrasto-sfondi_testo-principale.JPG Graphic file (type jpg)
+<use ../immagini/controllo-colori/dark-mode/testo-contrasto-sfondi_testo-principale.JPG>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/testo-contrasto-sfondi_testo-principale.JPG  used on input line 320.
+(pdftex.def)             Requested size: 190.76555pt x 181.27995pt.
+<../immagini/controllo-colori/dark-mode/testo-principale_background-menu.png, id=343, 733.74126pt x 707.64375pt>
+File: ../immagini/controllo-colori/dark-mode/testo-principale_background-menu.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/testo-principale_background-menu.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/testo-principale_background-menu.png  used on input line 326.
+(pdftex.def)             Requested size: 220.12407pt x 212.29475pt.
+ [15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.329 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.329 
+       <../immagini/controllo-colori/dark-mode/successo_sfondo-div.png> <../immagini/controllo-colori/dark-mode/testo-contrasto-sfondi_testo-principale.JPG>]
+<../immagini/controllo-colori/dark-mode/testo-principale_sfondo-article-p.png, id=351, 736.7525pt x 705.63625pt>
+File: ../immagini/controllo-colori/dark-mode/testo-principale_sfondo-article-p.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/testo-principale_sfondo-article-p.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/testo-principale_sfondo-article-p.png  used on input line 332.
+(pdftex.def)             Requested size: 221.02745pt x 211.6925pt.
+<../immagini/controllo-colori/dark-mode/testo-principale_sfondo-div.png, id=352, 729.72626pt x 699.61375pt>
+File: ../immagini/controllo-colori/dark-mode/testo-principale_sfondo-div.png Graphic file (type png)
+<use ../immagini/controllo-colori/dark-mode/testo-principale_sfondo-div.png>
+Package pdftex.def Info: ../immagini/controllo-colori/dark-mode/testo-principale_sfondo-div.png  used on input line 338.
+(pdftex.def)             Requested size: 218.91957pt x 209.88574pt.
+ [16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.341 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.341 
+       <../immagini/controllo-colori/dark-mode/testo-principale_background-menu.png> <../immagini/controllo-colori/dark-mode/testo-principale_sfondo-article-p.png>] [17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.350 
+       <../immagini/controllo-colori/dark-mode/testo-principale_sfondo-div.png>]
+<../immagini/desktop.png, id=367, 1440.38126pt x 725.71124pt>
+File: ../immagini/desktop.png Graphic file (type png)
+<use ../immagini/desktop.png>
+Package pdftex.def Info: ../immagini/desktop.png  used on input line 354.
+(pdftex.def)             Requested size: 432.1177pt x 217.71504pt.
+<../immagini/tablet.png, id=370, 505.89pt x 536.0025pt>
+File: ../immagini/tablet.png Graphic file (type png)
+<use ../immagini/tablet.png>
+Package pdftex.def Info: ../immagini/tablet.png  used on input line 363.
+(pdftex.def)             Requested size: 252.94437pt x 268.0006pt.
+ [18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.366 
+       <../immagini/desktop.png>]
+<../immagini/mobile.png, id=377, 392.06474pt x 536.0025pt>
+File: ../immagini/mobile.png Graphic file (type png)
+<use ../immagini/mobile.png>
+Package pdftex.def Info: ../immagini/mobile.png  used on input line 369.
+(pdftex.def)             Requested size: 235.24066pt x 321.60397pt.
+ [19
+pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.374 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.374 
+       <../immagini/tablet.png> <../immagini/mobile.png>]
+<../immagini/stampa.PNG, id=387, 496.10344pt x 395.97937pt>
+File: ../immagini/stampa.PNG Graphic file (type png)
+<use ../immagini/stampa.PNG>
+Package pdftex.def Info: ../immagini/stampa.PNG  used on input line 379.
+(pdftex.def)             Requested size: 272.85773pt x 217.78932pt.
+ [20
+pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.388 
+       <../immagini/stampa.PNG>] [21] [22] [23] [24] (relazione.aux)
+Package rerunfilecheck Info: File `relazione.out' has not changed.
+(rerunfilecheck)             Checksum: 59F377B4EF8A8C19F1169A5BA3AA2B73;5684.
+ ) 
+Here is how much of TeX's memory you used:
+ 11928 strings out of 478552
+ 193099 string characters out of 2851753
+ 514278 words of memory out of 3000000
+ 29863 multiletter control sequences out of 15000+600000
+ 479107 words of font info for 48 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 60i,9n,63p,2239b,408s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\adnan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
+Output written on relazione.pdf (24 pages, 10397037 bytes).
+PDF statistics:
+ 763 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 468 words of extra memory for PDF output out of 10000 (max. 10000000)
+

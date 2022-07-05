@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{helvet}
+\usepackage{multirow}
+\renewcommand*\familydefault{\sfdefault}
+\linespread{1.2}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand*{\SignatureAndDate}[1]{
+    \par\noindent\makebox[4.0in]{\hrulefill}
+    \par\noindent\makebox[4.0in][l]{#1}
+}
+
+\usepackage[
+a4paper,
+top=2.5cm,
+bottom=2.5cm,
+left=1.5cm,
+right=1.5cm,
+head=30pt,
+textheight=8in,
+footskip=10pt
+]{geometry}
+
+\usepackage[italian]{isodate}
+\usepackage{arydshln}
+\usepackage{hyperref}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+
+\hyphenation{ionto-pho-re-tic iso-tro-pic fortran} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{2cm}
+\setlength{\parindent}{0pt}
+
+\newcommand{\stileUNIPD}{
+    \lhead{
+       \textline[t]{\includegraphics[width=1cm, keepaspectratio=true]{img/UniPd.png}}
+        {Piano di lavoro stage presso \\\ragioneSocAzienda}
+        {\nomeStudente \cognomeStudente\\ (\matricolaStudente)}
+    }
+    \rfoot{\thepage/\pageref{LastPage}}
+    \cfoot{}
+}
+
+\newcommand{\stileAziendale}{
+    \lhead{
+        \textline[t]{\includegraphics[width=1cm, keepaspectratio=true]{img/logo_azienda.png}}
+        {\textbf{\ragioneSocAzienda}}
+        {\sitoAzienda}
+    }
+    \lfoot{
+        {\fontsize{8}{10}\selectfont
+        \textbf{\ragioneSocAzienda}\\
+        \indirizzoAzienda\\
+        \sitoAzienda\\
+    }
+    }
+    \cfoot{{\fontsize{8}{10}\selectfont \thepage/\pageref{LastPage}}}
+    \rfoot{{\fontsize{8}{10}\selectfont Tel. \telTutorAziendale\\ email: \emailAzienda \\ \partitaIVAAzienda \\}}
+}
+
+\newcommand\textline[4][t]{%
+    \noindent\parbox[#1]{.333\textwidth}{\raisebox{-0.40\height}{#2}}%
+    \parbox[#1]{.333\textwidth}{\centering #3}%
+    \parbox[#1]{.333\textwidth}{\raggedleft #4}%
+}
+
+\stileUNIPD
+
+\renewcommand{\headrulewidth}{0.4pt}  
+\renewcommand{\footrulewidth}{0.4pt}
