@@ -1,6 +1,6 @@
-PWD c:\Users\adnan\Desktop\Template-piano-di-lavoro-stage-master
+PWD d:\GitHub\adnangazi\school\university\bachelor\third-year\second-semester\piano-di-lavoro
 INPUT C:\Users\adnan\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\adnan\Desktop\Template-piano-di-lavoro-stage-master\PianoDiLavoro.tex
+INPUT d:\GitHub\adnangazi\school\university\bachelor\third-year\second-semester\piano-di-lavoro\PianoDiLavoro.tex
 OUTPUT PianoDiLavoro.log
 INPUT .\Template\Layout.tex
 INPUT Template\Layout.tex
@@ -856,10 +856,6 @@ INPUT .\Template\Sezioni\ContenutiFormativi.tex
 INPUT Template\Sezioni\ContenutiFormativi.tex
 INPUT .\Template\Sezioni\ContenutiFormativi.tex
 INPUT Template\Sezioni\ContenutiFormativi.tex
-INPUT C:\Users\adnan\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
-INPUT C:\Users\adnan\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
-INPUT C:\Users\adnan\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
-INPUT C:\Users\adnan\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
 INPUT .\img\UniPd.png
 INPUT .\img\UniPd.png
 INPUT img\UniPd.png
@@ -882,16 +878,16 @@ INPUT .\Template\Sezioni\Prodotti.tex
 INPUT Template\Sezioni\Prodotti.tex
 INPUT .\Template\Sezioni\Prodotti.tex
 INPUT Template\Sezioni\Prodotti.tex
-INPUT .\Template\Sezioni\Obiettivi.tex
-INPUT Template\Sezioni\Obiettivi.tex
-INPUT .\Template\Sezioni\Obiettivi.tex
-INPUT Template\Sezioni\Obiettivi.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\helvetic\phvb8t.tfm
 INPUT .\img\UniPd.png
 INPUT .\img\UniPd.png
 INPUT img\UniPd.png
 INPUT .\img\UniPd.png
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\helvetic\phvr8c.vf
+INPUT .\Template\Sezioni\Obiettivi.tex
+INPUT Template\Sezioni\Obiettivi.tex
+INPUT .\Template\Sezioni\Obiettivi.tex
+INPUT Template\Sezioni\Obiettivi.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\helvetic\phvb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\helvetic\phvro8t.tfm
 INPUT .\img\UniPd.png
 INPUT .\img\UniPd.png
@@ -909,18 +905,18 @@ INPUT .\img\UniPd.png
 INPUT .\img\UniPd.png
 INPUT img\UniPd.png
 INPUT .\img\UniPd.png
+INPUT .\Template\Tabelle\tabellaRipartizioneOre.tex
+INPUT Template\Tabelle\tabellaRipartizioneOre.tex
+INPUT .\Template\Tabelle\tabellaRipartizioneOre.tex
+INPUT Template\Tabelle\tabellaRipartizioneOre.tex
+INPUT .\Template\Sezioni\Diagramma.tex
+INPUT Template\Sezioni\Diagramma.tex
+INPUT .\Template\Sezioni\Diagramma.tex
+INPUT Template\Sezioni\Diagramma.tex
 INPUT .\img\UniPd.png
 INPUT .\img\UniPd.png
 INPUT img\UniPd.png
 INPUT .\img\UniPd.png
-INPUT .\Template\Tabelle\tabellaRipartizioneOre.tex
-INPUT Template\Tabelle\tabellaRipartizioneOre.tex
-INPUT .\Template\Tabelle\tabellaRipartizioneOre.tex
-INPUT Template\Tabelle\tabellaRipartizioneOre.tex
-INPUT .\Template\Sezioni\Diagramma.tex
-INPUT Template\Sezioni\Diagramma.tex
-INPUT .\Template\Sezioni\Diagramma.tex
-INPUT Template\Sezioni\Diagramma.tex
 INPUT .\img\gantt.png
 INPUT .\img\gantt.png
 INPUT img\gantt.png
