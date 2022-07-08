@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/adnangazi/school/master/university/bachelor/second-year/first-semester/programmazione-ad-oggetti/GoFlex/screen/GoFlex.ico)
+![Logo](https://raw.githubusercontent.com/adnangazi/school/master/university/bachelor/second-year/first-semester/programmazione-ad-oggetti/GoFlex/screen/GoFlex.png)
 
 # GoFlex
 GoFlex is a fitness desktop application to track workouts uniquely yours, creating, running, and monitoring your exercises! Working out is amusing, easy, and satisfying thanks to GoFlex! Start right now and enjoy a completely new era of working out!
