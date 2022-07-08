@@ -3,7 +3,7 @@
 # GoFlex
 GoFlex is a fitness desktop application to track workouts uniquely yours, creating, running, and monitoring your exercises! Working out is amusing, easy, and satisfying thanks to GoFlex! Start right now and enjoy a completely new era of working out!
 
-GoFlex is a bachelor second-year of the University of Padua project for the Object-Oriented Programming Course.
+GoFlex is a bachelor second-year of the University of Padua project for the Object-Oriented Programming course.
 
 ## Appendix
 - Screenshots
@@ -30,7 +30,7 @@ GoFlex is a bachelor second-year of the University of Padua project for the Obje
 - Create exercise
 - Change exercise
 - Remove exercise
-- Info and management dialogs
+- Info & management dialogs
 - Current exercise details
 - Workout execution
 - Workout details
@@ -72,7 +72,7 @@ Running locally is also possible by opening the prject with Qt IDE and running i
 - Multiple workouts management
 - Database to save user data
 - Timer for auto-playing exercises
-- Account management and interactions with others
+- Account management & interactions with others
 - Mobile version of the application
 
 ## Authors
