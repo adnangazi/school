@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.20)  6 JUL 2022 13:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.20)  11 JUL 2022 12:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -588,13 +588,13 @@ Package rerunfilecheck Info: File `PianoDiLavoro.out' has not changed.
 Here is how much of TeX's memory you used:
  13436 strings out of 478552
  209912 string characters out of 2851753
- 534402 words of memory out of 3000000
+ 534308 words of memory out of 3000000
  31351 multiletter control sequences out of 15000+600000
  524173 words of font info for 76 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 65i,18n,66p,924b,608s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 65i,18n,66p,956b,608s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on PianoDiLavoro.pdf (7 pages, 332615 bytes).
+Output written on PianoDiLavoro.pdf (7 pages, 332559 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  25 named destinations out of 1000 (max. 500000)
