@@ -35,6 +35,7 @@ IFIYT is a high school fourth-year project for the Programming course.
 
 ## Tech Stack
 **Languages:** Java, JavaScript, HTML, CSS, YouTube API, SpringBoot
+
 **Technologies:** Git, Windows, and Linux
 
 ## Run Locally

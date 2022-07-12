@@ -38,6 +38,7 @@ GoFlex is a bachelor second-year of the University of Padua project for the Obje
 
 ## Tech Stack
 **Languages:** C++
+
 **Technologies:** Qt Framework, Git, Windows, and Linux
 
 ## Documentation
