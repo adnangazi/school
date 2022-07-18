@@ -80,7 +80,7 @@ Running locally is also possible by opening the prject with Qt IDE and running i
 - [@adnangazi](https://github.com/adnangazi)
 
 ## License
-- [MIT](https://github.com/adnangazi/alpha-notary/blob/main/LICENSE)
+- [MIT](https://github.com/adnangazi/school/blob/master/university/bachelor/second-year/first-semester/programmazione-ad-oggetti/GoFlex/LICENSE)
 
 ## Support
 If you want to support us, please reach out to us at the following links:
