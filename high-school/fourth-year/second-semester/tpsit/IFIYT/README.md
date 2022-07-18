@@ -6,19 +6,18 @@ I Fix It for YouTube, also called from now simply IFIYT, is a voice assistant se
 IFIYT is a high school fourth-year project for the Programming course.
 
 ## Appendix
-- Screenshots
-- Features
-- Tech Stack
-- Installation
-- Run Locally
-- Demo
-- Next improvements
-- Authors
-- License
-- Support
-- FAQ
-- Feedback
-- Contributing
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Run Locally](#run-locally)
+- [Demo](#demo)
+- [Next improvements](#next-improvements)
+- [Authors](#authors)
+- [License](#license)
+- [Support](#support)
+- [FAQ](#faq)
+- [Feedback](#feedback)
+- [Contributing](#contributing)
 
 ## Screenshots
 ![Logo](https://raw.githubusercontent.com/adnangazi/school/master/high-school/fourth-year/second-semester/tpsit/IFIYT/images/screen/Main.png)
@@ -54,7 +53,7 @@ Fork or download the repository code, then open the project with IntelliJ Idea a
 - [@adnangazi](https://github.com/adnangazi)
 
 ## License
-[MIT](https://github.com/adnangazi/alpha-notary/blob/main/LICENSE)
+- [MIT](https://github.com/adnangazi/alpha-notary/blob/main/LICENSE)
 
 ## Support
 If you want to support us, please reach out to us at the following links:
@@ -90,3 +89,5 @@ If you have any feedback, please reach out to us at the following links:
 
 ## Contributing
 Very glad to see you here, it means you really liked our product. IFIYT is completely free and open source, so just go to the repository, study its documentation and pull a request to contribute, we will be very to collaborate! You can also refer us if you prefer.
+
+[Back to top](#)

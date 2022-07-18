@@ -6,20 +6,20 @@ GoFlex is a fitness desktop application to track workouts uniquely yours, creati
 GoFlex is a bachelor second-year of the University of Padua project for the Object-Oriented Programming course.
 
 ## Appendix
-- Screenshots
-- Features
-- Tech Stack
-- Documentation
-- Installation
-- Run Locally
-- Demo
-- Next improvements
-- Authors
-- License
-- Support
-- FAQ
-- Feedback
-- Contributing
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Documentation](#documentation)
+- [Installation](#installation)
+- [Run Locally](#run-locally)
+- [Demo](#demo)
+- [Next improvements](#next-improvements)
+- [Authors](#authors)
+- [License](#license)
+- [Support](#support)
+- [FAQ](#faq)
+- [Feedback](#feedback)
+- [Contributing](#contributing)
 
 ## Screenshots
 ![Logo](https://raw.githubusercontent.com/adnangazi/school/master/university/bachelor/second-year/first-semester/programmazione-ad-oggetti/GoFlex/screen/Main.png)
@@ -80,7 +80,7 @@ Running locally is also possible by opening the prject with Qt IDE and running i
 - [@adnangazi](https://github.com/adnangazi)
 
 ## License
-[MIT](https://github.com/adnangazi/alpha-notary/blob/main/LICENSE)
+- [MIT](https://github.com/adnangazi/alpha-notary/blob/main/LICENSE)
 
 ## Support
 If you want to support us, please reach out to us at the following links:
@@ -119,3 +119,5 @@ If you have any feedback, please reach out to us at the following links:
 
 ## Contributing
 Very glad to see you here, it means you really liked our product. GoFlex is completely free and open source, so just go to the repository, study its documentation and pull a request to contribute, we will be very to collaborate! You can also refer us if you prefer.
+
+[Back to top](#)
