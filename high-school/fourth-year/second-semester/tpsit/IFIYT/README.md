@@ -53,7 +53,7 @@ Fork or download the repository code, then open the project with IntelliJ Idea a
 - [@adnangazi](https://github.com/adnangazi)
 
 ## License
-- [MIT](https://github.com/adnangazi/alpha-notary/blob/main/LICENSE)
+- [MIT](https://github.com/adnangazi/school/blob/master/high-school/fourth-year/second-semester/tpsit/IFIYT/LICENSE)
 
 ## Support
 If you want to support us, please reach out to us at the following links:
